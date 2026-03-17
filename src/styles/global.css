@@ -1,0 +1,1113 @@
+/* ============================================================
+   THEOSIS - Eastern Orthodox Learning Platform
+   Global Stylesheet
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   1. CSS CUSTOM PROPERTIES (Light Theme - Default)
+   ------------------------------------------------------------ */
+
+:root {
+  /* Background & Surface */
+  --bg: #faf7f2;
+  --card: #fff;
+  --card-border: #e8dfd4;
+
+  /* Typography */
+  --text: #1a1009;
+  --text-sec: #6b5c4c;
+  --font-serif: Georgia, 'Times New Roman', serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Accent (Deep Red / Byzantine) */
+  --accent: #8b1a1a;
+  --accent-light: #f3e8e8;
+  --accent-hover: #a02020;
+
+  /* Gold */
+  --gold: #c9a84c;
+  --gold-light: #faf3dc;
+  --gold-border: #e8d48b;
+
+  /* Navigation */
+  --nav-bg: #fff;
+  --nav-border: #e8dfd4;
+
+  /* Hero */
+  --hero-bg: linear-gradient(135deg, #1a0a0a 0%, #3b1111 40%, #5a1a1a 70%, #2a0808 100%);
+  --hero-text: #f5ebe0;
+  --hero-text-sec: #d4b896;
+
+  /* Inputs */
+  --input-bg: #fff;
+  --input-border: #d4c9b8;
+
+  /* Tags */
+  --tag-bg-1: #f3e8e8;
+  --tag-color-1: #8b1a1a;
+  --tag-bg-2: #eae4d8;
+  --tag-color-2: #6b5c3c;
+
+  /* Footer */
+  --footer-bg: #fff;
+  --footer-border: #e8dfd4;
+  --footer-text: #a0927e;
+
+  /* Progress */
+  --progress-bg: #e8dfd4;
+  --progress-fill: #8b1a1a;
+
+  /* Status */
+  --success-bg: #d1e7dd;
+  --success-text: #0f5132;
+  --err-bg: #f8d7da;
+  --err-text: #842029;
+
+  /* Tabs */
+  --tab-active: #8b1a1a;
+  --tab-inactive: #a0927e;
+
+  /* Badge */
+  --badge-bg: rgba(201, 168, 76, 0.15);
+  --badge-text: #c9a84c;
+  --badge-border: rgba(201, 168, 76, 0.3);
+}
+
+
+/* ------------------------------------------------------------
+   2. CSS CUSTOM PROPERTIES (Dark Theme)
+   ------------------------------------------------------------ */
+
+[data-theme="dark"] {
+  --bg: #0f0a06;
+  --card: #1a1209;
+  --card-border: #2e2418;
+
+  --text: #e8dfd4;
+  --text-sec: #a09585;
+
+  --accent: #c94444;
+  --accent-light: #2a1515;
+  --accent-hover: #e05555;
+
+  --gold: #c9a84c;
+  --gold-light: #1f1a0a;
+  --gold-border: #3d3218;
+
+  --nav-bg: #141008;
+  --nav-border: #2e2418;
+
+  --hero-bg: linear-gradient(135deg, #0a0300 0%, #1a0808 40%, #2e1010 70%, #0a0300 100%);
+  --hero-text: #e8dfd4;
+  --hero-text-sec: #a09585;
+
+  --input-bg: #1a1209;
+  --input-border: #2e2418;
+
+  --tag-bg-1: #2a1515;
+  --tag-color-1: #e07070;
+  --tag-bg-2: #1f1a0a;
+  --tag-color-2: #c9a84c;
+
+  --footer-bg: #0f0a06;
+  --footer-border: #2e2418;
+  --footer-text: #5a5040;
+
+  --progress-bg: #2e2418;
+  --progress-fill: #c94444;
+
+  --success-bg: #0a2e1a;
+  --success-text: #6ee7a0;
+  --err-bg: #2e0a0a;
+  --err-text: #f08080;
+
+  --tab-active: #c94444;
+  --tab-inactive: #6b5c4c;
+
+  --badge-bg: rgba(201, 168, 76, 0.1);
+  --badge-text: #c9a84c;
+  --badge-border: rgba(201, 168, 76, 0.2);
+}
+
+
+/* ------------------------------------------------------------
+   3. RESET & BASE
+   ------------------------------------------------------------ */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+
+/* ------------------------------------------------------------
+   4. TYPOGRAPHY
+   ------------------------------------------------------------ */
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(28px, 5vw, 52px); letter-spacing: -1px; }
+h2 { font-size: 28px; }
+h3 { font-size: 17px; font-weight: 600; }
+
+p {
+  color: var(--text-sec);
+  line-height: 1.7;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+
+/* ------------------------------------------------------------
+   5. LAYOUT
+   ------------------------------------------------------------ */
+
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container--narrow {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+
+/* ------------------------------------------------------------
+   6. NAVIGATION
+   ------------------------------------------------------------ */
+
+.nav {
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: background 0.3s ease;
+}
+
+.nav__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.nav__logo-text {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--text);
+  letter-spacing: -0.5px;
+  font-family: var(--font-serif);
+}
+
+.nav__logo-icon {
+  color: var(--accent);
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav__btn {
+  background: transparent;
+  color: var(--text-sec);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav__btn:hover {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.nav__btn--active {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.nav__btn--primary {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  padding: 8px 18px;
+}
+
+.nav__btn--primary:hover {
+  background: var(--accent-hover);
+}
+
+.nav__btn--danger {
+  background: var(--err-bg);
+  color: var(--err-text);
+}
+
+.nav__theme-toggle {
+  background: transparent;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  color: var(--text-sec);
+  display: flex;
+  align-items: center;
+  margin-left: 4px;
+  transition: all 0.2s ease;
+}
+
+.nav__theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Mobile nav */
+.nav__mobile-btns {
+  display: none;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav__hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.nav__mobile-menu {
+  padding: 8px 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav__mobile-menu .nav__btn {
+  text-align: left;
+  padding: 10px 16px;
+  font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  .nav__links   { display: none !important; }
+  .nav__mobile-btns { display: flex !important; }
+}
+
+
+/* ------------------------------------------------------------
+   7. HERO SECTION
+   ------------------------------------------------------------ */
+
+.hero {
+  background: var(--hero-bg);
+  padding: 80px 24px 72px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.04;
+  font-size: 300px;
+  color: #c9a84c;
+  pointer-events: none;
+  font-family: serif;
+}
+
+.hero__content {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero__title {
+  color: var(--hero-text);
+  margin-bottom: 16px;
+}
+
+.hero__title span {
+  color: var(--gold);
+}
+
+.hero__subtitle {
+  font-size: 18px;
+  color: var(--hero-text-sec);
+  max-width: 520px;
+  margin: 16px auto 36px;
+  line-height: 1.7;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+/* ------------------------------------------------------------
+   8. BADGES & TAGS
+   ------------------------------------------------------------ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  backdrop-filter: blur(4px);
+}
+
+.badge--gold {
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  border: 1px solid var(--badge-border);
+}
+
+.tag {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.tag--video {
+  background: var(--tag-bg-1);
+  color: var(--tag-color-1);
+}
+
+.tag--reading {
+  background: var(--tag-bg-2);
+  color: var(--tag-color-2);
+}
+
+
+/* ------------------------------------------------------------
+   9. BUTTONS
+   ------------------------------------------------------------ */
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: #fff;
+  padding: 14px 32px;
+  font-size: 16px;
+}
+
+.btn--primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn--secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--hero-text);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 14px 32px;
+  font-size: 16px;
+  backdrop-filter: blur(4px);
+}
+
+.btn--sm {
+  padding: 8px 20px;
+  font-size: 13px;
+  border-radius: 8px;
+}
+
+.btn--success {
+  background: var(--success-bg);
+  color: var(--success-text);
+  border: 1px solid var(--success-text);
+}
+
+.btn--ghost {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--card-border);
+  padding: 8px 18px;
+  font-size: 13px;
+  border-radius: 8px;
+}
+
+
+/* ------------------------------------------------------------
+   10. CARDS
+   ------------------------------------------------------------ */
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 28px;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 24px rgba(139, 26, 26, 0.08);
+  border-color: var(--accent);
+}
+
+.card--flat {
+  border-radius: 12px;
+  padding: 18px 22px;
+}
+
+.card--flat:hover {
+  box-shadow: 0 2px 12px rgba(139, 26, 26, 0.06);
+}
+
+.card--gold {
+  background: var(--gold-light);
+  border-color: var(--gold-border);
+}
+
+.card--gold:hover {
+  box-shadow: none;
+  border-color: var(--gold-border);
+}
+
+
+/* ------------------------------------------------------------
+   11. ICON BOXES
+   ------------------------------------------------------------ */
+
+.icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.icon-box--accent {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.icon-box--success {
+  background: var(--success-bg);
+  color: var(--success-text);
+}
+
+.icon-box--muted {
+  background: var(--bg);
+  color: var(--text-sec);
+}
+
+.icon-box--sm {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+}
+
+
+/* ------------------------------------------------------------
+   12. FORMS & INPUTS
+   ------------------------------------------------------------ */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-sec);
+  margin-bottom: 5px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--input-border);
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  background: var(--input-bg);
+  color: var(--text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+textarea.form-input {
+  resize: vertical;
+}
+
+
+/* ------------------------------------------------------------
+   13. TABS
+   ------------------------------------------------------------ */
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.tab {
+  padding: 10px 20px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--tab-inactive);
+  cursor: pointer;
+  margin-bottom: -1px;
+  transition: all 0.2s ease;
+}
+
+.tab--active {
+  color: var(--tab-active);
+  border-bottom-color: var(--tab-active);
+}
+
+.tab:hover:not(.tab--active) {
+  color: var(--text);
+}
+
+/* Toggle tabs (sign in / sign up) */
+.tab-toggle {
+  display: flex;
+  background: var(--bg);
+  border-radius: 10px;
+  padding: 4px;
+}
+
+.tab-toggle__btn {
+  flex: 1;
+  padding: 10px 0;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  background: transparent;
+  color: var(--text-sec);
+  transition: all 0.2s ease;
+}
+
+.tab-toggle__btn--active {
+  background: var(--card);
+  color: var(--text);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ------------------------------------------------------------
+   14. PROGRESS BARS
+   ------------------------------------------------------------ */
+
+.progress {
+  height: 10px;
+  background: var(--progress-bg);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress--sm {
+  height: 6px;
+  border-radius: 3px;
+}
+
+.progress__fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: inherit;
+  transition: width 0.5s ease;
+}
+
+.progress__fill--success {
+  background: var(--success-text);
+}
+
+
+/* ------------------------------------------------------------
+   15. ALERTS & STATUS
+   ------------------------------------------------------------ */
+
+.alert {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.alert--error {
+  background: var(--err-bg);
+  color: var(--err-text);
+}
+
+.alert--success {
+  background: var(--success-bg);
+  color: var(--success-text);
+  padding: 20px 24px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-badge {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.status-badge--passed {
+  background: var(--success-bg);
+  color: var(--success-text);
+}
+
+.status-badge--failed {
+  background: var(--err-bg);
+  color: var(--err-text);
+}
+
+
+/* ------------------------------------------------------------
+   16. ORNAMENT (Byzantine Divider)
+   ------------------------------------------------------------ */
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.ornament__line {
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.4;
+}
+
+.ornament__symbol {
+  color: var(--gold);
+  opacity: 0.6;
+  font-size: 10px;
+}
+
+
+/* ------------------------------------------------------------
+   17. FOOTER
+   ------------------------------------------------------------ */
+
+.footer {
+  border-top: 1px solid var(--footer-border);
+  padding: 24px;
+  text-align: center;
+  background: var(--footer-bg);
+  transition: background 0.3s ease;
+}
+
+.footer__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--footer-text);
+  font-size: 13px;
+}
+
+.footer__brand {
+  font-family: var(--font-serif);
+}
+
+
+/* ------------------------------------------------------------
+   18. SECTIONS
+   ------------------------------------------------------------ */
+
+.section {
+  padding: 64px 24px;
+}
+
+.section--compact {
+  padding: 48px 24px;
+}
+
+.section--hero-cta {
+  padding: 48px 24px 72px;
+  text-align: center;
+}
+
+.section__title {
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.section__subtitle {
+  text-align: center;
+  color: var(--text-sec);
+  margin-bottom: 48px;
+  font-size: 16px;
+}
+
+
+/* ------------------------------------------------------------
+   19. GRID LAYOUTS
+   ------------------------------------------------------------ */
+
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+.grid--features {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.grid--values {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+
+/* ------------------------------------------------------------
+   20. MODULE & QUIZ LIST
+   ------------------------------------------------------------ */
+
+.module-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.module-item {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.module-item:hover {
+  box-shadow: 0 2px 12px rgba(139, 26, 26, 0.06);
+}
+
+.module-item__header {
+  padding: 18px 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.module-item__body {
+  padding: 0 22px 18px;
+  border-top: 1px solid var(--card-border);
+}
+
+.module-item__meta {
+  display: flex;
+  gap: 24px;
+  padding-top: 16px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--text-sec);
+}
+
+.quiz-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quiz-item {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.quiz-item__score {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.quiz-item__score--pass { color: var(--success-text); }
+.quiz-item__score--fail { color: var(--err-text); }
+
+
+/* ------------------------------------------------------------
+   21. PROGRESS CARD (Dashboard)
+   ------------------------------------------------------------ */
+
+.progress-card {
+  background: var(--gold-light);
+  border: 1px solid var(--gold-border);
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.progress-card__label {
+  font-size: 13px;
+  color: var(--gold);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 4px;
+}
+
+.progress-card__value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.progress-card__sub {
+  font-size: 13px;
+  color: var(--text-sec);
+  margin: 4px 0 0;
+}
+
+
+/* ------------------------------------------------------------
+   22. AUTH PAGE
+   ------------------------------------------------------------ */
+
+.auth-wrapper {
+  min-height: calc(100vh - 65px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--bg);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card);
+  border-radius: 16px;
+  padding: 40px 32px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.auth-card__header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.auth-card__icon {
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+
+/* ------------------------------------------------------------
+   23. UTILITY CLASSES
+   ------------------------------------------------------------ */
+
+.text-center  { text-align: center; }
+.text-left    { text-align: left; }
+.text-right   { text-align: right; }
+
+.text-accent  { color: var(--accent); }
+.text-gold    { color: var(--gold); }
+.text-muted   { color: var(--text-sec); }
+.text-success { color: var(--success-text); }
+.text-error   { color: var(--err-text); }
+
+.font-serif   { font-family: var(--font-serif); }
+
+.mt-0  { margin-top: 0; }
+.mt-8  { margin-top: 8px; }
+.mt-16 { margin-top: 16px; }
+.mt-24 { margin-top: 24px; }
+.mt-32 { margin-top: 32px; }
+.mb-0  { margin-bottom: 0; }
+.mb-8  { margin-bottom: 8px; }
+.mb-16 { margin-bottom: 16px; }
+.mb-24 { margin-bottom: 24px; }
+.mb-32 { margin-bottom: 32px; }
+
+.flex          { display: flex; }
+.flex-col      { flex-direction: column; }
+.items-center  { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.gap-8   { gap: 8px; }
+.gap-12  { gap: 12px; }
+.gap-16  { gap: 16px; }
+.gap-24  { gap: 24px; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-1    { flex: 1; }
+.shrink-0  { flex-shrink: 0; }
+
+.w-full    { width: 100%; }
+.max-w-500 { max-width: 500px; }
+.max-w-600 { max-width: 600px; }
+.max-w-700 { max-width: 700px; }
+
+
+/* ------------------------------------------------------------
+   24. TRANSITIONS & ANIMATIONS
+   ------------------------------------------------------------ */
+
+.transition-all {
+  transition: all 0.2s ease;
+}
+
+.transition-colors {
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   25. RESPONSIVE BREAKPOINTS
+   ------------------------------------------------------------ */
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 56px 20px 48px;
+  }
+
+  .section {
+    padding: 40px 20px;
+  }
+
+  .section--hero-cta {
+    padding: 32px 20px 48px;
+  }
+
+  .progress-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .progress-card > div:last-child {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero__actions .btn {
+    justify-content: center;
+  }
+
+  .auth-card {
+    padding: 28px 20px;
+  }
+}
