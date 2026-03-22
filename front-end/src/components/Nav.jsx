@@ -1,8 +1,9 @@
 import Icon from "./Icon";
 import { useThemeToggle } from "../context/ThemeContext";
+import { supabase } from "../lib/supabase";
 import '../styles/global.css';
 
-const Nav = ({ page, setPage, user, setUser, mobileOpen, setMobileOpen }) => {
+const Nav = ({ page, setPage, user, mobileOpen, setMobileOpen }) => {
   const { isDark, toggleDark } = useThemeToggle();
 
   const navBtnClass = (key) =>
@@ -14,7 +15,7 @@ const Nav = ({ page, setPage, user, setUser, mobileOpen, setMobileOpen }) => {
         {/* Logo */}
         <div className="nav__logo" onClick={() => setPage("home")}>
           <span className="nav__logo-icon"><Icon name="cross" size={28} /></span>
-          <span className="nav__logo-text">Theosis</span>
+          <span className="nav__logo-text">ZeOrthodox</span>
         </div>
 
         {/* Desktop nav */}
@@ -25,7 +26,7 @@ const Nav = ({ page, setPage, user, setUser, mobileOpen, setMobileOpen }) => {
           {user ? (
             <>
               <button className={navBtnClass("modules")} onClick={() => setPage("modules")}>My Learning</button>
-              <button className="nav__btn nav__btn--danger" onClick={() => { setUser(null); setPage("home"); }}>Sign Out</button>
+              <button className="nav__btn nav__btn--danger" onClick={async () => { await supabase.auth.signOut(); setPage("home"); }}>Sign Out</button>
             </>
           ) : (
             <button className="nav__btn nav__btn--primary" onClick={() => setPage("auth")}>Sign In</button>
@@ -56,7 +57,7 @@ const Nav = ({ page, setPage, user, setUser, mobileOpen, setMobileOpen }) => {
           {user ? (
             <>
               <button className={navBtnClass("modules")} onClick={() => { setPage("modules"); setMobileOpen(false); }}>My Learning</button>
-              <button className="nav__btn nav__btn--danger" onClick={() => { setUser(null); setPage("home"); setMobileOpen(false); }}>Sign Out</button>
+              <button className="nav__btn nav__btn--danger" onClick={async () => { await supabase.auth.signOut(); setPage("home"); setMobileOpen(false); }}>Sign Out</button>
             </>
           ) : (
             <button className="nav__btn nav__btn--primary" onClick={() => { setPage("auth"); setMobileOpen(false); }}>Sign In</button>

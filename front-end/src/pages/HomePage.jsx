@@ -9,14 +9,14 @@ const HomePage = ({ setPage, user }) => (
       <div className="hero__watermark">☦</div>
       <div className="hero__content">
         <div className="badge badge--gold mb-24">
-          <Icon name="church" size={14} /> Eastern Orthodox Christian Education
+          <Icon name="church" size={14} /> Ethiopian Orthodox Christian Education
         </div>
         <h1 className="hero__title">
           Grow in the<br /><span>Ancient Faith</span>
         </h1>
         <Ornament />
         <p className="hero__subtitle">
-          Explore the rich tradition of Eastern Orthodoxy through guided video lessons, curated readings, and interactive assessments.
+          Explore the rich tradition of Ethiopian Orthodoxy through guided video lessons, curated readings, and interactive assessments.
         </p>
         <div className="hero__actions">
           <button className="btn btn--primary" onClick={() => setPage(user ? "modules" : "auth")}>

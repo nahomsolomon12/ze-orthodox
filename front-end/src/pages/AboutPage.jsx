@@ -1,11 +1,14 @@
 import { useState } from "react";
 import Icon from "../components/Icon";
 import Ornament from "../components/Ornament";
+import { sendContact } from "../lib/api";
 import '../styles/global.css';
 
 const AboutPage = () => {
   const [contactForm, setContactForm] = useState({ name: "", email: "", message: "" });
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [contactErr, setContactErr] = useState("");
 
   return (
     <div className="container--narrow" style={{ paddingTop: 48, paddingBottom: 48 }}>
@@ -64,8 +67,28 @@ const AboutPage = () => {
               <label className="form-label">Message</label>
               <textarea className="form-input" value={contactForm.message} onChange={e => setContactForm({ ...contactForm, message: e.target.value })} rows={4} />
             </div>
-            <button className="btn btn--primary" style={{ padding: "12px 28px", fontSize: 15, alignSelf: "flex-start" }} onClick={() => setSent(true)}>
-              Send Message
+            {contactErr && <div className="alert alert--error">{contactErr}</div>}
+            <button
+              className="btn btn--primary"
+              style={{ padding: "12px 28px", fontSize: 15, alignSelf: "flex-start" }}
+              disabled={sending}
+              onClick={async () => {
+                setContactErr("");
+                if (!contactForm.name || !contactForm.email || !contactForm.message) {
+                  return setContactErr("Please fill in all fields.");
+                }
+                setSending(true);
+                try {
+                  await sendContact(contactForm.name, contactForm.email, contactForm.message);
+                  setSent(true);
+                } catch (err) {
+                  setContactErr(err.message);
+                } finally {
+                  setSending(false);
+                }
+              }}
+            >
+              {sending ? "Sending…" : "Send Message"}
             </button>
           </div>
         )}

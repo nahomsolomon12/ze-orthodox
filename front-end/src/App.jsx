@@ -6,16 +6,35 @@ import HomePage from "./pages/HomePage";
 import AuthPage from "./pages/AuthPage";
 import ModulesPage from "./pages/ModulesPage";
 import AboutPage from "./pages/AboutPage";
+import { supabase } from "./lib/supabase";
 import './styles/global.css';
 
 const AppContent = () => {
   const [page, setPage] = useState("home");
   const [user, setUser] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [authLoading, setAuthLoading] = useState(true);
+
+  useEffect(() => {
+    // Load existing session on mount
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+      setAuthLoading(false);
+    });
+
+    // Keep user in sync with Supabase auth state changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
 
   useEffect(() => {
     setMobileOpen(false);
   }, [page]);
+
+  if (authLoading) return null;
 
   return (
     <div className="app-wrapper">

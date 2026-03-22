@@ -1,21 +1,75 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Icon from "../components/Icon";
-import { modules, quizzes } from "../data/modules";
+import { getModules, getModuleProgress, getQuizzes } from "../lib/api";
 import '../styles/global.css';
 
 const ModulesPage = ({ user }) => {
   const [activeTab, setActiveTab] = useState("modules");
   const [expandedModule, setExpandedModule] = useState(null);
+  const [modules, setModules] = useState([]);
+  const [quizzes, setQuizzes] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    const load = async () => {
+      try {
+        // Fetch modules and quizzes in parallel
+        const [fetchedModules, fetchedQuizzes] = await Promise.all([
+          getModules(),
+          getQuizzes(),
+        ]);
+
+        // Fetch each module's progress in parallel, then merge into the module object
+        const progressList = await Promise.all(
+          fetchedModules.map(m => getModuleProgress(m.id))
+        );
+
+        const modulesWithProgress = fetchedModules.map((m, i) => ({
+          ...m,
+          desc: m.description,
+          completed: progressList[i]?.completed_lessons ?? 0,
+        }));
+
+        setModules(modulesWithProgress);
+        setQuizzes(fetchedQuizzes);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    load();
+  }, []);
 
   const totalLessons = modules.reduce((a, m) => a + m.lessons, 0);
   const completedLessons = modules.reduce((a, m) => a + m.completed, 0);
-  const pct = Math.round((completedLessons / totalLessons) * 100);
+  const pct = totalLessons > 0 ? Math.round((completedLessons / totalLessons) * 100) : 0;
+
+  const displayName = user?.user_metadata?.name || user?.email?.split("@")[0] || "there";
+
+  if (loading) {
+    return (
+      <div className="container--narrow" style={{ paddingTop: 64, textAlign: "center" }}>
+        <p className="text-muted">Loading your learning dashboard…</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="container--narrow" style={{ paddingTop: 64 }}>
+        <div className="alert alert--error">Could not load data: {error}</div>
+      </div>
+    );
+  }
 
   return (
     <div className="container--narrow" style={{ paddingTop: 32, paddingBottom: 32 }}>
       {/* Welcome */}
       <div className="mb-24">
-        <h1 className="font-serif mb-0" style={{ fontSize: 26 }}>Welcome back, {user?.name}</h1>
+        <h1 className="font-serif mb-0" style={{ fontSize: 26 }}>Welcome back, {displayName}</h1>
         <p className="text-muted mt-0" style={{ fontSize: 15 }}>Continue your journey in the Orthodox faith</p>
       </div>
 
@@ -95,7 +149,7 @@ const ModulesPage = ({ user }) => {
             <div key={q.id} className="quiz-item">
               <div>
                 <h3 className="mb-0" style={{ fontSize: 15 }}>{q.title}</h3>
-                <p className="text-muted mb-0" style={{ fontSize: 13, marginTop: 4 }}>{q.questions} questions · Module {q.module}</p>
+                <p className="text-muted mb-0" style={{ fontSize: 13, marginTop: 4 }}>{q.questions} questions · Module {q.module_id}</p>
               </div>
               {q.score != null ? (
                 <div className="flex items-center gap-12">
