@@ -8,7 +8,8 @@ import contactRouter from "./routes/contact.js";
 const app = express();
 const PORT = process.env.PORT ?? 4000;
 
-app.use(cors({ origin: "http://localhost:5173" }));
+const allowedOrigin = process.env.FRONTEND_URL ?? "http://localhost:5173";
+app.use(cors({ origin: allowedOrigin }));
 app.use(express.json());
 
 app.use("/api/modules", modulesRouter);

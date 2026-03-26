@@ -1,61 +1,72 @@
 import { supabase } from "./supabase";
 
-const BASE = import.meta.env.VITE_API_URL;
-
-// Attaches the current user's JWT as a Bearer token
-async function authHeaders() {
-  const { data: { session } } = await supabase.auth.getSession();
-  return {
-    "Content-Type": "application/json",
-    Authorization: `Bearer ${session?.access_token}`,
-  };
-}
-
-async function request(path, options = {}) {
-  const res = await fetch(`${BASE}${path}`, options);
-  const json = await res.json();
-  if (!res.ok) throw new Error(json.error ?? "Request failed");
-  return json;
-}
-
 // -- Modules --
 
 export async function getModules() {
-  return request("/api/modules", { headers: await authHeaders() });
+  const { data, error } = await supabase.from("modules").select("*").order("id");
+  if (error) throw new Error(error.message);
+  return data;
 }
 
 export async function getModuleProgress(moduleId) {
-  return request(`/api/modules/${moduleId}/progress`, { headers: await authHeaders() });
+  const { data: { user } } = await supabase.auth.getUser();
+  const { data, error } = await supabase
+    .from("user_progress")
+    .select("completed_lessons")
+    .eq("module_id", moduleId)
+    .eq("user_id", user.id)
+    .maybeSingle();
+  if (error) throw new Error(error.message);
+  return data; // { completed_lessons: number } or null
 }
 
 export async function saveModuleProgress(moduleId, completedLessons) {
-  return request(`/api/modules/${moduleId}/progress`, {
-    method: "POST",
-    headers: await authHeaders(),
-    body: JSON.stringify({ completed_lessons: completedLessons }),
+  const { data: { user } } = await supabase.auth.getUser();
+  const { error } = await supabase.from("user_progress").upsert({
+    user_id: user.id,
+    module_id: moduleId,
+    completed_lessons: completedLessons,
+    updated_at: new Date().toISOString(),
   });
+  if (error) throw new Error(error.message);
 }
 
 // -- Quizzes --
 
 export async function getQuizzes() {
-  return request("/api/quizzes", { headers: await authHeaders() });
+  const { data: { user } } = await supabase.auth.getUser();
+
+  const [{ data: quizzes, error: qErr }, { data: results, error: rErr }] = await Promise.all([
+    supabase.from("quizzes").select("*").order("id"),
+    supabase.from("quiz_results").select("quiz_id, score, passed").eq("user_id", user.id),
+  ]);
+
+  if (qErr) throw new Error(qErr.message);
+  if (rErr) throw new Error(rErr.message);
+
+  const resultMap = Object.fromEntries(results.map(r => [r.quiz_id, r]));
+  return quizzes.map(q => ({
+    ...q,
+    score: resultMap[q.id]?.score ?? null,
+    passed: resultMap[q.id]?.passed ?? false,
+  }));
 }
 
 export async function saveQuizResult(quizId, score) {
-  return request(`/api/quizzes/${quizId}/result`, {
-    method: "POST",
-    headers: await authHeaders(),
-    body: JSON.stringify({ score }),
+  const { data: { user } } = await supabase.auth.getUser();
+  const { error } = await supabase.from("quiz_results").upsert({
+    user_id: user.id,
+    quiz_id: quizId,
+    score,
+    passed: score >= 70,
+    taken_at: new Date().toISOString(),
   });
+  if (error) throw new Error(error.message);
 }
 
 // -- Contact --
 
 export async function sendContact(name, email, message) {
-  return request("/api/contact", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ name, email, message }),
-  });
+  const { error } = await supabase.from("contact_messages").insert({ name, email, message });
+  if (error) throw new Error(error.message);
 }
