@@ -1,72 +1,42 @@
-import { supabase } from "./supabase";
-
-// -- Modules --
+import { modules as moduleData, quizzes as quizData } from "../data/modules";
 
 export async function getModules() {
-  const { data, error } = await supabase.from("modules").select("*").order("id");
-  if (error) throw new Error(error.message);
-  return data;
+  return moduleData.map(({ desc, ...m }) => ({ ...m, description: desc }));
 }
 
 export async function getModuleProgress(moduleId) {
-  const { data: { user } } = await supabase.auth.getUser();
-  const { data, error } = await supabase
-    .from("user_progress")
-    .select("completed_lessons")
-    .eq("module_id", moduleId)
-    .eq("user_id", user.id)
-    .maybeSingle();
-  if (error) throw new Error(error.message);
-  return data; // { completed_lessons: number } or null
+  try {
+    const progress = JSON.parse(localStorage.getItem("ze_progress") || "{}");
+    return { completed_lessons: progress[moduleId] ?? 0 };
+  } catch {
+    return { completed_lessons: 0 };
+  }
 }
 
 export async function saveModuleProgress(moduleId, completedLessons) {
-  const { data: { user } } = await supabase.auth.getUser();
-  const { error } = await supabase.from("user_progress").upsert({
-    user_id: user.id,
-    module_id: moduleId,
-    completed_lessons: completedLessons,
-    updated_at: new Date().toISOString(),
-  });
-  if (error) throw new Error(error.message);
+  const progress = JSON.parse(localStorage.getItem("ze_progress") || "{}");
+  progress[moduleId] = completedLessons;
+  localStorage.setItem("ze_progress", JSON.stringify(progress));
 }
 
-// -- Quizzes --
-
 export async function getQuizzes() {
-  const { data: { user } } = await supabase.auth.getUser();
-
-  const [{ data: quizzes, error: qErr }, { data: results, error: rErr }] = await Promise.all([
-    supabase.from("quizzes").select("*").order("id"),
-    supabase.from("quiz_results").select("quiz_id, score, passed").eq("user_id", user.id),
-  ]);
-
-  if (qErr) throw new Error(qErr.message);
-  if (rErr) throw new Error(rErr.message);
-
-  const resultMap = Object.fromEntries(results.map(r => [r.quiz_id, r]));
-  return quizzes.map(q => ({
-    ...q,
-    score: resultMap[q.id]?.score ?? null,
-    passed: resultMap[q.id]?.passed ?? false,
-  }));
+  try {
+    const scores = JSON.parse(localStorage.getItem("ze_quiz_scores") || "{}");
+    return quizData.map(({ module: module_id, ...q }) => ({
+      ...q,
+      module_id,
+      score: scores[q.id]?.score ?? null,
+      passed: scores[q.id]?.passed ?? false,
+    }));
+  } catch {
+    return quizData.map(({ module: module_id, ...q }) => ({ ...q, module_id, score: null, passed: false }));
+  }
 }
 
 export async function saveQuizResult(quizId, score) {
-  const { data: { user } } = await supabase.auth.getUser();
-  const { error } = await supabase.from("quiz_results").upsert({
-    user_id: user.id,
-    quiz_id: quizId,
-    score,
-    passed: score >= 70,
-    taken_at: new Date().toISOString(),
-  });
-  if (error) throw new Error(error.message);
+  const scores = JSON.parse(localStorage.getItem("ze_quiz_scores") || "{}");
+  scores[quizId] = { score, passed: score >= 70 };
+  localStorage.setItem("ze_quiz_scores", JSON.stringify(scores));
 }
 
-// -- Contact --
-
-export async function sendContact(name, email, message) {
-  const { error } = await supabase.from("contact_messages").insert({ name, email, message });
-  if (error) throw new Error(error.message);
-}
+export async function sendContact(_name, _email, _message) {}
