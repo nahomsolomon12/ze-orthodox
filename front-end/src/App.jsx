@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ThemeProvider } from "./context/ThemeContext";
+import { LanguageProvider } from "./context/LanguageContext";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
@@ -43,7 +44,9 @@ const AppContent = () => {
 
 const App = () => (
   <ThemeProvider>
-    <AppContent />
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
   </ThemeProvider>
 );
 

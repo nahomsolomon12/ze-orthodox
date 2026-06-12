@@ -1,5 +1,5 @@
 export const modules = [
-  { id: 1, title: "Introduction to Orthodoxy", desc: "The foundations of Eastern Orthodox faith and tradition", lessons: 8, completed: 8, type: "text", duration: "2 hours" },
+  { id: 1, title: "Introduction to Orthodoxy", desc: "The foundations of Ethiopian Orthodox faith and tradition", lessons: 8, completed: 8, type: "text", duration: "2 hours" },
   { id: 2, title: "The Divine Liturgy", desc: "Understanding the central worship service of the Church", lessons: 12, completed: 7, type: "video", duration: "4 hours" },
   { id: 3, title: "Church Fathers & Theology", desc: "Exploring the writings of the early Church Fathers", lessons: 10, completed: 3, type: "text", duration: "5 hours" },
   { id: 4, title: "Icons & Sacred Art", desc: "The theology and tradition of iconography", lessons: 6, completed: 0, type: "video", duration: "3 hours" },

@@ -1,18 +1,20 @@
 import { useState } from "react";
 import Icon from "../components/Icon";
 import Ornament from "../components/Ornament";
+import { useLanguage } from "../context/LanguageContext";
 import { signIn } from "../lib/auth";
-import '../styles/global.css';
+import "../styles/global.css";
 
 const AuthPage = ({ setPage, setUser }) => {
+  const { t } = useLanguage();
   const [mode, setMode] = useState("signin");
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [err, setErr] = useState("");
 
   const handleSubmit = () => {
     setErr("");
-    if (!form.email || !form.password) return setErr("Please fill in all fields.");
-    if (mode === "signup" && !form.name) return setErr("Please enter your name.");
+    if (!form.email || !form.password) return setErr(t("authRequired"));
+    if (mode === "signup" && !form.name) return setErr(t("authNameRequired"));
 
     const user = signIn(form.email, form.name);
     setUser(user);
@@ -25,10 +27,10 @@ const AuthPage = ({ setPage, setUser }) => {
         <div className="auth-card__header">
           <div className="auth-card__icon"><Icon name="cross" size={32} /></div>
           <h2 className="font-serif mb-0" style={{ fontSize: 24 }}>
-            {mode === "signin" ? "Welcome Back" : "Create Account"}
+            {mode === "signin" ? t("welcomeBack") : t("createAccount")}
           </h2>
           <p className="text-muted" style={{ fontSize: 14 }}>
-            {mode === "signin" ? "Sign in to continue your studies" : "Start your Orthodox learning journey"}
+            {mode === "signin" ? t("signInSub") : t("signUpSub")}
           </p>
         </div>
 
@@ -38,11 +40,11 @@ const AuthPage = ({ setPage, setUser }) => {
           <button
             className={`tab-toggle__btn ${mode === "signin" ? "tab-toggle__btn--active" : ""}`}
             onClick={() => { setMode("signin"); setErr(""); }}
-          >Sign In</button>
+          >{t("signIn")}</button>
           <button
             className={`tab-toggle__btn ${mode === "signup" ? "tab-toggle__btn--active" : ""}`}
             onClick={() => { setMode("signup"); setErr(""); }}
-          >Sign Up</button>
+          >{t("signUp")}</button>
         </div>
 
         {err && <div className="alert alert--error">{err}</div>}
@@ -50,17 +52,17 @@ const AuthPage = ({ setPage, setUser }) => {
         <div className="form-group">
           {mode === "signup" && (
             <div>
-              <label className="form-label">Full Name</label>
+              <label className="form-label">{t("fullName")}</label>
               <input
                 className="form-input"
                 value={form.name}
                 onChange={e => setForm({ ...form, name: e.target.value })}
-                placeholder="Your name"
+                placeholder={t("yourName")}
               />
             </div>
           )}
           <div>
-            <label className="form-label">Email</label>
+            <label className="form-label">{t("email")}</label>
             <input
               className="form-input"
               value={form.email}
@@ -69,7 +71,7 @@ const AuthPage = ({ setPage, setUser }) => {
             />
           </div>
           <div>
-            <label className="form-label">Password</label>
+            <label className="form-label">{t("password")}</label>
             <input
               className="form-input"
               type="password"
@@ -83,7 +85,7 @@ const AuthPage = ({ setPage, setUser }) => {
             style={{ padding: 12, justifyContent: "center", fontSize: 15 }}
             onClick={handleSubmit}
           >
-            {mode === "signin" ? "Sign In" : "Create Account"}
+            {mode === "signin" ? t("signIn") : t("createAccount")}
           </button>
         </div>
       </div>

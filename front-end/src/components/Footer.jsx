@@ -1,13 +1,19 @@
 import Icon from "./Icon";
-import '../styles/global.css';
+import { useLanguage } from "../context/LanguageContext";
+import "../styles/global.css";
 
-const Footer = () => (
-  <footer className="footer">
-    <div className="footer__text">
-      <Icon name="cross" size={14} />
-      <span className="footer__brand">Theosis</span> · Eastern Orthodox Learning Platform
-    </div>
-  </footer>
-);
+const Footer = () => {
+  const { t } = useLanguage();
+
+  return (
+    <footer className="footer">
+      <div className="footer__text">
+        <Icon name="cross" size={14} />
+        <span className="footer__brand">ZeOrthodox</span> ·{" "}
+        {t("footerPlatform")}
+      </div>
+    </footer>
+  );
+};
 
 export default Footer;

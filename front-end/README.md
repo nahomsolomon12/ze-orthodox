@@ -1,6 +1,6 @@
-# Theosis — Orthodox Christian Learning Platform
+# ZeOrthodox — Orthodox Christian Learning Platform
 
-A full-stack web application for structured Eastern Orthodox Christian education. Users can create accounts, track lesson progress across modules, take quizzes, and contact the site team.
+A full-stack web application for structured Ethiopian Orthodox Christian education. Users can create accounts, track lesson progress across modules, take quizzes, and contact the site team.
 
 ---
 

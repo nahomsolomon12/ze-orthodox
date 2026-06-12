@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import Icon from "../components/Icon";
+import { useLanguage } from "../context/LanguageContext";
 import { getModules, getModuleProgress, getQuizzes } from "../lib/api";
-import '../styles/global.css';
+import "../styles/global.css";
 
 const ModulesPage = ({ user }) => {
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState("modules");
   const [expandedModule, setExpandedModule] = useState(null);
   const [modules, setModules] = useState([]);
@@ -14,13 +16,11 @@ const ModulesPage = ({ user }) => {
   useEffect(() => {
     const load = async () => {
       try {
-        // Fetch modules and quizzes in parallel
         const [fetchedModules, fetchedQuizzes] = await Promise.all([
           getModules(),
           getQuizzes(),
         ]);
 
-        // Fetch each module's progress in parallel, then merge into the module object
         const progressList = await Promise.all(
           fetchedModules.map(m => getModuleProgress(m.id))
         );
@@ -46,13 +46,12 @@ const ModulesPage = ({ user }) => {
   const totalLessons = modules.reduce((a, m) => a + m.lessons, 0);
   const completedLessons = modules.reduce((a, m) => a + m.completed, 0);
   const pct = totalLessons > 0 ? Math.round((completedLessons / totalLessons) * 100) : 0;
-
-  const displayName = user?.user_metadata?.name || user?.email?.split("@")[0] || "there";
+  const displayName = user?.user_metadata?.name || user?.email?.split("@")[0] || t("fallbackName");
 
   if (loading) {
     return (
       <div className="container--narrow" style={{ paddingTop: 64, textAlign: "center" }}>
-        <p className="text-muted">Loading your learning dashboard…</p>
+        <p className="text-muted">{t("loadingDashboard")}</p>
       </div>
     );
   }
@@ -60,25 +59,23 @@ const ModulesPage = ({ user }) => {
   if (error) {
     return (
       <div className="container--narrow" style={{ paddingTop: 64 }}>
-        <div className="alert alert--error">Could not load data: {error}</div>
+        <div className="alert alert--error">{t("loadError")} {error}</div>
       </div>
     );
   }
 
   return (
     <div className="container--narrow" style={{ paddingTop: 32, paddingBottom: 32 }}>
-      {/* Welcome */}
       <div className="mb-24">
-        <h1 className="font-serif mb-0" style={{ fontSize: 26 }}>Welcome back, {displayName}</h1>
-        <p className="text-muted mt-0" style={{ fontSize: 15 }}>Continue your journey in the Orthodox faith</p>
+        <h1 className="font-serif mb-0" style={{ fontSize: 26 }}>{t("welcomeUser")}, {displayName}</h1>
+        <p className="text-muted mt-0" style={{ fontSize: 15 }}>{t("journey")}</p>
       </div>
 
-      {/* Progress Card */}
       <div className="progress-card">
         <div>
-          <p className="progress-card__label">Overall Progress</p>
+          <p className="progress-card__label">{t("overallProgress")}</p>
           <p className="progress-card__value">{pct}%</p>
-          <p className="progress-card__sub">{completedLessons} of {totalLessons} lessons completed</p>
+          <p className="progress-card__sub">{completedLessons} {t("of")} {totalLessons} {t("lessonsCompleted")}</p>
         </div>
         <div style={{ width: 200 }}>
           <div className="progress">
@@ -87,19 +84,20 @@ const ModulesPage = ({ user }) => {
         </div>
       </div>
 
-      {/* Tabs */}
       <div className="tabs">
-        <button className={`tab ${activeTab === "modules" ? "tab--active" : ""}`} onClick={() => setActiveTab("modules")}>Modules</button>
-        <button className={`tab ${activeTab === "quizzes" ? "tab--active" : ""}`} onClick={() => setActiveTab("quizzes")}>Quizzes</button>
+        <button className={`tab ${activeTab === "modules" ? "tab--active" : ""}`} onClick={() => setActiveTab("modules")}>{t("modules")}</button>
+        <button className={`tab ${activeTab === "quizzes" ? "tab--active" : ""}`} onClick={() => setActiveTab("quizzes")}>{t("quizzes")}</button>
       </div>
 
-      {/* Modules List */}
       {activeTab === "modules" ? (
         <div className="module-list">
           {modules.map(m => {
             const prog = m.lessons > 0 ? Math.round((m.completed / m.lessons) * 100) : 0;
             const expanded = expandedModule === m.id;
             const iconBoxClass = `icon-box icon-box--sm ${prog === 100 ? "icon-box--success" : prog > 0 ? "icon-box--accent" : "icon-box--muted"}`;
+            const moduleTitle = t(`moduleTitle${m.id}`, m.title);
+            const moduleDesc = t(`moduleDesc${m.id}`, m.desc);
+            const moduleDuration = t(`moduleDuration${m.id}`, m.duration);
 
             return (
               <div key={m.id} className="module-item">
@@ -109,12 +107,12 @@ const ModulesPage = ({ user }) => {
                   </div>
                   <div className="flex-1" style={{ minWidth: 0 }}>
                     <div className="flex items-center gap-8 flex-wrap">
-                      <h3 className="mb-0">{m.title}</h3>
+                      <h3 className="mb-0">{moduleTitle}</h3>
                       <span className={`tag ${m.type === "video" ? "tag--video" : "tag--reading"}`}>
-                        {m.type === "video" ? "Video" : "Reading"}
+                        {m.type === "video" ? t("video") : t("reading")}
                       </span>
                     </div>
-                    <p className="text-muted mt-0" style={{ fontSize: 13, marginTop: 3 }}>{m.desc}</p>
+                    <p className="text-muted mt-0" style={{ fontSize: 13, marginTop: 3 }}>{moduleDesc}</p>
                   </div>
                   <div className="text-right shrink-0">
                     <p className={`mb-0 ${prog === 100 ? "text-success" : ""}`} style={{ fontSize: 14, fontWeight: 600 }}>{prog}%</p>
@@ -125,8 +123,8 @@ const ModulesPage = ({ user }) => {
                 {expanded && (
                   <div className="module-item__body">
                     <div className="module-item__meta">
-                      <div><strong>Duration:</strong> {m.duration}</div>
-                      <div><strong>Lessons:</strong> {m.lessons}</div>
+                      <div><strong>{t("duration")}</strong> {moduleDuration}</div>
+                      <div><strong>{t("lessons")}</strong> {m.lessons}</div>
                     </div>
                     <div className="mt-16">
                       <div className="progress progress--sm">
@@ -134,7 +132,7 @@ const ModulesPage = ({ user }) => {
                       </div>
                     </div>
                     <button className={`btn btn--sm mt-16 ${prog === 100 ? "btn--success" : "btn--primary"}`} style={{ padding: "8px 20px" }}>
-                      {prog === 100 ? "Review Module" : prog > 0 ? "Continue" : "Start Module"}
+                      {prog === 100 ? t("reviewModule") : prog > 0 ? t("continue") : t("startModule")}
                     </button>
                   </div>
                 )}
@@ -143,23 +141,22 @@ const ModulesPage = ({ user }) => {
           })}
         </div>
       ) : (
-        /* Quizzes List */
         <div className="quiz-list">
           {quizzes.map(q => (
             <div key={q.id} className="quiz-item">
               <div>
-                <h3 className="mb-0" style={{ fontSize: 15 }}>{q.title}</h3>
-                <p className="text-muted mb-0" style={{ fontSize: 13, marginTop: 4 }}>{q.questions} questions · Module {q.module_id}</p>
+                <h3 className="mb-0" style={{ fontSize: 15 }}>{t(`quizTitle${q.id}`, q.title)}</h3>
+                <p className="text-muted mb-0" style={{ fontSize: 13, marginTop: 4 }}>{q.questions} {t("questions")} · {t("module")} {q.module_id}</p>
               </div>
               {q.score != null ? (
                 <div className="flex items-center gap-12">
                   <span className={`quiz-item__score ${q.score >= 70 ? "quiz-item__score--pass" : "quiz-item__score--fail"}`}>{q.score}%</span>
                   <span className={`status-badge ${q.passed ? "status-badge--passed" : "status-badge--failed"}`}>
-                    {q.passed ? "Passed" : "Retry"}
+                    {q.passed ? t("passed") : t("retry")}
                   </span>
                 </div>
               ) : (
-                <button className="btn btn--ghost">Take Quiz</button>
+                <button className="btn btn--ghost">{t("takeQuiz")}</button>
               )}
             </div>
           ))}

@@ -1,8 +1,7 @@
 /* ============================================================
-   THEOSIS - Eastern Orthodox Learning Platform
+   ZeOrthodox - Ethiopian Orthodox Learning Platform
    Global Stylesheet
    ============================================================ */
-
 
 /* ------------------------------------------------------------
    1. CSS CUSTOM PROPERTIES (Light Theme - Default)
@@ -10,126 +9,136 @@
 
 :root {
   /* Background & Surface */
-  --bg: #faf7f2;
-  --card: #fff;
-  --card-border: #e8dfd4;
+  --bg: #f8f5ed;
+  --card: #fffdf8;
+  --card-border: #e2d6bd;
 
   /* Typography */
-  --text: #1a1009;
-  --text-sec: #6b5c4c;
-  --font-serif: Georgia, 'Times New Roman', serif;
-  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --text: #17130b;
+  --text-sec: #665b45;
+  --font-serif: Georgia, "Times New Roman", serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-  /* Accent (Deep Red / Byzantine) */
-  --accent: #8b1a1a;
-  --accent-light: #f3e8e8;
-  --accent-hover: #a02020;
+  /* Accent (complementary deep teal) */
+  --accent: #0f5b5c;
+  --accent-light: #e4f0ef;
+  --accent-hover: #0a4647;
 
   /* Gold */
-  --gold: #c9a84c;
-  --gold-light: #faf3dc;
-  --gold-border: #e8d48b;
+  --gold: #c8a548;
+  --gold-light: #fbf2d4;
+  --gold-border: #dcc06c;
 
   /* Navigation */
-  --nav-bg: #fff;
-  --nav-border: #e8dfd4;
+  --nav-bg: #fffdf8;
+  --nav-border: #e2d6bd;
 
   /* Hero */
-  --hero-bg: linear-gradient(135deg, #1a0a0a 0%, #3b1111 40%, #5a1a1a 70%, #2a0808 100%);
-  --hero-text: #f5ebe0;
-  --hero-text-sec: #d4b896;
+  --hero-bg: linear-gradient(
+    135deg,
+    #050504 0%,
+    #182322 42%,
+    #594416 72%,
+    #090806 100%
+  );
+  --hero-text: #fff8e8;
+  --hero-text-sec: #dcc98e;
 
   /* Inputs */
-  --input-bg: #fff;
-  --input-border: #d4c9b8;
+  --input-bg: #fffdf8;
+  --input-border: #cfc2a6;
 
   /* Tags */
-  --tag-bg-1: #f3e8e8;
-  --tag-color-1: #8b1a1a;
-  --tag-bg-2: #eae4d8;
-  --tag-color-2: #6b5c3c;
+  --tag-bg-1: #e4f0ef;
+  --tag-color-1: #0f5b5c;
+  --tag-bg-2: #f5ecd0;
+  --tag-color-2: #755d18;
 
   /* Footer */
-  --footer-bg: #fff;
-  --footer-border: #e8dfd4;
-  --footer-text: #a0927e;
+  --footer-bg: #fffdf8;
+  --footer-border: #e2d6bd;
+  --footer-text: #8b7d61;
 
   /* Progress */
-  --progress-bg: #e8dfd4;
-  --progress-fill: #8b1a1a;
+  --progress-bg: #e2d6bd;
+  --progress-fill: #0f5b5c;
 
   /* Status */
   --success-bg: #d1e7dd;
   --success-text: #0f5132;
-  --err-bg: #f8d7da;
-  --err-text: #842029;
+  --err-bg: #f4dddd;
+  --err-text: #7d1d1d;
 
   /* Tabs */
-  --tab-active: #8b1a1a;
-  --tab-inactive: #a0927e;
+  --tab-active: #0f5b5c;
+  --tab-inactive: #8b7d61;
 
   /* Badge */
-  --badge-bg: rgba(201, 168, 76, 0.15);
-  --badge-text: #c9a84c;
-  --badge-border: rgba(201, 168, 76, 0.3);
+  --badge-bg: rgba(200, 165, 72, 0.16);
+  --badge-text: #e3c76d;
+  --badge-border: rgba(200, 165, 72, 0.38);
 }
-
 
 /* ------------------------------------------------------------
    2. CSS CUSTOM PROPERTIES (Dark Theme)
    ------------------------------------------------------------ */
 
 [data-theme="dark"] {
-  --bg: #0f0a06;
-  --card: #1a1209;
-  --card-border: #2e2418;
+  --bg: #080806;
+  --card: #11120d;
+  --card-border: #312914;
 
-  --text: #e8dfd4;
-  --text-sec: #a09585;
+  --text: #f0e7d2;
+  --text-sec: #b7aa87;
 
-  --accent: #c94444;
-  --accent-light: #2a1515;
-  --accent-hover: #e05555;
+  --accent: #3aa6a3;
+  --accent-light: #0d2b2b;
+  --accent-hover: #5ec4c0;
 
-  --gold: #c9a84c;
-  --gold-light: #1f1a0a;
-  --gold-border: #3d3218;
+  --gold: #d5b85a;
+  --gold-light: #211a08;
+  --gold-border: #4c3d12;
 
-  --nav-bg: #141008;
-  --nav-border: #2e2418;
+  --nav-bg: #0b0b08;
+  --nav-border: #312914;
 
-  --hero-bg: linear-gradient(135deg, #0a0300 0%, #1a0808 40%, #2e1010 70%, #0a0300 100%);
-  --hero-text: #e8dfd4;
-  --hero-text-sec: #a09585;
+  --hero-bg: linear-gradient(
+    135deg,
+    #030302 0%,
+    #102120 45%,
+    #3b2e0e 76%,
+    #030302 100%
+  );
+  --hero-text: #fff6df;
+  --hero-text-sec: #cdbb80;
 
-  --input-bg: #1a1209;
-  --input-border: #2e2418;
+  --input-bg: #11120d;
+  --input-border: #312914;
 
-  --tag-bg-1: #2a1515;
-  --tag-color-1: #e07070;
+  --tag-bg-1: #0d2b2b;
+  --tag-color-1: #73d5d0;
   --tag-bg-2: #1f1a0a;
-  --tag-color-2: #c9a84c;
+  --tag-color-2: #d5b85a;
 
-  --footer-bg: #0f0a06;
-  --footer-border: #2e2418;
-  --footer-text: #5a5040;
+  --footer-bg: #080806;
+  --footer-border: #312914;
+  --footer-text: #827654;
 
-  --progress-bg: #2e2418;
-  --progress-fill: #c94444;
+  --progress-bg: #312914;
+  --progress-fill: #3aa6a3;
 
   --success-bg: #0a2e1a;
   --success-text: #6ee7a0;
-  --err-bg: #2e0a0a;
-  --err-text: #f08080;
+  --err-bg: #2b0d0d;
+  --err-text: #f09595;
 
-  --tab-active: #c94444;
-  --tab-inactive: #6b5c4c;
+  --tab-active: #3aa6a3;
+  --tab-inactive: #827654;
 
-  --badge-bg: rgba(201, 168, 76, 0.1);
-  --badge-text: #c9a84c;
-  --badge-border: rgba(201, 168, 76, 0.2);
+  --badge-bg: rgba(213, 184, 90, 0.12);
+  --badge-text: #d5b85a;
+  --badge-border: rgba(213, 184, 90, 0.25);
 }
-
 
 /* ------------------------------------------------------------
    3. RESET & BASE
@@ -155,24 +164,36 @@ body {
   color: var(--text);
   line-height: 1.6;
   min-height: 100vh;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }
-
 
 /* ------------------------------------------------------------
    4. TYPOGRAPHY
    ------------------------------------------------------------ */
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-serif);
   font-weight: 700;
   color: var(--text);
   line-height: 1.2;
 }
 
-h1 { font-size: clamp(28px, 5vw, 52px); letter-spacing: -1px; }
-h2 { font-size: 28px; }
-h3 { font-size: 17px; font-weight: 600; }
+h1 {
+  font-size: clamp(28px, 5vw, 52px);
+  letter-spacing: -1px;
+}
+h2 {
+  font-size: 28px;
+}
+h3 {
+  font-size: 17px;
+  font-weight: 600;
+}
 
 p {
   color: var(--text-sec);
@@ -188,7 +209,6 @@ a {
 a:hover {
   color: var(--accent-hover);
 }
-
 
 /* ------------------------------------------------------------
    5. LAYOUT
@@ -216,7 +236,6 @@ a:hover {
   padding: 0 24px;
 }
 
-
 /* ------------------------------------------------------------
    6. NAVIGATION
    ------------------------------------------------------------ */
@@ -243,22 +262,15 @@ a:hover {
 .nav__logo {
   display: flex;
   align-items: center;
-  gap: 10px;
   cursor: pointer;
 }
 
-.nav__logo-text {
-  font-weight: 700;
-  font-size: 20px;
-  color: var(--text);
-  letter-spacing: -0.5px;
-  font-family: var(--font-serif);
+.nav__logo-image {
+  height: 50px;
+  width: auto;
+  display: block;
+  object-fit: contain;
 }
-
-.nav__logo-icon {
-  color: var(--accent);
-}
-
 .nav__links {
   display: flex;
   align-items: center;
@@ -303,7 +315,8 @@ a:hover {
   color: var(--err-text);
 }
 
-.nav__theme-toggle {
+.nav__theme-toggle,
+.nav__language-toggle {
   background: transparent;
   border: 1px solid var(--card-border);
   border-radius: 8px;
@@ -316,7 +329,15 @@ a:hover {
   transition: all 0.2s ease;
 }
 
-.nav__theme-toggle:hover {
+.nav__language-toggle {
+  min-width: 42px;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.nav__theme-toggle:hover,
+.nav__language-toggle:hover {
   border-color: var(--accent);
   color: var(--accent);
 }
@@ -349,10 +370,13 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-  .nav__links   { display: none !important; }
-  .nav__mobile-btns { display: flex !important; }
+  .nav__links {
+    display: none !important;
+  }
+  .nav__mobile-btns {
+    display: flex !important;
+  }
 }
-
 
 /* ------------------------------------------------------------
    7. HERO SECTION
@@ -409,7 +433,6 @@ a:hover {
   flex-wrap: wrap;
 }
 
-
 /* ------------------------------------------------------------
    8. BADGES & TAGS
    ------------------------------------------------------------ */
@@ -447,7 +470,6 @@ a:hover {
   background: var(--tag-bg-2);
   color: var(--tag-color-2);
 }
-
 
 /* ------------------------------------------------------------
    9. BUTTONS
@@ -505,7 +527,6 @@ a:hover {
   border-radius: 8px;
 }
 
-
 /* ------------------------------------------------------------
    10. CARDS
    ------------------------------------------------------------ */
@@ -541,7 +562,6 @@ a:hover {
   box-shadow: none;
   border-color: var(--gold-border);
 }
-
 
 /* ------------------------------------------------------------
    11. ICON BOXES
@@ -579,7 +599,6 @@ a:hover {
   border-radius: 10px;
 }
 
-
 /* ------------------------------------------------------------
    12. FORMS & INPUTS
    ------------------------------------------------------------ */
@@ -608,7 +627,9 @@ a:hover {
   box-sizing: border-box;
   background: var(--input-bg);
   color: var(--text);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .form-input:focus {
@@ -619,7 +640,6 @@ a:hover {
 textarea.form-input {
   resize: vertical;
 }
-
 
 /* ------------------------------------------------------------
    13. TABS
@@ -681,7 +701,6 @@ textarea.form-input {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-
 /* ------------------------------------------------------------
    14. PROGRESS BARS
    ------------------------------------------------------------ */
@@ -708,7 +727,6 @@ textarea.form-input {
 .progress__fill--success {
   background: var(--success-text);
 }
-
 
 /* ------------------------------------------------------------
    15. ALERTS & STATUS
@@ -755,7 +773,6 @@ textarea.form-input {
   color: var(--err-text);
 }
 
-
 /* ------------------------------------------------------------
    16. ORNAMENT (Byzantine Divider)
    ------------------------------------------------------------ */
@@ -781,7 +798,6 @@ textarea.form-input {
   font-size: 10px;
 }
 
-
 /* ------------------------------------------------------------
    17. FOOTER
    ------------------------------------------------------------ */
@@ -806,7 +822,6 @@ textarea.form-input {
 .footer__brand {
   font-family: var(--font-serif);
 }
-
 
 /* ------------------------------------------------------------
    18. SECTIONS
@@ -837,7 +852,6 @@ textarea.form-input {
   font-size: 16px;
 }
 
-
 /* ------------------------------------------------------------
    19. GRID LAYOUTS
    ------------------------------------------------------------ */
@@ -855,7 +869,6 @@ textarea.form-input {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
-
 
 /* ------------------------------------------------------------
    20. MODULE & QUIZ LIST
@@ -924,9 +937,12 @@ textarea.form-input {
   font-weight: 700;
 }
 
-.quiz-item__score--pass { color: var(--success-text); }
-.quiz-item__score--fail { color: var(--err-text); }
-
+.quiz-item__score--pass {
+  color: var(--success-text);
+}
+.quiz-item__score--fail {
+  color: var(--err-text);
+}
 
 /* ------------------------------------------------------------
    21. PROGRESS CARD (Dashboard)
@@ -967,7 +983,6 @@ textarea.form-input {
   margin: 4px 0 0;
 }
 
-
 /* ------------------------------------------------------------
    22. AUTH PAGE
    ------------------------------------------------------------ */
@@ -1001,52 +1016,120 @@ textarea.form-input {
   margin-bottom: 8px;
 }
 
-
 /* ------------------------------------------------------------
    23. UTILITY CLASSES
    ------------------------------------------------------------ */
 
-.text-center  { text-align: center; }
-.text-left    { text-align: left; }
-.text-right   { text-align: right; }
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
 
-.text-accent  { color: var(--accent); }
-.text-gold    { color: var(--gold); }
-.text-muted   { color: var(--text-sec); }
-.text-success { color: var(--success-text); }
-.text-error   { color: var(--err-text); }
+.text-accent {
+  color: var(--accent);
+}
+.text-gold {
+  color: var(--gold);
+}
+.text-muted {
+  color: var(--text-sec);
+}
+.text-success {
+  color: var(--success-text);
+}
+.text-error {
+  color: var(--err-text);
+}
 
-.font-serif   { font-family: var(--font-serif); }
+.font-serif {
+  font-family: var(--font-serif);
+}
 
-.mt-0  { margin-top: 0; }
-.mt-8  { margin-top: 8px; }
-.mt-16 { margin-top: 16px; }
-.mt-24 { margin-top: 24px; }
-.mt-32 { margin-top: 32px; }
-.mb-0  { margin-bottom: 0; }
-.mb-8  { margin-bottom: 8px; }
-.mb-16 { margin-bottom: 16px; }
-.mb-24 { margin-bottom: 24px; }
-.mb-32 { margin-bottom: 32px; }
+.mt-0 {
+  margin-top: 0;
+}
+.mt-8 {
+  margin-top: 8px;
+}
+.mt-16 {
+  margin-top: 16px;
+}
+.mt-24 {
+  margin-top: 24px;
+}
+.mt-32 {
+  margin-top: 32px;
+}
+.mb-0 {
+  margin-bottom: 0;
+}
+.mb-8 {
+  margin-bottom: 8px;
+}
+.mb-16 {
+  margin-bottom: 16px;
+}
+.mb-24 {
+  margin-bottom: 24px;
+}
+.mb-32 {
+  margin-bottom: 32px;
+}
 
-.flex          { display: flex; }
-.flex-col      { flex-direction: column; }
-.items-center  { align-items: center; }
-.justify-center { justify-content: center; }
-.justify-between { justify-content: space-between; }
-.gap-8   { gap: 8px; }
-.gap-12  { gap: 12px; }
-.gap-16  { gap: 16px; }
-.gap-24  { gap: 24px; }
-.flex-wrap { flex-wrap: wrap; }
-.flex-1    { flex: 1; }
-.shrink-0  { flex-shrink: 0; }
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.gap-8 {
+  gap: 8px;
+}
+.gap-12 {
+  gap: 12px;
+}
+.gap-16 {
+  gap: 16px;
+}
+.gap-24 {
+  gap: 24px;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-1 {
+  flex: 1;
+}
+.shrink-0 {
+  flex-shrink: 0;
+}
 
-.w-full    { width: 100%; }
-.max-w-500 { max-width: 500px; }
-.max-w-600 { max-width: 600px; }
-.max-w-700 { max-width: 700px; }
-
+.w-full {
+  width: 100%;
+}
+.max-w-500 {
+  max-width: 500px;
+}
+.max-w-600 {
+  max-width: 600px;
+}
+.max-w-700 {
+  max-width: 700px;
+}
 
 /* ------------------------------------------------------------
    24. TRANSITIONS & ANIMATIONS
@@ -1057,7 +1140,10 @@ textarea.form-input {
 }
 
 .transition-colors {
-  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1068,7 +1154,6 @@ textarea.form-input {
     transition-duration: 0.01ms !important;
   }
 }
-
 
 /* ------------------------------------------------------------
    25. RESPONSIVE BREAKPOINTS
