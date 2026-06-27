@@ -390,23 +390,39 @@ a:hover {
   overflow: hidden;
 }
 
-.hero__watermark {
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at center, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.72)),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.68));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero__background-image {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 0.04;
-  font-size: 300px;
-  color: #c9a84c;
+  width: min(1080px, 100vw);
+  height: auto;
   pointer-events: none;
-  font-family: serif;
+  user-select: none;
+  z-index: 0;
 }
 
 .hero__content {
   max-width: 700px;
   margin: 0 auto;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .hero__title {
@@ -1164,6 +1180,11 @@ textarea.form-input {
     padding: 56px 20px 48px;
   }
 
+  .hero__background-image {
+    width: 112vw;
+    top: 52%;
+  }
+
   .section {
     padding: 40px 20px;
   }
@@ -1183,6 +1204,11 @@ textarea.form-input {
 }
 
 @media (max-width: 480px) {
+  .hero__background-image {
+    width: 128vw;
+    top: 54%;
+  }
+
   .hero__actions {
     flex-direction: column;
     align-items: stretch;
