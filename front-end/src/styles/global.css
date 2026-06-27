@@ -406,7 +406,9 @@ a:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: min(1080px, 100vw);
+  display: block;
+  width: 100vw;
+  max-width: none;
   height: auto;
   pointer-events: none;
   user-select: none;
@@ -1181,7 +1183,6 @@ textarea.form-input {
   }
 
   .hero__background-image {
-    width: 112vw;
     top: 52%;
   }
 
@@ -1205,7 +1206,6 @@ textarea.form-input {
 
 @media (max-width: 480px) {
   .hero__background-image {
-    width: 128vw;
     top: 54%;
   }
 
