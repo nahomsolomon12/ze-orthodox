@@ -1,5 +1,4 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import '../styles/global.css';
 
 const ThemeCtx = createContext();
 

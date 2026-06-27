@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Icon from "../components/Icon";
 import { useLanguage } from "../context/LanguageContext";
 import { getModules, getModuleProgress, getQuizzes } from "../lib/api";
-import "../styles/global.css";
+import "./ModulesPage.css";
 
 const ModulesPage = ({ user }) => {
   const { t } = useLanguage();

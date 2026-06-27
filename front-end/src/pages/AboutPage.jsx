@@ -3,7 +3,7 @@ import Icon from "../components/Icon";
 import Ornament from "../components/Ornament";
 import { useLanguage } from "../context/LanguageContext";
 import { sendContact } from "../lib/api";
-import "../styles/global.css";
+import "./AboutPage.css";
 
 const AboutPage = () => {
   const { t } = useLanguage();

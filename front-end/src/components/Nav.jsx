@@ -2,7 +2,7 @@ import Icon from "./Icon";
 import { useThemeToggle } from "../context/ThemeContext";
 import { useLanguage } from "../context/LanguageContext";
 import { signOut } from "../lib/auth";
-import "../styles/global.css";
+import "./Nav.css";
 import logo from "../assets/ZEOlogo.png";
 
 const Nav = ({ page, setPage, user, setUser, mobileOpen, setMobileOpen }) => {

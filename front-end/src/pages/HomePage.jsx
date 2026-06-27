@@ -1,7 +1,7 @@
 import Icon from "../components/Icon";
 import Ornament from "../components/Ornament";
 import { useLanguage } from "../context/LanguageContext";
-import "../styles/global.css";
+import "./HomePage.css";
 import backgroundImage from "../assets/golden_cross.jpg";
 
 const HomePage = ({ setPage, user }) => {

@@ -1,6 +1,6 @@
 import Icon from "./Icon";
 import { useLanguage } from "../context/LanguageContext";
-import "../styles/global.css";
+import "./Footer.css";
 
 const Footer = () => {
   const { t } = useLanguage();

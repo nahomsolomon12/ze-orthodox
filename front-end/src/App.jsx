@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./styles/global.css";
 import { ThemeProvider } from "./context/ThemeContext";
 import { LanguageProvider } from "./context/LanguageContext";
 import Nav from "./components/Nav";
@@ -8,7 +9,6 @@ import AuthPage from "./pages/AuthPage";
 import ModulesPage from "./pages/ModulesPage";
 import AboutPage from "./pages/AboutPage";
 import { getUser } from "./lib/auth";
-import './styles/global.css';
 
 const AppContent = () => {
   const [page, setPage] = useState("home");

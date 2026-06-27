@@ -3,7 +3,7 @@ import Icon from "../components/Icon";
 import Ornament from "../components/Ornament";
 import { useLanguage } from "../context/LanguageContext";
 import { signIn } from "../lib/auth";
-import "../styles/global.css";
+import "./AuthPage.css";
 
 const AuthPage = ({ setPage, setUser }) => {
   const { t } = useLanguage();

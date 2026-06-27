@@ -1,3 +1,5 @@
+import "./Ornament.css";
+
 const Ornament = () => (
   <div className="ornament">
     <div className="ornament__line" />
