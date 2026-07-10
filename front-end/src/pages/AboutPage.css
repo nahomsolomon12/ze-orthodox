@@ -1,9 +1,299 @@
-.grid {
-  display: grid;
-  gap: 24px;
+/* ------------------------------------------------------------
+   About page - editorial, organic layout
+   ------------------------------------------------------------ */
+
+.about-hero {
+  position: relative;
+  padding: 72px 0 64px;
+  overflow: hidden;
 }
 
-.grid--values {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+.about-hero::before {
+  content: "";
+  position: absolute;
+  top: -180px;
+  right: -160px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, var(--gold-light) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.about-hero__title {
+  font-size: clamp(28px, 4vw, 42px);
+  letter-spacing: -0.5px;
+  margin-bottom: 0;
+}
+
+.about-hero__lead {
+  font-size: 18px;
+  line-height: 1.85;
+  color: var(--text);
+  margin-top: 20px;
+}
+
+.about-hero__lead::first-letter {
+  font-family: var(--font-serif);
+  font-size: 52px;
+  font-weight: 700;
+  float: left;
+  line-height: 0.78;
+  padding: 6px 10px 0 0;
+  color: var(--gold);
+}
+
+.about-hero__second {
+  margin-top: 16px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.about-hero__art {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-hero__art img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 58% 42% 61% 39% / 46% 53% 47% 54%;
+  box-shadow: 0 24px 60px rgba(15, 91, 92, 0.18);
+  transform: rotate(-2deg);
+}
+
+.about-hero__blob {
+  position: absolute;
+  inset: -8% -6% -12% 8%;
+  z-index: 1;
+  background: linear-gradient(135deg, var(--gold-light), var(--accent-light));
+  border-radius: 42% 58% 39% 61% / 55% 45% 62% 38%;
+  transform: rotate(6deg);
+}
+
+/* ------------------------------------------------------------
+   Approach - staggered timeline instead of a card grid
+   ------------------------------------------------------------ */
+
+.about-approach {
+  position: relative;
+  padding: 72px 0 80px;
+}
+
+.approach-list {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.approach-item {
+  display: flex;
+  gap: 26px;
+  align-items: flex-start;
+  padding: 18px 0;
+}
+
+.approach-item__marker {
+  position: relative;
+  width: 64px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.approach-item__num {
+  font-family: var(--font-serif);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--gold);
+  opacity: 0.75;
+  margin-bottom: 8px;
+}
+
+.approach-item__badge {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  background: var(--accent-light);
+  border-radius: 62% 38% 55% 45% / 45% 58% 42% 55%;
+  box-shadow: 0 6px 18px rgba(15, 91, 92, 0.14);
+  position: relative;
+  z-index: 2;
+}
+
+.approach-item:nth-child(even) .approach-item__badge {
+  background: var(--gold-light);
+  color: var(--gold);
+  border-radius: 45% 55% 62% 38% / 55% 42% 58% 45%;
+}
+
+.approach-item:not(:last-child) .approach-item__marker::after {
+  content: "";
+  position: absolute;
+  top: 66px;
+  bottom: -18px;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background-image: linear-gradient(var(--gold-border) 55%, transparent 0%);
+  background-size: 2px 9px;
+  background-repeat: repeat-y;
+}
+
+.approach-item__body {
+  padding-top: 4px;
+}
+
+.approach-item:nth-child(even) .approach-item__body {
+  transform: translateX(16px);
+}
+
+.approach-item__body h3 {
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+
+.approach-item__body p {
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 0;
+}
+
+/* ------------------------------------------------------------
+   Contact - decorative panel + tilted form card
+   ------------------------------------------------------------ */
+
+.about-contact {
+  padding: 64px 0 96px;
+}
+
+.about-contact__inner {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 44px;
+  align-items: start;
+}
+
+.about-contact__panel {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--gold-light), var(--accent-light));
+  border-radius: 30px 64px 30px 64px / 64px 30px 64px 30px;
+  padding: 44px 36px;
+}
+
+.about-contact__mark {
+  position: absolute;
+  top: -18px;
+  left: 22px;
+  font-family: var(--font-serif);
+  font-size: 120px;
+  line-height: 1;
+  color: var(--gold);
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.about-contact__panel h2 {
+  position: relative;
+  margin-top: 20px;
+  font-size: 22px;
+}
+
+.about-contact__intro {
+  position: relative;
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-sec);
+}
+
+.about-contact__form-wrap {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 36px 32px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.07);
+  transform: rotate(0.6deg);
+  transition: transform 0.25s ease;
+}
+
+.about-contact__form-wrap:hover {
+  transform: rotate(0deg);
+}
+
+/* ------------------------------------------------------------
+   Responsive
+   ------------------------------------------------------------ */
+
+@media (max-width: 860px) {
+  .about-hero__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-hero__art {
+    order: -1;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .about-contact__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .about-contact__form-wrap {
+    transform: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .about-hero {
+    padding: 48px 0 40px;
+  }
+
+  .about-approach {
+    padding: 56px 0 64px;
+  }
+
+  .about-contact {
+    padding: 48px 0 72px;
+  }
+
+  .approach-item {
+    gap: 18px;
+  }
+
+  .approach-item:nth-child(even) .approach-item__body {
+    transform: none;
+  }
+
+  .about-contact__panel {
+    border-radius: 24px;
+    padding: 32px 24px;
+  }
 }
