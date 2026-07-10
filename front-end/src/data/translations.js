@@ -14,22 +14,16 @@ export const translations = {
     heroTitleTop: "Grow in the",
     heroTitleAccent: "Ancient Faith",
     heroSubtitle:
-      "Explore the rich tradition of Ethiopian Orthodoxy through guided video lessons, curated readings, and interactive assessments.",
+      "Explore the rich tradition of Ethiopian Orthodoxy through past video and audio lessons, and downloadable study materials.",
     beginLearning: "Begin Learning",
     learnMore: "Learn More",
     howLearn: "How You'll Learn",
-    featureVideoTitle: "Video Lessons",
+    featureVideoTitle: "Video & Audio Lessons",
     featureVideoDesc:
-      "Watch engaging lectures from Orthodox scholars and clergy on core topics of the faith.",
-    featureReadingTitle: "Sacred Readings",
+      "Browse our full library of past video and audio lessons from Orthodox scholars and clergy, ready to watch or listen anytime.",
+    featureReadingTitle: "Downloadable PDFs",
     featureReadingDesc:
-      "Study curated texts from Scripture, the Church Fathers, and liturgical tradition.",
-    featureAssessTitle: "Assessments",
-    featureAssessDesc:
-      "Test your understanding with quizzes after each module to reinforce your learning.",
-    featureProgressTitle: "Track Progress",
-    featureProgressDesc:
-      "See your growth over time with completion tracking across all courses.",
+      "Access past lesson notes and readings as downloadable PDFs you can study anytime, even offline.",
     readyBegin: "Ready to begin?",
     joinCommunity:
       "Join a growing community discovering the beauty of Orthodoxy.",
@@ -136,20 +130,16 @@ export const translations = {
     heroTitleTop: "በጥንታዊው",
     heroTitleAccent: "እምነት እደግ",
     heroSubtitle:
-      "የኢትዮጵያ ኦርቶዶክስን ባለጠጋ ትውፊት በተመራ የቪዲዮ ትምህርት፣ በተመረጡ ንባቦች እና በመስተጋብራዊ ግምገማዎች ይመርምሩ።",
+      "የኢትዮጵያ ኦርቶዶክስን ባለጠጋ ትውፊት ካለፉ የቪዲዮ እና የድምጽ ትምህርቶች እንዲሁም ማውረድ በሚቻሉ የጥናት ቁሳቁሶች ይመርምሩ።",
     beginLearning: "መማር ጀምር",
     learnMore: "ተጨማሪ ተማር",
     howLearn: "እንዴት እንደምትማር",
-    featureVideoTitle: "የቪዲዮ ትምህርቶች",
+    featureVideoTitle: "የቪዲዮ እና የድምጽ ትምህርቶች",
     featureVideoDesc:
-      "ስለ እምነቱ መሠረታዊ ርዕሶች ከኦርቶዶክስ ምሁራን እና ካህናት የሚቀርቡ ትምህርቶችን ይመልከቱ።",
-    featureReadingTitle: "ቅዱሳን ንባቦች",
+      "ከኦርቶዶክስ ምሁራን እና ካህናት የቀረቡ ያለፉ የቪዲዮ እና የድምጽ ትምህርቶችን ሙሉ ስብስብ በማንኛውም ጊዜ ይመልከቱ ወይም ያዳምጡ።",
+    featureReadingTitle: "ማውረድ የሚቻሉ PDF ፋይሎች",
     featureReadingDesc:
-      "ከቅዱሳት መጻሕፍት፣ ከቤተ ክርስቲያን አባቶች እና ከሥርዓተ አምልኮ ትውፊት የተመረጡ ጽሑፎችን ያጥኑ።",
-    featureAssessTitle: "ግምገማዎች",
-    featureAssessDesc: "እያንዳንዱን ሞጁል ከጨረሱ በኋላ በፈተናዎች ግንዛቤዎን ይፈትኑ።",
-    featureProgressTitle: "እድገትን ተከታተል",
-    featureProgressDesc: "በሁሉም ኮርሶች የማጠናቀቂያ ክትትል የእድገትዎን ሁኔታ ይመልከቱ።",
+      "ያለፉ የትምህርት ማስታወሻዎችን እና ንባቦችን እንደ PDF በማውረድ ከመስመር ውጭ ሆነው እንኳ በማንኛውም ጊዜ ያጥኑ።",
     readyBegin: "ለመጀመር ዝግጁ ነዎት?",
     joinCommunity: "የኦርቶዶክስን ውበት ከሚያውቅ እያደገ ካለ ማኅበረሰብ ጋር ይቀላቀሉ።",
     goLearning: "ወደ የእኔ ትምህርት ሂድ",

@@ -13,19 +13,9 @@ const HomePage = ({ setPage, user }) => {
       desc: t("featureVideoDesc"),
     },
     {
-      icon: "book",
+      icon: "download",
       title: t("featureReadingTitle"),
       desc: t("featureReadingDesc"),
-    },
-    {
-      icon: "check",
-      title: t("featureAssessTitle"),
-      desc: t("featureAssessDesc"),
-    },
-    {
-      icon: "trophy",
-      title: t("featureProgressTitle"),
-      desc: t("featureProgressDesc"),
     },
   ];
 
