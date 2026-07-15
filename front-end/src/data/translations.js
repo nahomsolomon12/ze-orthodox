@@ -3,8 +3,6 @@ export const translations = {
     navHome: "Home",
     navAbout: "About & Contact",
     navLearning: "My Learning",
-    navSignOut: "Sign Out",
-    navSignIn: "Sign In",
     languageToggle: "አማ",
     languageTitle: "Switch to Amharic",
     lightMode: "Light mode",
@@ -28,7 +26,6 @@ export const translations = {
     joinCommunity:
       "Join a growing community discovering the beauty of Orthodoxy.",
     goLearning: "Go to My Learning",
-    createFreeAccount: "Create Free Account",
 
     aboutTitle: "About ZeOrthodox",
     aboutParagraphOne:
@@ -54,19 +51,6 @@ export const translations = {
     contactRequired: "Please fill in all fields.",
     sending: "Sending...",
     sendMessage: "Send Message",
-
-    welcomeBack: "Welcome Back",
-    createAccount: "Create Account",
-    signInSub: "Sign in to continue your studies",
-    signUpSub: "Start your Orthodox learning journey",
-    signIn: "Sign In",
-    signUp: "Sign Up",
-    authRequired: "Please fill in all fields.",
-    authNameRequired: "Please enter your name.",
-    fullName: "Full Name",
-    yourName: "Your name",
-    email: "Email",
-    password: "Password",
 
     loadingDashboard: "Loading your learning dashboard...",
     loadError: "Could not load data:",
@@ -119,8 +103,6 @@ export const translations = {
     navHome: "መነሻ",
     navAbout: "ስለ እኛ እና መገናኛ",
     navLearning: "የእኔ ትምህርት",
-    navSignOut: "ውጣ",
-    navSignIn: "ግባ",
     languageToggle: "EN",
     languageTitle: "ወደ እንግሊዝኛ ቀይር",
     lightMode: "የብርሃን ሁነታ",
@@ -143,7 +125,6 @@ export const translations = {
     readyBegin: "ለመጀመር ዝግጁ ነዎት?",
     joinCommunity: "የኦርቶዶክስን ውበት ከሚያውቅ እያደገ ካለ ማኅበረሰብ ጋር ይቀላቀሉ።",
     goLearning: "ወደ የእኔ ትምህርት ሂድ",
-    createFreeAccount: "ነፃ መለያ ፍጠር",
 
     aboutTitle: "ስለ ዘኦርቶዶክስ",
     aboutParagraphOne:
@@ -166,19 +147,6 @@ export const translations = {
     contactRequired: "እባክዎ ሁሉንም መስኮች ይሙሉ።",
     sending: "በመላክ ላይ...",
     sendMessage: "መልእክት ላክ",
-
-    welcomeBack: "እንኳን ደህና ተመለሱ",
-    createAccount: "መለያ ፍጠር",
-    signInSub: "ትምህርትዎን ለመቀጠል ይግቡ",
-    signUpSub: "የኦርቶዶክስ የመማር ጉዞዎን ይጀምሩ",
-    signIn: "ግባ",
-    signUp: "ተመዝገብ",
-    authRequired: "እባክዎ ሁሉንም መስኮች ይሙሉ።",
-    authNameRequired: "እባክዎ ስምዎን ያስገቡ።",
-    fullName: "ሙሉ ስም",
-    yourName: "ስምዎ",
-    email: "ኢሜይል",
-    password: "የይለፍ ቃል",
 
     loadingDashboard: "የትምህርት ዳሽቦርድዎ በመጫን ላይ...",
     loadError: "ውሂብ መጫን አልተቻለም:",

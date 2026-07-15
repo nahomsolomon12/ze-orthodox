@@ -4,7 +4,7 @@ import { useLanguage } from "../context/LanguageContext";
 import "./HomePage.css";
 import backgroundImage from "../assets/golden_cross.jpg";
 
-const HomePage = ({ setPage, user }) => {
+const HomePage = ({ setPage }) => {
   const { t } = useLanguage();
   const features = [
     {
@@ -39,7 +39,7 @@ const HomePage = ({ setPage, user }) => {
           <div className="hero__actions">
             <button
               className="btn btn--primary"
-              onClick={() => setPage(user ? "modules" : "auth")}
+              onClick={() => setPage("modules")}
             >
               {t("beginLearning")} <Icon name="arrow" size={18} />
             </button>
@@ -93,7 +93,7 @@ const HomePage = ({ setPage, user }) => {
             style={{ padding: "12px 28px", fontSize: 15 }}
             onClick={() => setPage(user ? "modules" : "auth")}
           >
-            {user ? t("goLearning") : t("createFreeAccount")}
+            {t("goLearning")}
           </button>
         </div>
       </section>

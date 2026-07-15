@@ -1,22 +1,15 @@
 import Icon from "./Icon";
 import { useThemeToggle } from "../context/ThemeContext";
 import { useLanguage } from "../context/LanguageContext";
-import { signOut } from "../lib/auth";
 import "./Nav.css";
 import logo from "../assets/ZEOlogo.png";
 
-const Nav = ({ page, setPage, user, setUser, mobileOpen, setMobileOpen }) => {
+const Nav = ({ page, setPage, mobileOpen, setMobileOpen }) => {
   const { isDark, toggleDark } = useThemeToggle();
   const { t, toggleLanguage } = useLanguage();
 
   const navBtnClass = (key) =>
     `nav__btn ${page === key ? "nav__btn--active" : ""}`;
-
-  const handleSignOut = () => {
-    signOut();
-    setUser(null);
-    setPage("home");
-  };
 
   return (
     <nav className="nav">
@@ -39,29 +32,12 @@ const Nav = ({ page, setPage, user, setUser, mobileOpen, setMobileOpen }) => {
             {t("navAbout")}
           </button>
 
-          {user ? (
-            <>
-              <button
-                className={navBtnClass("modules")}
-                onClick={() => setPage("modules")}
-              >
-                {t("navLearning")}
-              </button>
-              <button
-                className="nav__btn nav__btn--danger"
-                onClick={handleSignOut}
-              >
-                {t("navSignOut")}
-              </button>
-            </>
-          ) : (
-            <button
-              className="nav__btn nav__btn--primary"
-              onClick={() => setPage("auth")}
-            >
-              {t("navSignIn")}
-            </button>
-          )}
+          <button
+            className={navBtnClass("modules")}
+            onClick={() => setPage("modules")}
+          >
+            {t("navLearning")}
+          </button>
 
           <button
             className="nav__language-toggle"
@@ -120,38 +96,15 @@ const Nav = ({ page, setPage, user, setUser, mobileOpen, setMobileOpen }) => {
             {t("navAbout")}
           </button>
 
-          {user ? (
-            <>
-              <button
-                className={navBtnClass("modules")}
-                onClick={() => {
-                  setPage("modules");
-                  setMobileOpen(false);
-                }}
-              >
-                {t("navLearning")}
-              </button>
-              <button
-                className="nav__btn nav__btn--danger"
-                onClick={() => {
-                  handleSignOut();
-                  setMobileOpen(false);
-                }}
-              >
-                {t("navSignOut")}
-              </button>
-            </>
-          ) : (
-            <button
-              className="nav__btn nav__btn--primary"
-              onClick={() => {
-                setPage("auth");
-                setMobileOpen(false);
-              }}
-            >
-              {t("navSignIn")}
-            </button>
-          )}
+          <button
+            className={navBtnClass("modules")}
+            onClick={() => {
+              setPage("modules");
+              setMobileOpen(false);
+            }}
+          >
+            {t("navLearning")}
+          </button>
         </div>
       )}
     </nav>

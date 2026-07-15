@@ -4,7 +4,7 @@ import { useLanguage } from "../context/LanguageContext";
 import { getModules, getModuleProgress, getQuizzes } from "../lib/api";
 import "./ModulesPage.css";
 
-const ModulesPage = ({ user }) => {
+const ModulesPage = () => {
   const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState("modules");
   const [expandedModule, setExpandedModule] = useState(null);
@@ -46,7 +46,7 @@ const ModulesPage = ({ user }) => {
   const totalLessons = modules.reduce((a, m) => a + m.lessons, 0);
   const completedLessons = modules.reduce((a, m) => a + m.completed, 0);
   const pct = totalLessons > 0 ? Math.round((completedLessons / totalLessons) * 100) : 0;
-  const displayName = user?.user_metadata?.name || user?.email?.split("@")[0] || t("fallbackName");
+  const displayName = t("fallbackName");
 
   if (loading) {
     return (

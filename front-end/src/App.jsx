@@ -5,14 +5,11 @@ import { LanguageProvider } from "./context/LanguageContext";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
-import AuthPage from "./pages/AuthPage";
 import ModulesPage from "./pages/ModulesPage";
 import AboutPage from "./pages/AboutPage";
-import { getUser } from "./lib/auth";
 
 const AppContent = () => {
   const [page, setPage] = useState("home");
-  const [user, setUser] = useState(getUser);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
@@ -24,17 +21,12 @@ const AppContent = () => {
       <Nav
         page={page}
         setPage={setPage}
-        user={user}
-        setUser={setUser}
         mobileOpen={mobileOpen}
         setMobileOpen={setMobileOpen}
       />
       <main className="app-main">
-        {page === "home" && <HomePage setPage={setPage} user={user} />}
-        {page === "auth" && <AuthPage setPage={setPage} setUser={setUser} />}
-        {page === "modules" && (
-          user ? <ModulesPage user={user} /> : <AuthPage setPage={setPage} setUser={setUser} />
-        )}
+        {page === "home" && <HomePage setPage={setPage} />}
+        {page === "modules" && <ModulesPage />}
         {page === "about" && <AboutPage />}
       </main>
       <Footer />
