@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import ModulesPage from "./pages/ModulesPage";
 import AboutPage from "./pages/AboutPage";
+import LessonsCategoryPage from "./pages/LessonsCategoryPage";
 
 const AppContent = () => {
   const [page, setPage] = useState("home");
@@ -28,6 +29,10 @@ const AppContent = () => {
         {page === "home" && <HomePage setPage={setPage} />}
         {page === "modules" && <ModulesPage />}
         {page === "about" && <AboutPage />}
+        {page === "lessons-wed-adult" && <LessonsCategoryPage category="wed-adult" />}
+        {page === "lessons-sat-youth" && <LessonsCategoryPage category="sat-youth" />}
+        {page === "lessons-sun-youth" && <LessonsCategoryPage category="sun-youth" />}
+        {page === "lessons-video" && <LessonsCategoryPage category="video" />}
       </main>
       <Footer />
     </div>

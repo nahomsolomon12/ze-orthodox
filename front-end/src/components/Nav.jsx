@@ -1,8 +1,16 @@
 import Icon from "./Icon";
 import { useThemeToggle } from "../context/ThemeContext";
 import { useLanguage } from "../context/LanguageContext";
+import { lessonCategories } from "../data/lessonCategories";
 import "./Nav.css";
 import logo from "../assets/ZEOlogo.png";
+
+const lessonPages = [
+  { key: "lessons-wed-adult", category: "wed-adult" },
+  { key: "lessons-sat-youth", category: "sat-youth" },
+  { key: "lessons-sun-youth", category: "sun-youth" },
+  { key: "lessons-video", category: "video" },
+];
 
 const Nav = ({ page, setPage, mobileOpen, setMobileOpen }) => {
   const { isDark, toggleDark } = useThemeToggle();
@@ -10,6 +18,8 @@ const Nav = ({ page, setPage, mobileOpen, setMobileOpen }) => {
 
   const navBtnClass = (key) =>
     `nav__btn ${page === key ? "nav__btn--active" : ""}`;
+
+  const lessonsActive = page === "modules" || lessonPages.some(l => l.key === page);
 
   return (
     <nav className="nav">
@@ -32,12 +42,25 @@ const Nav = ({ page, setPage, mobileOpen, setMobileOpen }) => {
             {t("navAbout")}
           </button>
 
-          <button
-            className={navBtnClass("modules")}
-            onClick={() => setPage("modules")}
-          >
-            {t("navLearning")}
-          </button>
+          <div className="nav__dropdown">
+            <button
+              className={`nav__btn ${lessonsActive ? "nav__btn--active" : ""}`}
+              onClick={() => setPage("modules")}
+            >
+              {t("navLearning")}
+            </button>
+            <div className="nav__dropdown-menu">
+              {lessonPages.map(({ key, category }) => (
+                <button
+                  key={key}
+                  className={`nav__dropdown-item ${page === key ? "nav__dropdown-item--active" : ""}`}
+                  onClick={() => setPage(key)}
+                >
+                  {t(lessonCategories[category].titleKey)} - {t(lessonCategories[category].languageKey)}
+                </button>
+              ))}
+            </div>
+          </div>
 
           <button
             className="nav__language-toggle"
@@ -97,7 +120,7 @@ const Nav = ({ page, setPage, mobileOpen, setMobileOpen }) => {
           </button>
 
           <button
-            className={navBtnClass("modules")}
+            className={`nav__btn ${lessonsActive ? "nav__btn--active" : ""}`}
             onClick={() => {
               setPage("modules");
               setMobileOpen(false);
@@ -105,6 +128,18 @@ const Nav = ({ page, setPage, mobileOpen, setMobileOpen }) => {
           >
             {t("navLearning")}
           </button>
+          {lessonPages.map(({ key, category }) => (
+            <button
+              key={key}
+              className={`nav__btn nav__btn--sub ${page === key ? "nav__btn--active" : ""}`}
+              onClick={() => {
+                setPage(key);
+                setMobileOpen(false);
+              }}
+            >
+              {t(lessonCategories[category].titleKey)} - {t(lessonCategories[category].languageKey)}
+            </button>
+          ))}
         </div>
       )}
     </nav>

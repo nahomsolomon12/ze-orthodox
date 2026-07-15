@@ -2,11 +2,20 @@ export const translations = {
   en: {
     navHome: "Home",
     navAbout: "About & Contact",
-    navLearning: "My Learning",
+    navLearning: "Lessons",
     languageToggle: "አማ",
     languageTitle: "Switch to Amharic",
     lightMode: "Light mode",
     darkMode: "Dark mode",
+
+    lessonWedAdultTitle: "Wednesday Adult Lessons",
+    lessonSatYouthTitle: "Saturday Youth Lessons",
+    lessonSunYouthTitle: "Sunday Youth Lessons",
+    lessonVideoTitle: "Video Lessons",
+    languageAmharic: "Amharic",
+    languageEnglish: "English",
+    languageBoth: "English & Amharic",
+    lessonComingSoon: "Lessons for this track will be posted here soon.",
 
     heroBadge: "Ethiopian Orthodox Christian Education",
     heroTitleTop: "Grow in the",
@@ -25,7 +34,7 @@ export const translations = {
     readyBegin: "Ready to begin?",
     joinCommunity:
       "Join a growing community discovering the beauty of Orthodoxy.",
-    goLearning: "Go to My Learning",
+    goLearning: "Go to Lessons",
 
     aboutTitle: "About ZeOrthodox",
     aboutParagraphOne:
@@ -107,6 +116,15 @@ export const translations = {
     languageTitle: "ወደ እንግሊዝኛ ቀይር",
     lightMode: "የብርሃን ሁነታ",
     darkMode: "የጨለማ ሁነታ",
+
+    lessonWedAdultTitle: "የረቡዕ የአዋቂዎች ትምህርቶች",
+    lessonSatYouthTitle: "የቅዳሜ ወጣቶች ትምህርቶች",
+    lessonSunYouthTitle: "የእሁድ ወጣቶች ትምህርቶች",
+    lessonVideoTitle: "የቪዲዮ ትምህርቶች",
+    languageAmharic: "አማርኛ",
+    languageEnglish: "እንግሊዝኛ",
+    languageBoth: "እንግሊዝኛ እና አማርኛ",
+    lessonComingSoon: "ትምህርቶች በቅርቡ እዚህ ይለጠፋሉ።",
 
     heroBadge: "የኢትዮጵያ ኦርቶዶክስ ክርስቲያናዊ ትምህርት",
     heroTitleTop: "በጥንታዊው",
