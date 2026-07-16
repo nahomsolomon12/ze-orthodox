@@ -61,8 +61,6 @@ export const translations = {
     contactRequired: "Please fill in all fields.",
     sending: "Sending...",
     sendMessage: "Send Message",
-
-    footerPlatform: "Ethiopian Orthodox Learning Platform",
   },
   am: {
     navHome: "መነሻ",
@@ -122,7 +120,5 @@ export const translations = {
     contactRequired: "እባክዎ ሁሉንም መስኮች ይሙሉ።",
     sending: "በመላክ ላይ...",
     sendMessage: "መልእክት ላክ",
-
-    footerPlatform: "የኢትዮጵያ ኦርቶዶክስ የአስተምህሮ መድረክ",
   },
 };
