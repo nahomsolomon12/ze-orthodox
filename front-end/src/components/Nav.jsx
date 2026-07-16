@@ -19,7 +19,7 @@ const Nav = ({ page, setPage, mobileOpen, setMobileOpen }) => {
   const navBtnClass = (key) =>
     `nav__btn ${page === key ? "nav__btn--active" : ""}`;
 
-  const lessonsActive = page === "modules" || lessonPages.some(l => l.key === page);
+  const lessonsActive = page === "lessons" || lessonPages.some(l => l.key === page);
 
   return (
     <nav className="nav">
@@ -45,7 +45,7 @@ const Nav = ({ page, setPage, mobileOpen, setMobileOpen }) => {
           <div className="nav__dropdown">
             <button
               className={`nav__btn ${lessonsActive ? "nav__btn--active" : ""}`}
-              onClick={() => setPage("modules")}
+              onClick={() => setPage("lessons")}
             >
               {t("navLearning")}
             </button>
@@ -122,7 +122,7 @@ const Nav = ({ page, setPage, mobileOpen, setMobileOpen }) => {
           <button
             className={`nav__btn ${lessonsActive ? "nav__btn--active" : ""}`}
             onClick={() => {
-              setPage("modules");
+              setPage("lessons");
               setMobileOpen(false);
             }}
           >

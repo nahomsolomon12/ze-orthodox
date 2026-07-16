@@ -1,0 +1,13 @@
+.lessons-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.lessons-grid__card {
+  text-align: center;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  width: 100%;
+}

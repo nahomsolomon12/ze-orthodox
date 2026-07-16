@@ -5,7 +5,7 @@ import { LanguageProvider } from "./context/LanguageContext";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
-import ModulesPage from "./pages/ModulesPage";
+import LessonsPage from "./pages/LessonsPage";
 import AboutPage from "./pages/AboutPage";
 import LessonsCategoryPage from "./pages/LessonsCategoryPage";
 
@@ -27,7 +27,7 @@ const AppContent = () => {
       />
       <main className="app-main">
         {page === "home" && <HomePage setPage={setPage} />}
-        {page === "modules" && <ModulesPage />}
+        {page === "lessons" && <LessonsPage setPage={setPage} />}
         {page === "about" && <AboutPage />}
         {page === "lessons-wed-adult" && <LessonsCategoryPage category="wed-adult" />}
         {page === "lessons-sat-youth" && <LessonsCategoryPage category="sat-youth" />}

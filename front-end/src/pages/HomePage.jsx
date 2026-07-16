@@ -39,7 +39,7 @@ const HomePage = ({ setPage }) => {
           <div className="hero__actions">
             <button
               className="btn btn--primary"
-              onClick={() => setPage("modules")}
+              onClick={() => setPage("lessons")}
             >
               {t("beginLearning")} <Icon name="arrow" size={18} />
             </button>
@@ -91,7 +91,7 @@ const HomePage = ({ setPage }) => {
           <button
             className="btn btn--primary"
             style={{ padding: "12px 28px", fontSize: 15 }}
-            onClick={() => setPage(user ? "modules" : "auth")}
+            onClick={() => setPage("lessons")}
           >
             {t("goLearning")}
           </button>
