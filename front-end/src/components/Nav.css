@@ -21,6 +21,9 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  border: 0;
+  padding: 0;
+  background: transparent;
 }
 
 .nav__logo-image {
@@ -101,8 +104,7 @@
   z-index: 60;
 }
 
-.nav__dropdown:hover .nav__dropdown-menu,
-.nav__dropdown:focus-within .nav__dropdown-menu {
+.nav__dropdown-menu--open {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -143,7 +145,7 @@
 .nav__language-toggle {
   background: transparent;
   border: 1px solid var(--card-border);
-  border-radius: 8px;
+  border-radius: 6px;
   padding: 8px;
   cursor: pointer;
   color: var(--text-sec);

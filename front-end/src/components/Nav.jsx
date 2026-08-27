@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Icon from "./Icon";
 import { useThemeToggle } from "../context/ThemeContext";
 import { useLanguage } from "../context/LanguageContext";
@@ -15,6 +16,7 @@ const lessonPages = [
 const Nav = ({ page, setPage, mobileOpen, setMobileOpen }) => {
   const { isDark, toggleDark } = useThemeToggle();
   const { t, toggleLanguage } = useLanguage();
+  const [lessonsOpen, setLessonsOpen] = useState(false);
 
   const navBtnClass = (key) =>
     `nav__btn ${page === key ? "nav__btn--active" : ""}`;
@@ -24,9 +26,14 @@ const Nav = ({ page, setPage, mobileOpen, setMobileOpen }) => {
   return (
     <nav className="nav">
       <div className="nav__inner">
-        <div className="nav__logo" onClick={() => setPage("home")}>
+        <button
+          type="button"
+          className="nav__logo"
+          onClick={() => setPage("home")}
+          aria-label="ZeOrthodox home"
+        >
           <img src={logo} alt="ZeOrthodox Logo" className="nav__logo-image" />
-        </div>
+        </button>
 
         <div className="nav__links">
           <button
@@ -45,16 +52,32 @@ const Nav = ({ page, setPage, mobileOpen, setMobileOpen }) => {
           <div className="nav__dropdown">
             <button
               className={`nav__btn ${lessonsActive ? "nav__btn--active" : ""}`}
-              onClick={() => setPage("lessons")}
+              onClick={() => setLessonsOpen((open) => !open)}
+              aria-expanded={lessonsOpen}
+              aria-haspopup="menu"
             >
-              {t("navLearning")}
+              {t("navLearning")} <Icon name="chevronDown" size={14} />
             </button>
-            <div className="nav__dropdown-menu">
+            <div className={`nav__dropdown-menu ${lessonsOpen ? "nav__dropdown-menu--open" : ""}`} role="menu">
+              <button
+                className="nav__dropdown-item"
+                role="menuitem"
+                onClick={() => {
+                  setPage("lessons");
+                  setLessonsOpen(false);
+                }}
+              >
+                {t("allLessons")}
+              </button>
               {lessonPages.map(({ key, category }) => (
                 <button
                   key={key}
                   className={`nav__dropdown-item ${page === key ? "nav__dropdown-item--active" : ""}`}
-                  onClick={() => setPage(key)}
+                  role="menuitem"
+                  onClick={() => {
+                    setPage(key);
+                    setLessonsOpen(false);
+                  }}
                 >
                   {t(lessonCategories[category].titleKey)} - {t(lessonCategories[category].languageKey)}
                 </button>
@@ -66,6 +89,7 @@ const Nav = ({ page, setPage, mobileOpen, setMobileOpen }) => {
             className="nav__language-toggle"
             onClick={toggleLanguage}
             title={t("languageTitle")}
+            aria-label={t("languageTitle")}
           >
             {t("languageToggle")}
           </button>
@@ -73,6 +97,7 @@ const Nav = ({ page, setPage, mobileOpen, setMobileOpen }) => {
             className="nav__theme-toggle"
             onClick={toggleDark}
             title={isDark ? t("lightMode") : t("darkMode")}
+            aria-label={isDark ? t("lightMode") : t("darkMode")}
           >
             <Icon name={isDark ? "sun" : "moon"} size={16} />
           </button>
@@ -83,15 +108,18 @@ const Nav = ({ page, setPage, mobileOpen, setMobileOpen }) => {
             className="nav__language-toggle"
             onClick={toggleLanguage}
             title={t("languageTitle")}
+            aria-label={t("languageTitle")}
           >
             {t("languageToggle")}
           </button>
-          <button className="nav__theme-toggle" onClick={toggleDark}>
+          <button className="nav__theme-toggle" onClick={toggleDark} aria-label={isDark ? t("lightMode") : t("darkMode")}>
             <Icon name={isDark ? "sun" : "moon"} size={16} />
           </button>
           <button
             className="nav__hamburger"
             onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
+            aria-expanded={mobileOpen}
           >
             <Icon name={mobileOpen ? "x" : "menu"} size={24} />
           </button>
