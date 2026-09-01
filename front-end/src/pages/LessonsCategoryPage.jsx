@@ -2,10 +2,13 @@ import Icon from "../components/Icon";
 import Ornament from "../components/Ornament";
 import { useLanguage } from "../context/LanguageContext";
 import { lessonCategories } from "../data/lessonCategories";
+import { wednesdayLessonCategories } from "../data/wednesdayLessons";
+import "./LessonsCategoryPage.css";
 
 const LessonsCategoryPage = ({ category }) => {
   const { t } = useLanguage();
   const { titleKey, languageKey, icon } = lessonCategories[category];
+  const isWednesdayLessons = category === "wed-adult";
 
   return (
     <div className="container--narrow" style={{ paddingTop: 48, paddingBottom: 48 }}>
@@ -20,9 +23,31 @@ const LessonsCategoryPage = ({ category }) => {
         </div>
       </div>
 
-      <div className="card text-center" style={{ padding: "40px 24px" }}>
-        <p className="text-muted mb-0">{t("lessonComingSoon")}</p>
-      </div>
+      {isWednesdayLessons ? (
+        <div className="lesson-catalog" aria-label="Wednesday lesson categories">
+          {wednesdayLessonCategories.map((lessonCategory, index) => (
+            <details className="lesson-category" key={lessonCategory.id} open={index === 0}>
+              <summary className="lesson-category__summary">
+                <span className="lesson-category__number">{String(index + 1).padStart(2, "0")}</span>
+                {lessonCategory.title}
+                <span className="lesson-category__chevron" aria-hidden="true">⌄</span>
+              </summary>
+              <ul className="lesson-category__lessons">
+                {lessonCategory.lessons.map((lesson, lessonIndex) => (
+                  <li className="lesson-category__lesson" key={lesson.id}>
+                    <span className="lesson-category__lesson-index">{String(lessonIndex + 1).padStart(2, "0")}</span>
+                    {lesson.title}
+                  </li>
+                ))}
+              </ul>
+            </details>
+          ))}
+        </div>
+      ) : (
+        <div className="card text-center" style={{ padding: "40px 24px" }}>
+          <p className="text-muted mb-0">{t("lessonComingSoon")}</p>
+        </div>
+      )}
     </div>
   );
 };

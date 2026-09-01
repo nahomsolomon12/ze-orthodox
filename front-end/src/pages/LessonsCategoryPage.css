@@ -1,0 +1,95 @@
+.lesson-catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.lesson-category {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lesson-category:hover,
+.lesson-category[open] {
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px rgba(15, 91, 92, 0.1);
+}
+
+.lesson-category__summary {
+  align-items: center;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 700;
+  gap: 12px;
+  list-style: none;
+  padding: 18px;
+}
+
+.lesson-category__summary::-webkit-details-marker {
+  display: none;
+}
+
+.lesson-category__number {
+  align-items: center;
+  background: var(--gold-light);
+  border: 1px solid var(--gold-border);
+  border-radius: 50%;
+  color: var(--gold);
+  display: inline-flex;
+  flex: 0 0 34px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  height: 34px;
+  justify-content: center;
+}
+
+.lesson-category__chevron {
+  color: var(--accent);
+  font-family: var(--font-sans);
+  font-size: 18px;
+  margin-left: auto;
+  transition: transform 0.2s ease;
+}
+
+.lesson-category[open] .lesson-category__chevron {
+  transform: rotate(180deg);
+}
+
+.lesson-category__lessons {
+  border-top: 1px solid var(--card-border);
+  list-style: none;
+  padding: 6px 18px 14px 64px;
+}
+
+.lesson-category__lesson {
+  align-items: center;
+  color: var(--text-sec);
+  display: flex;
+  font-size: 14px;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.lesson-category__lesson:not(:last-child) {
+  border-bottom: 1px solid var(--card-border);
+}
+
+.lesson-category__lesson-index {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+@media (max-width: 620px) {
+  .lesson-catalog {
+    grid-template-columns: 1fr;
+  }
+}
