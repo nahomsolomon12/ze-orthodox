@@ -2,13 +2,22 @@ import Icon from "../components/Icon";
 import Ornament from "../components/Ornament";
 import { useLanguage } from "../context/LanguageContext";
 import { lessonCategories } from "../data/lessonCategories";
-import { wednesdayLessonCategories } from "../data/wednesdayLessons";
+import {
+  saturdayLessonCategories,
+  sundayLessonCategories,
+  wednesdayLessonCategories,
+} from "../data/wednesdayLessons";
 import "./LessonsCategoryPage.css";
 
 const LessonsCategoryPage = ({ category }) => {
   const { t } = useLanguage();
   const { titleKey, languageKey, icon } = lessonCategories[category];
-  const isWednesdayLessons = category === "wed-adult";
+  const catalogByCategory = {
+    "wed-adult": wednesdayLessonCategories,
+    "sat-youth": saturdayLessonCategories,
+    "sun-youth": sundayLessonCategories,
+  };
+  const lessonCatalog = catalogByCategory[category];
 
   return (
     <div className="container--narrow" style={{ paddingTop: 48, paddingBottom: 48 }}>
@@ -23,9 +32,9 @@ const LessonsCategoryPage = ({ category }) => {
         </div>
       </div>
 
-      {isWednesdayLessons ? (
-        <div className="lesson-catalog" aria-label="Wednesday lesson categories">
-          {wednesdayLessonCategories.map((lessonCategory, index) => (
+      {lessonCatalog ? (
+        <div className="lesson-catalog" aria-label={`${t(titleKey)} categories`}>
+          {lessonCatalog.map((lessonCategory, index) => (
             <details className="lesson-category" key={lessonCategory.id} open={index === 0}>
               <summary className="lesson-category__summary">
                 <span className="lesson-category__number">{String(index + 1).padStart(2, "0")}</span>
