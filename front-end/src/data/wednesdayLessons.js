@@ -5,7 +5,7 @@ const createLessonCategories = (prefix, categoryCount) => Array.from({ length: c
 
   return {
     id: `${prefix.toLowerCase()}-category-${number}`,
-    title: `${prefix} Lesson Category ${number}`,
+    title: `Category ${number}`,
     lessons: Array.from({ length: 3 }, (_, lessonIndex) => ({
       id: `${prefix.toLowerCase()}-category-${number}-lesson-${lessonIndex + 1}`,
       title: `Lesson ${categoryNumber(lessonIndex + 1)}`,

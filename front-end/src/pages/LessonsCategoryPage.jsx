@@ -11,7 +11,7 @@ import "./LessonsCategoryPage.css";
 
 const LessonsCategoryPage = ({ category }) => {
   const { t } = useLanguage();
-  const { titleKey, languageKey, icon } = lessonCategories[category];
+  const { titleKey, languageKey } = lessonCategories[category];
   const catalogByCategory = {
     "wed-adult": wednesdayLessonCategories,
     "sat-youth": saturdayLessonCategories,
@@ -22,9 +22,6 @@ const LessonsCategoryPage = ({ category }) => {
   return (
     <div className="container--narrow" style={{ paddingTop: 48, paddingBottom: 48 }}>
       <div className="text-center mb-24">
-        <div className="icon-box icon-box--accent" style={{ margin: "0 auto 16px" }}>
-          <Icon name={icon} size={26} />
-        </div>
         <h1 className="font-serif mb-0" style={{ fontSize: 28 }}>{t(titleKey)}</h1>
         <p className="text-muted mt-8" style={{ fontSize: 14 }}>{t(languageKey)}</p>
         <div className="flex justify-center mt-16">
@@ -39,7 +36,9 @@ const LessonsCategoryPage = ({ category }) => {
               <summary className="lesson-category__summary">
                 <span className="lesson-category__number">{String(index + 1).padStart(2, "0")}</span>
                 {lessonCategory.title}
-                <span className="lesson-category__chevron" aria-hidden="true">⌄</span>
+                <span className="lesson-category__chevron" aria-hidden="true">
+                  <Icon name="chevronDown" size={18} />
+                </span>
               </summary>
               <ul className="lesson-category__lessons">
                 {lessonCategory.lessons.map((lesson, lessonIndex) => (
@@ -53,7 +52,7 @@ const LessonsCategoryPage = ({ category }) => {
           ))}
         </div>
       ) : (
-        <div className="card text-center" style={{ padding: "40px 24px" }}>
+        <div className="lesson-empty-state text-center">
           <p className="text-muted mb-0">{t("lessonComingSoon")}</p>
         </div>
       )}

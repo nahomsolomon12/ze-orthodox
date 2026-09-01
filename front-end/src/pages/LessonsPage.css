@@ -1,6 +1,6 @@
 .lessons-grid {
   display: grid;
-  gap: 24px;
+  gap: 18px;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 

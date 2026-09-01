@@ -1,22 +1,22 @@
 .lesson-catalog {
+  align-items: start;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 18px;
-  margin-top: 32px;
 }
 
 .lesson-category {
   background: var(--card);
   border: 1px solid var(--card-border);
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .lesson-category:hover,
 .lesson-category[open] {
   border-color: var(--accent);
-  box-shadow: 0 8px 24px rgba(15, 91, 92, 0.1);
+  box-shadow: 0 4px 24px rgba(139, 26, 26, 0.08);
 }
 
 .lesson-category__summary {
@@ -52,9 +52,8 @@
 }
 
 .lesson-category__chevron {
+  display: flex;
   color: var(--accent);
-  font-family: var(--font-sans);
-  font-size: 18px;
   margin-left: auto;
   transition: transform 0.2s ease;
 }
@@ -88,7 +87,15 @@
   font-weight: 700;
 }
 
-@media (max-width: 620px) {
+.lesson-empty-state {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  grid-column: 1 / -1;
+  padding: 40px 24px;
+}
+
+@media (max-width: 500px) {
   .lesson-catalog {
     grid-template-columns: 1fr;
   }
