@@ -27,7 +27,7 @@
 }
 
 .nav__logo-image {
-  height: 50px;
+  height: 60px;
   width: auto;
   display: block;
   object-fit: contain;
@@ -195,6 +195,10 @@
 }
 
 @media (max-width: 768px) {
+  .nav__logo-image {
+    height: 50px;
+  }
+
   .nav__links {
     display: none !important;
   }
