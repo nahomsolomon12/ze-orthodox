@@ -1,5 +1,4 @@
 import Icon from "../components/Icon";
-import Ornament from "../components/Ornament";
 import { useLanguage } from "../context/LanguageContext";
 import "./HomePage.css";
 import backgroundImage from "../assets/golden_cross.jpg";
@@ -34,7 +33,6 @@ const HomePage = ({ setPage }) => {
             <br />
             <span>{t("heroTitleAccent")}</span>
           </h1>
-          <Ornament />
           <p className="hero__subtitle">{t("heroSubtitle")}</p>
           <div className="hero__actions">
             <button
@@ -56,9 +54,6 @@ const HomePage = ({ setPage }) => {
       <section className="section">
         <div className="container">
           <h2 className="section__title font-serif">{t("howLearn")}</h2>
-          <div className="flex justify-center mb-32">
-            <Ornament />
-          </div>
           <div className="grid grid--features">
             {features.map((f, i) => (
               <div key={i} className="card">
@@ -86,7 +81,6 @@ const HomePage = ({ setPage }) => {
           <h2 className="font-serif mb-0" style={{ fontSize: 24 }}>
             {t("readyBegin")}
           </h2>
-          <Ornament />
           <p className="text-muted mt-8 mb-24">{t("joinCommunity")}</p>
           <button
             className="btn btn--primary"

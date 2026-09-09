@@ -1,5 +1,4 @@
 import Icon from "../components/Icon";
-import Ornament from "../components/Ornament";
 import { useLanguage } from "../context/LanguageContext";
 import { lessonCategories } from "../data/lessonCategories";
 import "./LessonsPage.css";
@@ -14,9 +13,6 @@ const LessonsPage = ({ setPage }) => {
       <div className="text-center mb-24">
         <h1 className="font-serif mb-0" style={{ fontSize: 28 }}>{t("navLearning")}</h1>
         <p className="text-muted mt-8" style={{ fontSize: 15 }}>{t("chooseLessonTrack")}</p>
-        <div className="flex justify-center mt-16">
-          <Ornament />
-        </div>
       </div>
 
       <div className="lessons-grid">

@@ -1,10 +1,10 @@
 import { useState } from "react";
 import Icon from "../components/Icon";
-import Ornament from "../components/Ornament";
 import { useLanguage } from "../context/LanguageContext";
 import { sendContact } from "../lib/api";
 import "./AboutPage.css";
 import heroArt from "../assets/Cross.jpg";
+import logo from "../assets/ZEOlogo.png";
 
 const AboutPage = () => {
   const { t } = useLanguage();
@@ -23,8 +23,10 @@ const AboutPage = () => {
       <section className="about-hero">
         <div className="container about-hero__inner">
           <div className="about-hero__text">
-            <h1 className="about-hero__title font-serif">{t("aboutTitle")}</h1>
-            <Ornament />
+            <h1 className="about-hero__title font-serif">
+              <span>{t("aboutTitle")}</span>
+              <img src={logo} alt="ZeOrthodox" className="about-hero__logo" />
+            </h1>
             <p className="about-hero__lead">{t("aboutParagraphOne")}</p>
             <p className="text-muted about-hero__second">{t("aboutParagraphTwo")}</p>
           </div>
@@ -39,7 +41,6 @@ const AboutPage = () => {
         <div className="container">
           <div className="text-center">
             <h2 className="font-serif mb-0">{t("approachTitle")}</h2>
-            <Ornament />
           </div>
 
           <div className="approach-list mt-32">
@@ -66,7 +67,6 @@ const AboutPage = () => {
           <div className="about-contact__panel">
             <span className="about-contact__mark" aria-hidden="true">&#10077;</span>
             <h2 className="font-serif">{t("contactTitle")}</h2>
-            <Ornament />
             <p className="about-contact__intro">{t("contactIntro")}</p>
           </div>
 

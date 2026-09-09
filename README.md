@@ -36,7 +36,7 @@ A full-stack web application for structured Eastern Orthodox Christian education
 ze-orthodox/
 ├── front-end/               # React + Vite application
 │   ├── src/
-│   │   ├── components/      # Nav, Footer, Icon, Ornament
+│   │   ├── components/      # Nav, Footer, Icon
 │   │   ├── context/         # ThemeContext (light/dark mode)
 │   │   ├── lib/
 │   │   │   ├── supabase.js  # Supabase browser client (anon key)

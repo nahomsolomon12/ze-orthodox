@@ -1,5 +1,4 @@
 import Icon from "../components/Icon";
-import Ornament from "../components/Ornament";
 import { useLanguage } from "../context/LanguageContext";
 import { lessonCategories } from "../data/lessonCategories";
 import {
@@ -24,9 +23,6 @@ const LessonsCategoryPage = ({ category }) => {
       <div className="text-center mb-24">
         <h1 className="font-serif mb-0" style={{ fontSize: 28 }}>{t(titleKey)}</h1>
         <p className="text-muted mt-8" style={{ fontSize: 14 }}>{t(languageKey)}</p>
-        <div className="flex justify-center mt-16">
-          <Ornament />
-        </div>
       </div>
 
       {lessonCatalog ? (
