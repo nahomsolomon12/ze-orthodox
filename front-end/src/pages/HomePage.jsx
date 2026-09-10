@@ -1,10 +1,25 @@
+import { useEffect, useState } from "react";
 import Icon from "../components/Icon";
 import { useLanguage } from "../context/LanguageContext";
 import "./HomePage.css";
-import backgroundImage from "../assets/golden_cross.jpg";
+import carouselOne from "../assets/car-1.jpg";
+import carouselTwo from "../assets/car-2.jpg";
 
 const HomePage = ({ setPage }) => {
   const { t } = useLanguage();
+  const [activeSlide, setActiveSlide] = useState(0);
+  const slides = [
+    { image: carouselOne, heading: t("heroSlideOne") },
+    { image: carouselTwo, heading: t("heroSlideTwo") },
+  ];
+
+  useEffect(() => {
+    const rotation = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % slides.length);
+    }, 6000);
+
+    return () => window.clearInterval(rotation);
+  }, [slides.length]);
   const features = [
     {
       icon: "play",
@@ -21,17 +36,21 @@ const HomePage = ({ setPage }) => {
   return (
     <div>
       <section className="hero">
-        <img
-          src={backgroundImage}
-          alt=""
-          className="hero__background-image"
-          aria-hidden="true"
-        />
+        <div className="hero__slides" aria-hidden="true">
+          {slides.map((slide, index) => (
+            <img
+              key={slide.image}
+              src={slide.image}
+              alt=""
+              className={`hero__background-image ${
+                index === activeSlide ? "hero__background-image--active" : ""
+              }`}
+            />
+          ))}
+        </div>
         <div className="hero__content">
           <h1 className="hero__title">
-            {t("heroTitleTop")}
-            <br />
-            <span>{t("heroTitleAccent")}</span>
+            {slides[activeSlide].heading}
           </h1>
           <p className="hero__subtitle">{t("heroSubtitle")}</p>
           <div className="hero__actions">
@@ -48,6 +67,20 @@ const HomePage = ({ setPage }) => {
               {t("learnMore")}
             </button>
           </div>
+        </div>
+        <div className="hero__pagination" aria-label="Hero slides">
+          {slides.map((slide, index) => (
+            <button
+              key={slide.image}
+              type="button"
+              className={`hero__pagination-dot ${
+                index === activeSlide ? "hero__pagination-dot--active" : ""
+              }`}
+              aria-label={`Show slide ${index + 1}`}
+              aria-current={index === activeSlide ? "true" : undefined}
+              onClick={() => setActiveSlide(index)}
+            />
+          ))}
         </div>
       </section>
 
