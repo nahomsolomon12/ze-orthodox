@@ -49,7 +49,10 @@ const HomePage = ({ setPage }) => {
           ))}
         </div>
         <div className="hero__content">
-          <h1 className="hero__title">
+          <h1
+            key={activeSlide}
+            className="hero__title hero__title--transitioning"
+          >
             {slides[activeSlide].heading}
           </h1>
           <p className="hero__subtitle">{t("heroSubtitle")}</p>

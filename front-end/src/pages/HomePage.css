@@ -60,6 +60,22 @@
   margin-bottom: 16px;
 }
 
+.hero__title--transitioning {
+  animation: hero-title-enter 700ms ease both;
+}
+
+@keyframes hero-title-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hero__title span {
   color: var(--gold);
 }
@@ -96,7 +112,9 @@
   border-radius: 50%;
   background: transparent;
   cursor: pointer;
-  transition: background-color 200ms ease, transform 200ms ease;
+  transition:
+    background-color 200ms ease,
+    transform 200ms ease;
 }
 
 .hero__pagination-dot--active {
@@ -165,5 +183,14 @@
 
   .hero__actions .btn {
     justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__background-image,
+  .hero__title--transitioning,
+  .hero__pagination-dot {
+    transition: none;
+    animation: none;
   }
 }
