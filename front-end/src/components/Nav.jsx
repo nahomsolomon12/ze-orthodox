@@ -21,7 +21,8 @@ const Nav = ({ page, setPage, mobileOpen, setMobileOpen }) => {
   const navBtnClass = (key) =>
     `nav__btn ${page === key ? "nav__btn--active" : ""}`;
 
-  const lessonsActive = page === "lessons" || lessonPages.some(l => l.key === page);
+  const lessonsActive =
+    page === "lessons" || lessonPages.some((l) => l.key === page);
 
   return (
     <nav className="nav">
@@ -49,26 +50,26 @@ const Nav = ({ page, setPage, mobileOpen, setMobileOpen }) => {
             {t("navAbout")}
           </button>
 
-          <div className="nav__dropdown">
+          <div
+            className="nav__dropdown"
+            onMouseEnter={() => setLessonsOpen(true)}
+            onMouseLeave={() => setLessonsOpen(false)}
+          >
             <button
               className={`nav__btn ${lessonsActive ? "nav__btn--active" : ""}`}
-              onClick={() => setLessonsOpen((open) => !open)}
+              onClick={() => {
+                setPage("lessons");
+                setLessonsOpen(false);
+              }}
               aria-expanded={lessonsOpen}
               aria-haspopup="menu"
             >
               {t("navLearning")} <Icon name="chevronDown" size={14} />
             </button>
-            <div className={`nav__dropdown-menu ${lessonsOpen ? "nav__dropdown-menu--open" : ""}`} role="menu">
-              <button
-                className="nav__dropdown-item"
-                role="menuitem"
-                onClick={() => {
-                  setPage("lessons");
-                  setLessonsOpen(false);
-                }}
-              >
-                {t("allLessons")}
-              </button>
+            <div
+              className={`nav__dropdown-menu ${lessonsOpen ? "nav__dropdown-menu--open" : ""}`}
+              role="menu"
+            >
               {lessonPages.map(({ key, category }) => (
                 <button
                   key={key}
@@ -79,7 +80,8 @@ const Nav = ({ page, setPage, mobileOpen, setMobileOpen }) => {
                     setLessonsOpen(false);
                   }}
                 >
-                  {t(lessonCategories[category].titleKey)} - {t(lessonCategories[category].languageKey)}
+                  {t(lessonCategories[category].titleKey)} -{" "}
+                  {t(lessonCategories[category].languageKey)}
                 </button>
               ))}
             </div>
@@ -112,7 +114,11 @@ const Nav = ({ page, setPage, mobileOpen, setMobileOpen }) => {
           >
             {t("languageToggle")}
           </button>
-          <button className="nav__theme-toggle" onClick={toggleDark} aria-label={isDark ? t("lightMode") : t("darkMode")}>
+          <button
+            className="nav__theme-toggle"
+            onClick={toggleDark}
+            aria-label={isDark ? t("lightMode") : t("darkMode")}
+          >
             <Icon name={isDark ? "sun" : "moon"} size={16} />
           </button>
           <button
@@ -165,7 +171,8 @@ const Nav = ({ page, setPage, mobileOpen, setMobileOpen }) => {
                 setMobileOpen(false);
               }}
             >
-              {t(lessonCategories[category].titleKey)} - {t(lessonCategories[category].languageKey)}
+              {t(lessonCategories[category].titleKey)} -{" "}
+              {t(lessonCategories[category].languageKey)}
             </button>
           ))}
         </div>

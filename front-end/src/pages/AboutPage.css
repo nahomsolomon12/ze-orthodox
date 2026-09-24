@@ -295,6 +295,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .about-hero__art {
+    display: none;
+  }
+}
+
 @media (max-width: 560px) {
   .about-hero {
     padding: 48px 0 40px;
