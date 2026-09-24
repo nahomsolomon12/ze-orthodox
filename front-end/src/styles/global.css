@@ -16,8 +16,10 @@
   /* Typography */
   --text: #17130b;
   --text-sec: #665b45;
-  --font-serif: Georgia, "Times New Roman", serif;
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: "Noto Serif Ethiopic", Georgia, "Times New Roman", serif;
+  --font-sans:
+    "Noto Sans Ethiopic", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
 
   /* Accent (complementary deep teal) */
   --accent: #0f5b5c;
@@ -77,6 +79,13 @@
   --badge-bg: rgba(200, 165, 72, 0.16);
   --badge-text: #e3c76d;
   --badge-border: rgba(200, 165, 72, 0.38);
+}
+
+html:lang(en) {
+  --font-serif:
+    "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans:
+    "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 /* ------------------------------------------------------------
