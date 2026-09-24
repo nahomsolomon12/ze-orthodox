@@ -20,19 +20,6 @@ const HomePage = ({ setPage }) => {
 
     return () => window.clearInterval(rotation);
   }, [slides.length]);
-  const features = [
-    {
-      icon: "play",
-      title: t("featureVideoTitle"),
-      desc: t("featureVideoDesc"),
-    },
-    {
-      icon: "download",
-      title: t("featureReadingTitle"),
-      desc: t("featureReadingDesc"),
-    },
-  ];
-
   return (
     <div>
       <section className="hero">
@@ -89,41 +76,67 @@ const HomePage = ({ setPage }) => {
 
       <section className="section">
         <div className="container">
-          <h2 className="section__title font-serif">{t("howLearn")}</h2>
-          <div className="grid grid--features">
-            {features.map((f, i) => (
-              <div key={i} className="card">
-                <div className="icon-box icon-box--accent mb-16">
-                  <Icon name={f.icon} size={22} />
-                </div>
-                <h3 className="font-serif mb-8">{f.title}</h3>
-                <p
-                  className="text-muted"
-                  style={{ fontSize: 14, lineHeight: 1.6 }}
-                >
-                  {f.desc}
-                </p>
+          <div className="section__intro">
+            <span className="home-section__eyebrow">{t("howLearn")}</span>
+            <h2 className="section__title font-serif">{t("libraryTitle")}</h2>
+            <p className="section__subtitle">{t("libraryIntro")}</p>
+          </div>
+
+          <div className="home-library">
+            <article className="home-featured">
+              <div className="home-featured__media">
+                <img src={carouselTwo} alt="" />
+                <span>{t("featuredLessonLabel")}</span>
               </div>
-            ))}
+              <div className="home-featured__content">
+                <p className="home-content__meta">{t("featuredLessonMeta")}</p>
+                <h3 className="font-serif">{t("featuredLessonTitle")}</h3>
+                <p>{t("featureVideoDesc")}</p>
+                <button
+                  className="btn btn--primary"
+                  onClick={() => setPage("lessons-video")}
+                >
+                  {t("exploreVideos")} <Icon name="arrow" size={17} />
+                </button>
+              </div>
+            </article>
+
+            <article className="home-resource">
+              <div className="home-resource__topline">
+                <div className="icon-box icon-box--accent">
+                  <Icon name="download" size={22} />
+                </div>
+                <span className="home-content__meta">
+                  {t("studyMaterialsLabel")}
+                </span>
+              </div>
+              <h3 className="font-serif">{t("featureReadingTitle")}</h3>
+              <p>{t("featureReadingDesc")}</p>
+              <button
+                className="btn btn--ghost"
+                onClick={() => setPage("lessons")}
+              >
+                {t("viewLessons")} <Icon name="arrow" size={16} />
+              </button>
+            </article>
           </div>
         </div>
       </section>
 
-      <section className="section--hero-cta">
-        <div
-          className="card card--gold max-w-600"
-          style={{ margin: "0 auto", padding: "40px 32px" }}
-        >
-          <h2 className="font-serif mb-0" style={{ fontSize: 24 }}>
-            {t("readyBegin")}
-          </h2>
-          <p className="text-muted mt-8 mb-24">{t("joinCommunity")}</p>
+      <section className="home-community">
+        <div className="container home-community__inner">
+          <div>
+            <span className="home-section__eyebrow">
+              {t("communityEyebrow")}
+            </span>
+            <h2 className="font-serif">{t("readyBegin")}</h2>
+            <p>{t("joinCommunity")}</p>
+          </div>
           <button
             className="btn btn--primary"
-            style={{ padding: "12px 28px", fontSize: 15 }}
             onClick={() => setPage("lessons")}
           >
-            {t("goLearning")}
+            {t("goLearning")} <Icon name="arrow" size={17} />
           </button>
         </div>
       </section>

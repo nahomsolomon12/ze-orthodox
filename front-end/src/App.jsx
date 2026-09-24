@@ -58,13 +58,19 @@ const AppContent = () => {
         mobileOpen={mobileOpen}
         setMobileOpen={setMobileOpen}
       />
-      <main className="app-main">
+      <main className="app-main" key={page}>
         {page === "home" && <HomePage setPage={navigate} />}
         {page === "lessons" && <LessonsPage setPage={navigate} />}
         {page === "about" && <AboutPage />}
-        {page === "lessons-wed-adult" && <LessonsCategoryPage category="wed-adult" />}
-        {page === "lessons-sat-youth" && <LessonsCategoryPage category="sat-youth" />}
-        {page === "lessons-sun-youth" && <LessonsCategoryPage category="sun-youth" />}
+        {page === "lessons-wed-adult" && (
+          <LessonsCategoryPage category="wed-adult" />
+        )}
+        {page === "lessons-sat-youth" && (
+          <LessonsCategoryPage category="sat-youth" />
+        )}
+        {page === "lessons-sun-youth" && (
+          <LessonsCategoryPage category="sun-youth" />
+        )}
         {page === "lessons-video" && <LessonsCategoryPage category="video" />}
       </main>
       <Footer setPage={navigate} />
