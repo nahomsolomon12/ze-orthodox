@@ -10,12 +10,12 @@ import "./LessonsCategoryPage.css";
 
 const videoLessons = [
   {
-    id: "5z5Z-cX1dxI",
-    title: "ሰሙነ ሕማማት - ኢሳይያስ 53፡ 3-12",
+    id: "nEpaCs_Vcp4",
+    title: "Dating for the Youth",
   },
   {
-    id: "arliWuVjXag",
-    title: "ፍቅር - 1ኛ ዮሐ. 3÷18",
+    id: "1A25lkIPRus",
+    title: "ኦርቶዶክሳዊ የልጆች አስተዳደግ",
   },
 ];
 
@@ -69,6 +69,16 @@ const LessonsCategoryPage = ({ category }) => {
               </div>
             </article>
           ))}
+          <p className="video-channel-link">
+            For more lessons go to our{" "}
+            <a
+              href="https://www.youtube.com/@kesisolomonmulugeta"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Youtube Channel
+            </a>
+          </p>
         </div>
       ) : lessonCatalog ? (
         <div
