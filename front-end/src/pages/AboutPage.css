@@ -18,46 +18,44 @@
 }
 
 .about-hero__title {
-  font-size: clamp(28px, 4vw, 42px);
+  font-size: clamp(28px, 4vw, 44px);
   letter-spacing: 0;
-  margin-bottom: 0;
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  margin: 8px 0 0;
   animation: about-slide-in 0.6s ease-out both;
 }
 
 .about-hero__logo {
   display: block;
-  height: 2.7em;
+  flex: 0 0 auto;
+  height: 56px;
   width: auto;
+  max-width: 240px;
   object-fit: contain;
-  transform: translateY(0.06em);
+}
+
+.about-article__kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--gold);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.about-article__kicker span {
+  line-height: 1;
 }
 
 .about-hero__lead {
-  font-size: 18px;
-  line-height: 1.85;
-  color: var(--text);
-  margin-top: 20px;
-  animation: about-slide-in 0.6s 0.12s ease-out both;
-}
-
-.about-hero__lead::first-letter {
+  max-width: 680px;
+  margin-top: 22px;
   font-family: var(--font-serif);
-  font-size: 52px;
-  font-weight: 700;
-  float: left;
-  line-height: 0.78;
-  padding: 6px 10px 0 0;
-  color: var(--gold);
-}
-
-.about-hero__second {
-  margin-top: 16px;
-  font-size: 15px;
-  line-height: 1.8;
-  animation: about-slide-in 0.6s 0.24s ease-out both;
+  font-size: 20px;
+  line-height: 1.65;
+  color: var(--text);
+  animation: about-slide-in 0.6s 0.12s ease-out both;
 }
 
 @keyframes about-slide-in {
@@ -92,6 +90,143 @@
 
 .about-hero__blob {
   display: none;
+}
+
+/* ------------------------------------------------------------
+   Editorial story - readable long-form article layout
+   ------------------------------------------------------------ */
+
+.about-story {
+  padding: 18px 0 84px;
+  background: var(--surface-soft);
+  border-top: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.about-story__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 64px;
+  align-items: start;
+}
+
+.about-story__article {
+  max-width: 760px;
+}
+
+.about-story__quotes {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 16px;
+  margin-bottom: 34px;
+}
+
+.about-story blockquote {
+  margin: 0;
+}
+
+.about-story__scripture,
+.about-story__liturgy {
+  padding: 22px 24px;
+  background: var(--card);
+  border-left: 3px solid var(--gold);
+  color: var(--text);
+  font-family: var(--font-serif);
+  font-size: 15px;
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+.about-story__liturgy {
+  background: var(--gold-light);
+  border-left-color: var(--accent);
+}
+
+.about-story__paragraph {
+  max-width: 720px;
+  margin: 0 0 22px;
+  color: var(--text-sec);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.about-story__heading {
+  margin: 42px 0 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--card-border);
+  font-size: 24px;
+}
+
+.about-story__list {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding-left: 24px;
+  color: var(--text-sec);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.about-story__list--numbered {
+  list-style: decimal;
+}
+
+.about-story__list--resources {
+  list-style: none;
+  padding-left: 0;
+}
+
+.about-story__list--resources li {
+  position: relative;
+  padding-left: 24px;
+}
+
+.about-story__list--resources li::before {
+  content: "";
+  position: absolute;
+  top: 0.75em;
+  left: 2px;
+  width: 7px;
+  height: 7px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+.about-story__closing {
+  margin-top: 46px;
+  padding: 24px 26px;
+  background: var(--accent);
+  color: #fff8e8;
+  font-family: var(--font-serif);
+  font-size: 16px;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+.about-story__aside {
+  position: sticky;
+  top: 104px;
+}
+
+.about-story__figure {
+  margin: 0;
+}
+
+.about-story__figure img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  box-shadow: 0 18px 42px rgba(15, 91, 92, 0.16);
+}
+
+.about-story__figure figcaption {
+  margin-top: 12px;
+  color: var(--text-sec);
+  font-size: 12px;
+  line-height: 1.5;
 }
 
 /* ------------------------------------------------------------
@@ -270,13 +405,21 @@
   }
 
   .about-hero__art {
-    order: -1;
-    max-width: 320px;
-    margin: 0 auto;
+    display: none;
   }
 
   .about-contact__inner {
     grid-template-columns: 1fr;
+  }
+
+  .about-story__layout {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .about-story__aside {
+    position: static;
+    max-width: 420px;
   }
 
   .approach-layout {
@@ -295,12 +438,6 @@
   }
 }
 
-@media (max-width: 768px) {
-  .about-hero__art {
-    display: none;
-  }
-}
-
 @media (max-width: 560px) {
   .about-hero {
     padding: 48px 0 40px;
@@ -308,6 +445,35 @@
 
   .about-approach {
     padding: 56px 0 64px;
+  }
+
+  .about-story {
+    padding: 12px 0 64px;
+  }
+
+  .about-hero__logo {
+    height: 48px;
+    max-width: 200px;
+  }
+
+  .about-story__quotes {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 26px;
+  }
+
+  .about-story__scripture,
+  .about-story__liturgy {
+    padding: 18px;
+    font-size: 14px;
+  }
+
+  .about-story__paragraph {
+    font-size: 15px;
+  }
+
+  .about-story__heading {
+    font-size: 21px;
   }
 
   .about-contact {

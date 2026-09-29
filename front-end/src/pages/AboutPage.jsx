@@ -5,6 +5,7 @@ import { sendContact } from "../lib/api";
 import "./AboutPage.css";
 import heroArt from "../assets/Cross.jpg";
 import communityArt from "../assets/car-2.jpg";
+import featureArt from "../assets/car-1.jpg";
 import logo from "../assets/ZEOlogo.png";
 
 const AboutPage = () => {
@@ -22,25 +23,92 @@ const AboutPage = () => {
     { title: t("valueAcademicTitle"), desc: t("valueAcademicDesc") },
     { title: t("valueAccessTitle"), desc: t("valueAccessDesc") },
   ];
+  const articleBlocks = t("aboutParagraphOne").split(/\n\n+/);
+  const [
+    articleTitle,
+    scripture,
+    liturgy,
+    missionContext,
+    missionResponsibility,
+    pagePurpose,
+    functionsHeading,
+    functionsBlock,
+    resourcesHeading,
+    resourcesBlock,
+    closingPrayer,
+  ] = articleBlocks;
+  const functionItems =
+    functionsBlock
+      ?.split("\n")
+      .filter(Boolean)
+      .map((item) => item.replace(/^\d+\.\s*/, "")) || [];
+  const resourceItems = resourcesBlock?.split("\n").filter(Boolean) || [];
 
   return (
     <div className="about">
       <section className="about-hero">
         <div className="container about-hero__inner">
           <div className="about-hero__text">
-            <h1 className="about-hero__title font-serif">
+            <div className="about-article__kicker">
               <span>{t("aboutTitle")}</span>
               <img src={logo} alt="ZeOrthodox" className="about-hero__logo" />
+            </div>
+            <h1 className="about-hero__title font-serif">
+              <span>{articleTitle}</span>
             </h1>
-            <p className="about-hero__lead">{t("aboutParagraphOne")}</p>
-            <p className="text-muted about-hero__second">
-              {t("aboutParagraphTwo")}
-            </p>
+            <p className="about-hero__lead">{missionContext}</p>
           </div>
           <div className="about-hero__art" aria-hidden="true">
             <span className="about-hero__blob" />
             <img src={heroArt} alt="" />
           </div>
+        </div>
+      </section>
+
+      <section className="about-story">
+        <div className="container about-story__layout">
+          <article className="about-story__article">
+            <div className="about-story__quotes">
+              <blockquote className="about-story__scripture">
+                {scripture}
+              </blockquote>
+              <blockquote className="about-story__liturgy">
+                {liturgy}
+              </blockquote>
+            </div>
+
+            <p className="about-story__paragraph">{missionResponsibility}</p>
+            <p className="about-story__paragraph">{pagePurpose}</p>
+
+            <h2 className="about-story__heading font-serif">
+              {functionsHeading}
+            </h2>
+            <ol className="about-story__list about-story__list--numbered">
+              {functionItems.map((item, index) => (
+                <li key={`${item}-${index}`}>{item}</li>
+              ))}
+            </ol>
+
+            <h2 className="about-story__heading font-serif">
+              {resourcesHeading}
+            </h2>
+            <ul className="about-story__list about-story__list--resources">
+              {resourceItems.map((item, index) => (
+                <li key={`${item}-${index}`}>{item}</li>
+              ))}
+            </ul>
+
+            <blockquote className="about-story__closing">
+              {closingPrayer}
+            </blockquote>
+          </article>
+
+          <aside className="about-story__aside">
+            <figure className="about-story__figure">
+              <img src={featureArt} alt={articleTitle} />
+              <figcaption>{t("approachCaption")}</figcaption>
+            </figure>
+          </aside>
         </div>
       </section>
 

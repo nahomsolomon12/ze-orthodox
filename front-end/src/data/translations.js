@@ -66,10 +66,58 @@ export const translations = {
       "Join a growing community discovering the beauty of Orthodoxy.",
     goLearning: "Go to Lessons",
     aboutTitle: "About",
-    aboutParagraphOne:
-      "ZeOrthodox is an online learning platform dedicated to making Ethiopian Orthodox Christian education accessible to all. Whether you're inquiring about the faith, a catechumen, or a lifelong Orthodox Christian seeking deeper understanding, our structured courses guide you through the rich theology, liturgical life, and spiritual practices of the Church.",
-    aboutParagraphTwo:
-      "Our curriculum is developed in consultation with Orthodox clergy and theologians, drawing from Scripture, the Church Fathers, conciliar teachings, and the living tradition of the Church.",
+    aboutParagraphOne: `Evangelism and the Role of Believers?
+
+Whenever you eat this bread and whenever you drink this cup, you proclaim the Lord's death until he comes.
+[1 Corinthians 11:26]
+
+"Amen, amen, amen. O Lord, we remember your death and resurrection."
+The Holy Liturgy of Saint Basil
+
+When we examine the verse and prayer above, we understand that the mission of evangelism is not a choice for each believer, but an obligation. Although the ministry of the gospel of Christ, kindled by the first Ethiopian evangelist, the eunuch, or Bacchos, has reached its present place through the beauty and work of our fathers and mothers who came before us, the need for this ministry to continue growing and expanding in many areas remains undeniable. Therefore, desiring to continue spreading the true Ethiopian gospel, we began this work as God's will. [The page/chapter reference is unclear]
+
+The mission of evangelism is a responsibility given not only to bishops, priests, and deacons, but to all who believe. Although the mission of evangelism is a matter to which we make a covenant before God in the liturgy we celebrate continually, we have not yet fulfilled our responsibility. Therefore, to help us fulfill this covenant and carry out our responsibility, we have prepared this evangelism mission page.
+
+This page was prepared to create a good understanding of the mission of evangelism, to make the resources needed to carry out the ministry of the gospel readily available, and to help us gain sufficient knowledge and practice concerning the mission and ministry of evangelism.
+
+The main functions of this page are:
+
+1. To prepare people for evangelism and its mission.
+2. To provide an opportunity to use modern technology to learn not only about the mission of evangelism, but also about theology, the Bible, the mysteries of the Church, and the order of the Church.
+3. To serve as a resource center where resources that support the success of the evangelism mission can be readily found, where we can meet the fathers, ministers, and faithful of the Church who have committed themselves to this mission, and where we can accelerate the work of the mission.
+[The line for point 4 is very faint in the image]
+4. To present the topics and lessons needed around the mission of evangelism, so that this page may serve as a primary resource for everyone who should take part in the ministry of the evangelism mission.
+
+The main resources included on this page are also the following:
+
+❖ Bible studies centered on the mission of evangelism that help us draw others to our Orthodox Tewahedo Church through the study of Scripture.
+
+❖ Answers to questions about evangelism, mission, and other related topics.
+
+❖ A list of mission requirements that help us prepare to engage in the evangelism mission.
+
+❖ Broad topics through which we carry out all kinds of evangelism and mission ministry.
+
+❖ Brochures and flyers that we use by printing them repeatedly.
+
+❖ Addresses where groups engaged in the evangelism mission or studying the Bible can be found near you.
+
+❖ Addresses of people near you whom we ask to remember us in prayer.
+
+❖ Advice and guidance that enable us to begin evangelism mission ministry in the congregations, schools, colleges, and cities where we serve or live, divided into different groups.
+
+❖ Detailed reports and news about new missions and activities that begin from time to time.
+
+❖ A place where we can hear or read the experiences and testimonies of those engaged in mission work or evangelism, concerning their concerns, failures, and successes.
+
+❖ Additional lessons through which we learn about the Bible, our Church, and our faith.
+
+"Pray for us also, that God may open to us a door for the word."
+[Colossians 4:3]
+
+"Finally, brothers and sisters, pray for us, that the word of the Lord may spread rapidly and be honored among you, and that we may be delivered from wicked and evil people, for not all have faith."
+[2 Thessalonians 3:1-2]`,
+    aboutParagraphTwo: "",
     approachTitle: "Our Approach",
     approachImageAlt: "Members of an Ethiopian Orthodox congregation",
     approachCaption: "Learning grows through faith shared with others.",
@@ -154,9 +202,58 @@ export const translations = {
     joinCommunity: "የኦርቶዶክስን ውበት ከሚያውቅ እያደገ ካለ ማህበረሰብ ጋር ይቀላቀሉ።",
     goLearning: "ወደ ትምህርቶች ሂድ",
     aboutTitle: "ስለ",
-    aboutParagraphOne:
-      "ዘኦርቶዶክስ የኢትዮጵያ ኦርቶዶክስ ክርስቲያናዊ ትምህርትን ለሁሉም ተደራሽ ለማድረግ የተዘጋጀ የመስመር ላይ የመማሪያ መድረክ ነው።",
-    aboutParagraphTwo: "ሥርዓተ ትምህርታችን ከኦርቶዶክስ ካህናት እና ምሁራን ጋር በመመካከር ይዘጋጃል።",
+    aboutParagraphOne: `ስብከተ ወንጌል እና የአማኞች ሚና?
+
+ይህን እንጀራ በበላችሁ ጊዜ ሁሉ፥ ይህንንም ጽዋ በጠጣችሁ ጊዜ ሁሉ ጌታ እስኪመጣ ድረስ ሞቱን ትናገራላችሁና።
+[1ኛ ቆሮንቶስ 11፥26]
+
+“አሜን፣ አሜን፣ አሜን አቤቱ ሞትህንና ትንሣኤህን እናስባለን።”
+ቅዳሴ ቅዱስ ባስልዮስ
+
+ከላይ የሚገኘውን ጥቅስና ጸሎት ስንመረምር የስብከተ ወንጌል ተልዕኮ ለእያንዳንዱ አማኒ ምርጫ ሳይሆን ግዴታ መሆኑን እንገነዘባለን። የኢትዮጵያውያን የመጀመሪያው ወንጌላዊ ሕጽው (ጃንደረባው) ወይም ባኮስ ያቀጣጠለው የክርስቶስ ወንጌል አገልግሎት፣ በቀደሙት አባቶቻችንና እናቶቻችን ውበት አግኝቶ አሁን ያለበት ደረጃ ላይ ቢደርስም የዚህ አገልግሎት ገዝፎና ሰፍቶ መቀጠል በብዙ ዘርፍ አስፈላጊነቱ አጠያያቂ አልሆነም። ስለዚህም ኢትዮጵያዊውን እውነተኛ ወንጌል በማስፋፋቱ ለመቀጠል በመመኘት የእግዚአብሔር ፈቃድ ሆኖ ጀመርን። [የገጽ/ምዕራፍ ማጣቀሻው ግልጽ አይደለም]
+
+የስብከተ ወንጌል ተልዕኮ ለጳጳሳት፣ ለቀሳውስትና፣ ለዲያቆናት ብቻ ሳይሆን ለሚያምኑ ሁሉ የተሰጠ ኃላፊነት ነው። የስብከተ ወንጌል ተልዕኮ ዘወትር በምናስቀድሰው ቅዳሴ በእግዚአብሔር ፊት ቃል የምንገባበት ጉዳይ ቢሆንም ኃላፊነታችንን ገና እየተወጣን አይደለም። ስለዚህ ይህንን ቃል ኪዳን ለመፈጸምና ኃላፊነታችንን ለመወጣት እንዲያስችለን ይህን የስብከተ ወንጌል ተልዕኮ ገጽ አዘጋጅተናል።
+
+ይህ ገጽ ስለ ስብከተ ወንጌል ተልዕኮ መልካም ግንዛቤ ለመፍጠር፣ የወንጌልን አገልግሎት ለመፈጸም የሚያስፈልጉ ምንጮች በቅርበት ለማዳረስ፣ ስለ ስብከተ ወንጌል ተልዕኮና አገልግሎት በቂ ዕውቀት እንድንቀስምና ልምምድ እንድናደርግ ሲባል ተዘጋጅቷል።
+
+ይህ ገጽ የሚያደርጋቸው ዋና ዋና ተግባራት ናቸው፦
+
+ሰውን ለስብከተ ወንጌልና ለተልዕኮው ማዘጋጀት፣
+2. በዘመናዊ ስልት የቴክኖሎጂ ውጤቶችን በመጠቀም የስብከተ ወንጌል ተልዕኮን ብቻ ሳይሆን ትምህርተ ሃይማኖትን፣ መጽሐፍ ቅዱስን፣ ምስጢራተ ቤተ ክርስቲያን፣ ሥርዓተ ቤተ ክርስቲያንንም ጭምር የምንማርበት ዕድል ማመቻቸት፣
+3. ገጹ ለስብከተ ወንጌል ተልዕኮ መሳካት የሚያግዙ ምንጮች እንደ ልብ የሚገኙበትና ለዚሁ ተልዕኮ ከተሰለፉ የቤተ ክርስቲያንን አባቶች፣ አገልጋዮችና ምዕመናን የምንገናኝበት፣ ተልዕኮውንም የምናፋጥንበት መጋቢ ምንጭ ሆኖ ማገልገል፣
+[የነጥብ 4 መስመር በምስሉ በጣም ደብዛዛ ነው]
+4. ይህን ገጽ በስብከተ ወንጌል ተልዕኮ አገልግሎት መሰለፍ ለሚገባቸው ሁሉ እንደ ዋና ምንጭ ሆኖ እንዲያገለግል በስብከተ ወንጌል ተልዕኮ ዙሪያ የሚፈለጉ ርዕሰ ጉዳዮችንና ትምህርቶች ማቅረብ ነው።
+
+ይህ ገጽ በሥሩ አቅፎ የያዛቸው ፍሬ ነገሮችም የሚከተሉት ናቸው፦
+
+❖ በመጽሐፍ ቅዱስ ጥናት ሥር ሌሎችን ወደ ኦርቶዶክሳዊት ተዋሕዶ ቤተ ክርስቲያናችን ለመሳብ የሚረዳን የስብከተ ወንጌል ተልዕኮን ማዕከል ያደረገ የመጽሐፍ ቅዱስ ጥናት።
+
+❖ ስለ ወንጌላዊነት፣ ተልእኮ እንዲሁም በሌሎች ርዕሰ ጉዳዮች ዙሪያ ለሚነሱ ጥያቄዎች የሚሰጡ ምላሾችን።
+
+❖ በስብከተ ወንጌል ተልዕኮ ለመሰማራት በምናደርገው ዝግጅት የሚረዱ የተልእኮ መስፈርቶች ዝርዝር።
+
+❖ ሁሉንም የወንጌላዊነትና የተልእኮ አገልግሎት የምናከናውንባቸው ሁለገብ ርዕሰ ጉዳዮች።
+
+❖ ደጋግመን በማተም የምንጠቀምባቸው ብሮሹሮችና በራሪ ጽሑፎች።
+
+❖ በአቅራቢያችሁ የሚገኙ በስብከተ ወንጌል ተልዕኮ የተሰማሩ ወይም የመጽሐፍ ቅዱስ ጥናት የሚያጠኑ ምድቦች የሚገኙበት አድራሻ።
+
+❖ በአቅራቢያችሁ የሚገኙ በጸሎት አስቡን የምንላቸው የሚገኙበት አድራሻ።
+
+❖ በምንገለገልበት ወይም በምናገለግልበት አጥቢያ፣ ት/ቤቶች፣ ኮሌጆች እና በምንኖርባቸው ከተሞች በተለያዩ ምድቦች በመከፋፈል የስብከተ ወንጌል ተልዕኮ አገልግሎትን ለመጀመር የሚያስችሉን ምክሮችና መመሪያዎች።
+
+❖ በየጊዜው ስለሚጀመሩ አዳዲስ ተልእኮዎችና ድርጊቶች ዝርዝር ዘገባዎችና ዜናዎች።
+
+❖ በተልእኮ ሥራም ሆነ በወንጌላዊነት ተሰማርተው ከሚገኙት ስጋታቸውን፣ ውድቀታቸውን እና ስኬታቸውን አስመልክቶ ልምዳቸውንና ምስክርነታቸውን የምንሰማበት ወይም የምናነብበት።
+
+❖ መጽሐፍ ቅዱስን ብሎም ቤተ ክርስቲያናችንንና ሃይማኖታችንን የምናውቅባቸው ተጨማሪ ትምህርቶች ናቸው።
+
+“እግዚአብሔር የቃሉን ደጅ ይከፍትልን ዘንድ ስለ እኛ ደግሞ ጸልዩ።”
+[ቆላስይስ 4፥3]
+
+“በቀረውስ፥ ወንድሞች ሆይ፥ የጌታ ቃል እንዲሮጥ በእናንተም ዘንድ ደግሞ እንደሚሆን እንዲከበር፥ እምነትም ለሁሉ ስለማይሆን ከዓመፀኛችና ከክፉዎች ሰዎች እንድንድን ስለ እኛ ጸልዩ።”
+[2ኛ ተሰሎንቄ 3፥1–2]`,
+    aboutParagraphTwo: "",
     approachTitle: "አቀራረባችን",
     approachImageAlt: "የኢትዮጵያ ኦርቶዶክስ ምዕመናን",
     approachCaption: "እምነትን ከሌሎች ጋር በመጋራት መማር ያድጋል።",
