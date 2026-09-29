@@ -1,6 +1,6 @@
 .hero {
   background: var(--hero-bg);
-  padding: 80px 24px 72px;
+  padding: 92px 24px 83px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -337,7 +337,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 56px 20px 48px;
+    padding: 64px 20px 55px;
   }
 
   .hero__background-image {

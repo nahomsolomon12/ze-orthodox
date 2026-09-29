@@ -1,8 +1,61 @@
 .lesson-catalog {
   align-items: start;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
+  gap: 14px;
+}
+
+.lesson-catalog__toolbar {
+  margin-bottom: 20px;
+}
+
+.lesson-catalog__search-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.lesson-catalog__search {
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 10px;
+  color: var(--text);
+  font: inherit;
+  min-height: 46px;
+  padding: 10px 14px;
+  width: 100%;
+}
+
+.lesson-catalog__search:focus-visible,
+.lesson-catalog__toggle:focus-visible,
+.lesson-category__lesson-link:focus-visible {
+  outline: 3px solid var(--gold-border);
+  outline-offset: 3px;
+}
+
+.lesson-catalog__toolbar-row {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.lesson-catalog__count,
+.lesson-category__meta {
+  color: var(--text-sec);
+  font-size: 12px;
+}
+
+.lesson-catalog__toggle {
+  background: none;
+  border: 0;
+  color: var(--accent);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 0;
 }
 
 .video-lessons {
@@ -56,15 +109,26 @@
 .lesson-category {
   background: var(--card);
   border: 1px solid var(--card-border);
-  border-radius: 8px;
+  border-radius: 14px;
   overflow: hidden;
-  transition: all 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.lesson-category:nth-child(even) {
+  background: var(--surface-soft);
 }
 
 .lesson-category:hover,
 .lesson-category[open] {
   border-color: var(--accent);
-  box-shadow: 0 4px 24px rgba(139, 26, 26, 0.08);
+  box-shadow: 0 8px 24px rgba(15, 91, 92, 0.1);
+}
+
+.lesson-category[open] {
+  background: var(--accent-light);
 }
 
 .lesson-category__summary {
@@ -77,7 +141,8 @@
   font-weight: 700;
   gap: 12px;
   list-style: none;
-  padding: 18px;
+  min-height: 68px;
+  padding: 14px 18px;
 }
 
 .lesson-category__summary::-webkit-details-marker {
@@ -99,6 +164,29 @@
   justify-content: center;
 }
 
+.lesson-category__heading {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  min-width: 0;
+}
+
+.lesson-category__description {
+  color: var(--text-sec);
+  flex-basis: 100%;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.lesson-category__meta {
+  align-self: center;
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+
 .lesson-category__chevron {
   display: flex;
   color: var(--accent);
@@ -113,26 +201,49 @@
 .lesson-category__lessons {
   border-top: 1px solid var(--card-border);
   list-style: none;
-  padding: 6px 18px 14px 64px;
+  padding: 6px 18px 14px;
 }
 
 .lesson-category__lesson {
+  border-bottom: 1px solid var(--card-border);
+  min-height: 44px;
+}
+
+.lesson-category__lesson:not(:last-child) {
+  margin-bottom: 2px;
+}
+
+.lesson-category__lesson-link {
   align-items: center;
   color: var(--text-sec);
   display: flex;
   font-size: 14px;
   gap: 10px;
-  padding: 10px 0;
+  min-height: 44px;
+  padding: 7px 4px;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+  width: 100%;
 }
 
-.lesson-category__lesson:not(:last-child) {
-  border-bottom: 1px solid var(--card-border);
+a.lesson-category__lesson-link:hover {
+  background: var(--card);
+  color: var(--accent);
 }
 
 .lesson-category__lesson-index {
+  flex: 0 0 24px;
   color: var(--gold);
   font-size: 12px;
   font-weight: 700;
+}
+
+.lesson-category__lesson-title {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .lesson-empty-state {
@@ -144,11 +255,22 @@
 }
 
 @media (max-width: 500px) {
-  .lesson-catalog {
+  .video-lessons {
     grid-template-columns: 1fr;
   }
 
-  .video-lessons {
-    grid-template-columns: 1fr;
+  .lesson-catalog__toolbar-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .lesson-category__summary {
+    padding: 12px;
+  }
+
+  .lesson-category__lessons {
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }

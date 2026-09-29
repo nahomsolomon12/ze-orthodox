@@ -25,6 +25,7 @@
   --accent: #0f5b5c;
   --accent-light: #e4f0ef;
   --accent-hover: #0a4647;
+  --surface-soft: #f4f0e6;
 
   /* Gold */
   --gold: #c8a548;
@@ -103,6 +104,7 @@ html:lang(en) {
   --accent: #3aa6a3;
   --accent-light: #0d2b2b;
   --accent-hover: #5ec4c0;
+  --surface-soft: #151710;
 
   --gold: #d5b85a;
   --gold-light: #211a08;
