@@ -66,7 +66,7 @@ export const translations = {
       "Join a growing community discovering the beauty of Orthodoxy.",
     goLearning: "Go to Lessons",
     aboutTitle: "About",
-    aboutParagraphOne: `Evangelism and the Role of Believers?
+    aboutParagraphOne: `Evangelism and the Role of Believers
 
 Whenever you eat this bread and whenever you drink this cup, you proclaim the Lord's death until he comes.
 [1 Corinthians 11:26]
@@ -74,7 +74,7 @@ Whenever you eat this bread and whenever you drink this cup, you proclaim the Lo
 "Amen, amen, amen. O Lord, we remember your death and resurrection."
 The Holy Liturgy of Saint Basil
 
-When we examine the verse and prayer above, we understand that the mission of evangelism is not a choice for each believer, but an obligation. Although the ministry of the gospel of Christ, kindled by the first Ethiopian evangelist, the eunuch, or Bacchos, has reached its present place through the beauty and work of our fathers and mothers who came before us, the need for this ministry to continue growing and expanding in many areas remains undeniable. Therefore, desiring to continue spreading the true Ethiopian gospel, we began this work as God's will. [The page/chapter reference is unclear]
+When we examine the verse and prayer above, we understand that the mission of evangelism is not a choice for each believer, but an obligation. Although the ministry of the gospel of Christ, kindled by the first Ethiopian evangelist, the eunuch, or Bacchos, has reached its present place through the beauty and work of our fathers and mothers who came before us, the need for this ministry to continue growing and expanding in many areas remains undeniable. Therefore, desiring to continue spreading the true Ethiopian gospel, we began this work as God's will. [cf. Acts 8:26-40]
 
 The mission of evangelism is a responsibility given not only to bishops, priests, and deacons, but to all who believe. Although the mission of evangelism is a matter to which we make a covenant before God in the liturgy we celebrate continually, we have not yet fulfilled our responsibility. Therefore, to help us fulfill this covenant and carry out our responsibility, we have prepared this evangelism mission page.
 
@@ -85,7 +85,6 @@ The main functions of this page are:
 1. To prepare people for evangelism and its mission.
 2. To provide an opportunity to use modern technology to learn not only about the mission of evangelism, but also about theology, the Bible, the mysteries of the Church, and the order of the Church.
 3. To serve as a resource center where resources that support the success of the evangelism mission can be readily found, where we can meet the fathers, ministers, and faithful of the Church who have committed themselves to this mission, and where we can accelerate the work of the mission.
-[The line for point 4 is very faint in the image]
 4. To present the topics and lessons needed around the mission of evangelism, so that this page may serve as a primary resource for everyone who should take part in the ministry of the evangelism mission.
 
 The main resources included on this page are also the following:
@@ -116,7 +115,7 @@ The main resources included on this page are also the following:
 [Colossians 4:3]
 
 "Finally, brothers and sisters, pray for us, that the word of the Lord may spread rapidly and be honored among you, and that we may be delivered from wicked and evil people, for not all have faith."
-[2 Thessalonians 3:1-2]`,
+[2nd Thessalonians 3:1-2]`,
     aboutParagraphTwo: "",
     approachTitle: "Our Approach",
     approachImageAlt: "Members of an Ethiopian Orthodox congregation",
@@ -210,7 +209,7 @@ The main resources included on this page are also the following:
 “አሜን፣ አሜን፣ አሜን አቤቱ ሞትህንና ትንሣኤህን እናስባለን።”
 ቅዳሴ ቅዱስ ባስልዮስ
 
-ከላይ የሚገኘውን ጥቅስና ጸሎት ስንመረምር የስብከተ ወንጌል ተልዕኮ ለእያንዳንዱ አማኒ ምርጫ ሳይሆን ግዴታ መሆኑን እንገነዘባለን። የኢትዮጵያውያን የመጀመሪያው ወንጌላዊ ሕጽው (ጃንደረባው) ወይም ባኮስ ያቀጣጠለው የክርስቶስ ወንጌል አገልግሎት፣ በቀደሙት አባቶቻችንና እናቶቻችን ውበት አግኝቶ አሁን ያለበት ደረጃ ላይ ቢደርስም የዚህ አገልግሎት ገዝፎና ሰፍቶ መቀጠል በብዙ ዘርፍ አስፈላጊነቱ አጠያያቂ አልሆነም። ስለዚህም ኢትዮጵያዊውን እውነተኛ ወንጌል በማስፋፋቱ ለመቀጠል በመመኘት የእግዚአብሔር ፈቃድ ሆኖ ጀመርን። [የገጽ/ምዕራፍ ማጣቀሻው ግልጽ አይደለም]
+ከላይ የሚገኘውን ጥቅስና ጸሎት ስንመረምር የስብከተ ወንጌል ተልዕኮ ለእያንዳንዱ አማኒ ምርጫ ሳይሆን ግዴታ መሆኑን እንገነዘባለን። የኢትዮጵያውያን የመጀመሪያው ወንጌላዊ ሕጽው (ጃንደረባው) ወይም ባኮስ ያቀጣጠለው የክርስቶስ ወንጌል አገልግሎት፣ በቀደሙት አባቶቻችንና እናቶቻችን ውበት አግኝቶ አሁን ያለበት ደረጃ ላይ ቢደርስም የዚህ አገልግሎት ገዝፎና ሰፍቶ መቀጠል በብዙ ዘርፍ አስፈላጊነቱ አጠያያቂ አልሆነም። ስለዚህም ኢትዮጵያዊውን እውነተኛ ወንጌል በማስፋፋቱ ለመቀጠል በመመኘት የእግዚአብሔር ፈቃድ ሆኖ ጀመርን። [የሐዋርያት ሥራ 8፤26᎓40]
 
 የስብከተ ወንጌል ተልዕኮ ለጳጳሳት፣ ለቀሳውስትና፣ ለዲያቆናት ብቻ ሳይሆን ለሚያምኑ ሁሉ የተሰጠ ኃላፊነት ነው። የስብከተ ወንጌል ተልዕኮ ዘወትር በምናስቀድሰው ቅዳሴ በእግዚአብሔር ፊት ቃል የምንገባበት ጉዳይ ቢሆንም ኃላፊነታችንን ገና እየተወጣን አይደለም። ስለዚህ ይህንን ቃል ኪዳን ለመፈጸምና ኃላፊነታችንን ለመወጣት እንዲያስችለን ይህን የስብከተ ወንጌል ተልዕኮ ገጽ አዘጋጅተናል።
 
@@ -221,7 +220,7 @@ The main resources included on this page are also the following:
 ሰውን ለስብከተ ወንጌልና ለተልዕኮው ማዘጋጀት፣
 2. በዘመናዊ ስልት የቴክኖሎጂ ውጤቶችን በመጠቀም የስብከተ ወንጌል ተልዕኮን ብቻ ሳይሆን ትምህርተ ሃይማኖትን፣ መጽሐፍ ቅዱስን፣ ምስጢራተ ቤተ ክርስቲያን፣ ሥርዓተ ቤተ ክርስቲያንንም ጭምር የምንማርበት ዕድል ማመቻቸት፣
 3. ገጹ ለስብከተ ወንጌል ተልዕኮ መሳካት የሚያግዙ ምንጮች እንደ ልብ የሚገኙበትና ለዚሁ ተልዕኮ ከተሰለፉ የቤተ ክርስቲያንን አባቶች፣ አገልጋዮችና ምዕመናን የምንገናኝበት፣ ተልዕኮውንም የምናፋጥንበት መጋቢ ምንጭ ሆኖ ማገልገል፣
-[የነጥብ 4 መስመር በምስሉ በጣም ደብዛዛ ነው]
+
 4. ይህን ገጽ በስብከተ ወንጌል ተልዕኮ አገልግሎት መሰለፍ ለሚገባቸው ሁሉ እንደ ዋና ምንጭ ሆኖ እንዲያገለግል በስብከተ ወንጌል ተልዕኮ ዙሪያ የሚፈለጉ ርዕሰ ጉዳዮችንና ትምህርቶች ማቅረብ ነው።
 
 ይህ ገጽ በሥሩ አቅፎ የያዛቸው ፍሬ ነገሮችም የሚከተሉት ናቸው፦
