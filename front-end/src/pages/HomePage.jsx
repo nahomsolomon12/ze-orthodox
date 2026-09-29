@@ -84,10 +84,6 @@ const HomePage = ({ setPage }) => {
 
           <div className="home-library">
             <article className="home-featured">
-              <div className="home-featured__media">
-                <img src={carouselTwo} alt="" />
-                <span>{t("featuredLessonLabel")}</span>
-              </div>
               <div className="home-featured__content">
                 <p className="home-content__meta">{t("featuredLessonMeta")}</p>
                 <h3 className="font-serif">{t("featuredLessonTitle")}</h3>
@@ -126,9 +122,6 @@ const HomePage = ({ setPage }) => {
       <section className="home-community">
         <div className="container home-community__inner">
           <div>
-            <span className="home-section__eyebrow">
-              {t("communityEyebrow")}
-            </span>
             <h2 className="font-serif">{t("readyBegin")}</h2>
             <p>{t("joinCommunity")}</p>
           </div>
