@@ -68,9 +68,9 @@ Whenever you eat this bread and whenever you drink this cup, you proclaim the Lo
 [1 Corinthians 11:26]
 
 "Amen, amen, amen. O Lord, we remember your death and resurrection."
-The Holy Liturgy of Saint Basil
+The Holy Anaphora of Saint Basil
 
-When we examine the verse and prayer above, we understand that the mission of evangelism is not a choice for each believer, but an obligation. Although the ministry of the gospel of Christ, kindled by the first Ethiopian evangelist, the eunuch, or Bacchos, has reached its present place through the beauty and work of our fathers and mothers who came before us, the need for this ministry to continue growing and expanding in many areas remains undeniable. Therefore, desiring to continue spreading the true Ethiopian gospel, we began this work as God's will. [cf. Acts 8:26-40]
+When we examine the verse and prayer below(1st Corinthians 11:26 and The Holy Anaphora of Saint Basil), we understand that the mission of evangelism is not a choice for each believer, but an obligation. Although the ministry of the gospel of Christ, kindled by the first Ethiopian evangelist, the eunuch, or Bacchos, has reached its present place through the beauty and work of our fathers and mothers who came before us, the need for this ministry to continue growing and expanding in many areas remains undeniable. Therefore, desiring to continue spreading the true Ethiopian gospel, we began this work as God's will. [cf. Acts 8:26-40]
 
 The mission of evangelism is a responsibility given not only to bishops, priests, and deacons, but to all who believe. Although the mission of evangelism is a matter to which we make a covenant before God in the liturgy we celebrate continually, we have not yet fulfilled our responsibility. Therefore, to help us fulfill this covenant and carry out our responsibility, we have prepared this evangelism mission page.
 
@@ -202,7 +202,7 @@ The main resources included on this page are also the following:
 “አሜን፣ አሜን፣ አሜን አቤቱ ሞትህንና ትንሣኤህን እናስባለን።”
 ቅዳሴ ቅዱስ ባስልዮስ
 
-ከላይ የሚገኘውን ጥቅስና ጸሎት ስንመረምር የስብከተ ወንጌል ተልዕኮ ለእያንዳንዱ አማኒ ምርጫ ሳይሆን ግዴታ መሆኑን እንገነዘባለን። የኢትዮጵያውያን የመጀመሪያው ወንጌላዊ ሕጽው (ጃንደረባው) ወይም ባኮስ ያቀጣጠለው የክርስቶስ ወንጌል አገልግሎት፣ በቀደሙት አባቶቻችንና እናቶቻችን ውበት አግኝቶ አሁን ያለበት ደረጃ ላይ ቢደርስም የዚህ አገልግሎት ገዝፎና ሰፍቶ መቀጠል በብዙ ዘርፍ አስፈላጊነቱ አጠያያቂ አልሆነም። ስለዚህም ኢትዮጵያዊውን እውነተኛ ወንጌል በማስፋፋቱ ለመቀጠል በመመኘት የእግዚአብሔር ፈቃድ ሆኖ ጀመርን። [የሐዋርያት ሥራ 8፤26᎓40]
+ከሥር የሚገኘውን ጥቅስና ጸሎት(1ኛው ቆሮንቶስ እና የቅዱስ ባስልዮስ አኰቴት) ስንመረምር የስብከተ ወንጌል ተልዕኮ ለእያንዳንዱ አማኒ ምርጫ ሳይሆን ግዴታ መሆኑን እንገነዘባለን። የኢትዮጵያውያን የመጀመሪያው ወንጌላዊ ሕጽው (ጃንደረባው) ወይም ባኮስ ያቀጣጠለው የክርስቶስ ወንጌል አገልግሎት፣ በቀደሙት አባቶቻችንና እናቶቻችን ውበት አግኝቶ አሁን ያለበት ደረጃ ላይ ቢደርስም የዚህ አገልግሎት ገዝፎና ሰፍቶ መቀጠል በብዙ ዘርፍ አስፈላጊነቱ አጠያያቂ አልሆነም። ስለዚህም ኢትዮጵያዊውን እውነተኛ ወንጌል በማስፋፋቱ ለመቀጠል በመመኘት የእግዚአብሔር ፈቃድ ሆኖ ጀመርን። [የሐዋርያት ሥራ 8፤26᎓40]
 
 የስብከተ ወንጌል ተልዕኮ ለጳጳሳት፣ ለቀሳውስትና፣ ለዲያቆናት ብቻ ሳይሆን ለሚያምኑ ሁሉ የተሰጠ ኃላፊነት ነው። የስብከተ ወንጌል ተልዕኮ ዘወትር በምናስቀድሰው ቅዳሴ በእግዚአብሔር ፊት ቃል የምንገባበት ጉዳይ ቢሆንም ኃላፊነታችንን ገና እየተወጣን አይደለም። ስለዚህ ይህንን ቃል ኪዳን ለመፈጸምና ኃላፊነታችንን ለመወጣት እንዲያስችለን ይህን የስብከተ ወንጌል ተልዕኮ ገጽ አዘጋጅተናል።
 
