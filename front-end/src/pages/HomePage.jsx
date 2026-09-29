@@ -76,12 +76,6 @@ const HomePage = ({ setPage }) => {
 
       <section className="section">
         <div className="container">
-          <div className="section__intro">
-            <span className="home-section__eyebrow">{t("howLearn")}</span>
-            <h2 className="section__title font-serif">{t("libraryTitle")}</h2>
-            <p className="section__subtitle">{t("libraryIntro")}</p>
-          </div>
-
           <div className="home-library">
             <article className="home-featured">
               <div className="home-featured__content">
