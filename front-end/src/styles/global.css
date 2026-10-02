@@ -12,7 +12,3 @@
 @import "./motion.css" layer(motion);
 
 @layer reset, tokens, base, layout, primitives, components, utilities, motion;
-
-/* ------------------------------------------------------------
-   1. CSS CUSTOM PROPERTIES (Light Theme - Default)
-   ------------------------------------------------------------ */
