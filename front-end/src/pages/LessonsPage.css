@@ -1,86 +1,88 @@
-.lessons-recommendations {
-  margin-bottom: 28px;
-  padding: 24px;
-  background: var(--surface-soft);
-  border: 1px solid var(--card-border);
-  border-radius: 14px;
-}
-
-.lessons-recommendations__list {
-  display: grid;
-  gap: 8px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.lessons-recommendations__list button {
-  display: grid;
-  width: 100%;
-  grid-template-columns: 34px minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 12px;
-  color: inherit;
-  text-align: left;
-  background: transparent;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  cursor: pointer;
-  font: inherit;
-}
-
-.lessons-recommendations__list button > span:nth-child(2) {
-  min-width: 0;
-}
-
-.lessons-recommendations__list button:hover,
-.lessons-recommendations__list button:focus-visible {
-  background: var(--card);
-  border-color: var(--card-border);
-  outline: none;
-}
-
-.lessons-recommendations__number {
-  color: var(--accent);
-  font-family: var(--font-serif);
-  font-size: 17px;
-}
-
-.lessons-recommendations__list strong,
-.lessons-recommendations__list button span span {
-  display: block;
-}
-
-.lessons-recommendations__list strong {
-  font-size: 14px;
-}
-
-.lessons-recommendations__list button span span {
-  margin-top: 3px;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.4;
-}
-
-.lessons-recommendations__track {
-  overflow-wrap: anywhere;
-  color: var(--muted);
-  font-size: 12px;
-  text-align: right;
-}
-
-@media (max-width: 680px) {
+@layer components {
   .lessons-recommendations {
-    padding: 20px 16px;
+    margin-bottom: 28px;
+    padding: 24px;
+    background: var(--surface-soft);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+  }
+
+  .lessons-recommendations__list {
+    display: grid;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
 
   .lessons-recommendations__list button {
-    grid-template-columns: 30px minmax(0, 1fr);
+    display: grid;
+    width: 100%;
+    grid-template-columns: 34px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    color: inherit;
+    text-align: left;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    font: inherit;
+  }
+
+  .lessons-recommendations__list button > span:nth-child(2) {
+    min-width: 0;
+  }
+
+  .lessons-recommendations__list button:hover,
+  .lessons-recommendations__list button:focus-visible {
+    background: var(--card);
+    border-color: var(--card-border);
+    outline: none;
+  }
+
+  .lessons-recommendations__number {
+    color: var(--accent);
+    font-family: var(--font-serif);
+    font-size: 17px;
+  }
+
+  .lessons-recommendations__list strong,
+  .lessons-recommendations__list button span span {
+    display: block;
+  }
+
+  .lessons-recommendations__list strong {
+    font-size: 14px;
+  }
+
+  .lessons-recommendations__list button span span {
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.4;
   }
 
   .lessons-recommendations__track {
-    grid-column: 2;
-    text-align: left;
+    overflow-wrap: anywhere;
+    color: var(--muted);
+    font-size: 12px;
+    text-align: right;
+  }
+
+  @media (max-width: 680px) {
+    .lessons-recommendations {
+      padding: 20px 16px;
+    }
+
+    .lessons-recommendations__list button {
+      grid-template-columns: 30px minmax(0, 1fr);
+    }
+
+    .lessons-recommendations__track {
+      grid-column: 2;
+      text-align: left;
+    }
   }
 }

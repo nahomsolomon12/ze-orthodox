@@ -1,512 +1,514 @@
-/* ------------------------------------------------------------
+@layer components {
+  /* ------------------------------------------------------------
    About page - editorial, organic layout
    ------------------------------------------------------------ */
 
-.about-hero {
-  position: relative;
-  padding: 72px 0 64px;
-  overflow: hidden;
-}
-
-.about-hero__inner {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 56px;
-  align-items: center;
-}
-
-.about-hero__title {
-  font-size: clamp(28px, 4vw, 44px);
-  letter-spacing: 0;
-  margin: 8px 0 0;
-  animation: about-slide-in 0.6s ease-out both;
-}
-
-.about-hero__logo {
-  display: block;
-  flex: 0 0 auto;
-  height: 56px;
-  width: auto;
-  max-width: 240px;
-  object-fit: contain;
-}
-
-.about-article__kicker {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--gold);
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.about-article__kicker span {
-  line-height: 1;
-}
-
-.about-hero__lead {
-  max-width: 680px;
-  margin-top: 22px;
-  font-family: var(--font-serif);
-  font-size: 20px;
-  line-height: 1.65;
-  color: var(--text);
-  animation: about-slide-in 0.6s 0.12s ease-out both;
-}
-
-@keyframes about-slide-in {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.about-hero__art {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.about-hero__art img {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 24px 60px rgba(15, 91, 92, 0.18);
-  border: 1px solid var(--card-border);
-}
-
-.about-hero__blob {
-  display: none;
-}
-
-/* ------------------------------------------------------------
-   Editorial story - readable long-form article layout
-   ------------------------------------------------------------ */
-
-.about-story {
-  padding: 18px 0 84px;
-  background: var(--surface-soft);
-  border-top: 1px solid var(--card-border);
-  border-bottom: 1px solid var(--card-border);
-}
-
-.about-story__layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 280px;
-  gap: 64px;
-  align-items: start;
-}
-
-.about-story__article {
-  max-width: 760px;
-}
-
-.about-story__quotes {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 16px;
-  margin-bottom: 34px;
-}
-
-.about-story blockquote {
-  margin: 0;
-}
-
-.about-story__scripture,
-.about-story__liturgy {
-  padding: 22px 24px;
-  background: var(--card);
-  border-left: 3px solid var(--gold);
-  color: var(--text);
-  font-family: var(--font-serif);
-  font-size: 15px;
-  line-height: 1.7;
-  white-space: pre-line;
-}
-
-.about-story__liturgy {
-  background: var(--gold-light);
-  border-left-color: var(--accent);
-}
-
-.about-story__paragraph {
-  max-width: 720px;
-  margin: 0 0 22px;
-  color: var(--text-sec);
-  font-size: 16px;
-  line-height: 1.9;
-}
-
-.about-story__heading {
-  margin: 42px 0 18px;
-  padding-top: 16px;
-  border-top: 1px solid var(--card-border);
-  font-size: 24px;
-}
-
-.about-story__list {
-  display: grid;
-  gap: 14px;
-  margin: 0;
-  padding-left: 24px;
-  color: var(--text-sec);
-  font-size: 15px;
-  line-height: 1.75;
-}
-
-.about-story__list--numbered {
-  list-style: decimal;
-}
-
-.about-story__list--resources {
-  list-style: none;
-  padding-left: 0;
-}
-
-.about-story__list--resources li {
-  position: relative;
-  padding-left: 24px;
-}
-
-.about-story__list--resources li::before {
-  content: "";
-  position: absolute;
-  top: 0.75em;
-  left: 2px;
-  width: 7px;
-  height: 7px;
-  background: var(--gold);
-  border-radius: 50%;
-}
-
-.about-story__closing {
-  margin-top: 46px;
-  padding: 24px 26px;
-  background: var(--accent);
-  color: #fff8e8;
-  font-family: var(--font-serif);
-  font-size: 16px;
-  line-height: 1.8;
-  white-space: pre-line;
-}
-
-.about-story__aside {
-  position: sticky;
-  top: 104px;
-}
-
-.about-story__figure {
-  margin: 0;
-}
-
-.about-story__figure img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  border: 1px solid var(--card-border);
-  border-radius: 8px;
-  box-shadow: 0 18px 42px rgba(15, 91, 92, 0.16);
-}
-
-.about-story__figure figcaption {
-  margin-top: 12px;
-  color: var(--text-sec);
-  font-size: 12px;
-  line-height: 1.5;
-}
-
-/* ------------------------------------------------------------
-   Approach - staggered timeline instead of a card grid
-   ------------------------------------------------------------ */
-
-.about-approach {
-  position: relative;
-  padding: 72px 0 80px;
-}
-
-.approach-layout {
-  display: grid;
-  grid-template-columns: minmax(280px, 0.85fr) minmax(320px, 1.15fr);
-  gap: 64px;
-  align-items: center;
-}
-
-.approach-visual {
-  position: relative;
-  min-height: 420px;
-}
-
-.approach-visual::after {
-  content: "";
-  position: absolute;
-  inset: 18px -18px -18px 18px;
-  border: 1px solid var(--gold-border);
-  border-radius: 8px;
-  pointer-events: none;
-}
-
-.approach-visual img {
-  position: relative;
-  z-index: 1;
-  display: block;
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 18px 42px rgba(15, 91, 92, 0.16);
-}
-
-.approach-visual__caption {
-  position: absolute;
-  z-index: 2;
-  right: -22px;
-  bottom: 22px;
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  max-width: 220px;
-  padding: 16px 18px;
-  background: var(--card);
-  border: 1px solid var(--card-border);
-  border-radius: 6px;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
-}
-
-.approach-visual__caption span {
-  color: var(--gold);
-  font-family: var(--font-serif);
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.approach-visual__caption p {
-  color: var(--text-sec);
-  font-size: 13px;
-  line-height: 1.5;
-}
-
-.approach-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.approach-item {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-  padding: 22px 0;
-  border-bottom: 1px solid var(--card-border);
-}
-
-.approach-item__num {
-  flex: 0 0 34px;
-  font-family: var(--font-serif);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: var(--gold);
-}
-
-.approach-item__body {
-  max-width: 480px;
-}
-
-.approach-item__body h3 {
-  font-size: 17px;
-  margin-bottom: 6px;
-}
-
-.approach-item__body p {
-  font-size: 14px;
-  line-height: 1.7;
-  margin-bottom: 0;
-}
-
-/* ------------------------------------------------------------
-   Contact - decorative panel + tilted form card
-   ------------------------------------------------------------ */
-
-.about-contact {
-  padding: 64px 0 96px;
-}
-
-.about-contact__inner {
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 44px;
-  align-items: start;
-}
-
-.about-contact__panel {
-  position: relative;
-  overflow: hidden;
-  background: var(--gold-light);
-  border: 1px solid var(--gold-border);
-  border-radius: 8px;
-  padding: 44px 36px;
-}
-
-.about-contact__mark {
-  position: absolute;
-  top: -18px;
-  left: 22px;
-  font-family: var(--font-serif);
-  font-size: 120px;
-  line-height: 1;
-  color: var(--gold);
-  opacity: 0.2;
-  pointer-events: none;
-}
-
-.about-contact__panel h2 {
-  position: relative;
-  margin-top: 20px;
-  font-size: 22px;
-}
-
-.about-contact__intro {
-  position: relative;
-  margin-top: 12px;
-  font-size: 15px;
-  line-height: 1.8;
-  color: var(--text-sec);
-}
-
-.about-contact__form-wrap {
-  background: var(--card);
-  border: 1px solid var(--card-border);
-  border-radius: 8px;
-  padding: 36px 32px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.07);
-}
-
-/* ------------------------------------------------------------
-   Responsive
-   ------------------------------------------------------------ */
-
-@media (max-width: 860px) {
-  .about-hero__inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .about-hero__art {
-    display: none;
-  }
-
-  .about-contact__inner {
-    grid-template-columns: 1fr;
-  }
-
-  .about-story__layout {
-    grid-template-columns: 1fr;
-    gap: 42px;
-  }
-
-  .about-story__aside {
-    position: static;
-    max-width: 420px;
-  }
-
-  .approach-layout {
-    grid-template-columns: 1fr;
-    gap: 42px;
-  }
-
-  .approach-visual {
-    max-width: 520px;
-    width: calc(100% - 18px);
-    margin: 0 auto;
-  }
-
-  .about-contact__form-wrap {
-    transform: none;
-  }
-}
-
-@media (max-width: 560px) {
   .about-hero {
-    padding: 48px 0 40px;
+    position: relative;
+    padding: 72px 0 64px;
+    overflow: hidden;
   }
 
-  .about-approach {
-    padding: 56px 0 64px;
+  .about-hero__inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 56px;
+    align-items: center;
   }
 
-  .about-story {
-    padding: 12px 0 64px;
+  .about-hero__title {
+    font-size: clamp(28px, 4vw, 44px);
+    letter-spacing: 0;
+    margin: 8px 0 0;
+    animation: about-slide-in 0.6s ease-out both;
   }
 
   .about-hero__logo {
-    height: 48px;
-    max-width: 200px;
+    display: block;
+    flex: 0 0 auto;
+    height: 56px;
+    width: auto;
+    max-width: 240px;
+    object-fit: contain;
+  }
+
+  .about-article__kicker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--gold);
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .about-article__kicker span {
+    line-height: 1;
+  }
+
+  .about-hero__lead {
+    max-width: 680px;
+    margin-block-start: clamp(1rem, 3vw, 1.375rem);
+    font-family: var(--font-serif);
+    font-size: 20px;
+    line-height: 1.65;
+    color: var(--text);
+    animation: about-slide-in 0.6s 0.12s ease-out both;
+  }
+
+  @keyframes about-slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .about-hero__art {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-hero__art img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 24px 60px rgba(15, 91, 92, 0.18);
+    border: 1px solid var(--card-border);
+  }
+
+  .about-hero__blob {
+    display: none;
+  }
+
+  /* ------------------------------------------------------------
+   Editorial story - readable long-form article layout
+   ------------------------------------------------------------ */
+
+  .about-story {
+    padding: 18px 0 84px;
+    background: var(--surface-soft);
+    border-top: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .about-story__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .about-story__article {
+    max-width: 760px;
   }
 
   .about-story__quotes {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    margin-bottom: 26px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 16px;
+    margin-bottom: 34px;
+  }
+
+  .about-story blockquote {
+    margin: 0;
   }
 
   .about-story__scripture,
   .about-story__liturgy {
-    padding: 18px;
-    font-size: 14px;
+    padding: 22px 24px;
+    background: var(--card);
+    border-inline-start: 3px solid var(--gold);
+    color: var(--text);
+    font-family: var(--font-serif);
+    font-size: 15px;
+    line-height: 1.7;
+    white-space: pre-line;
+  }
+
+  .about-story__liturgy {
+    background: var(--gold-light);
+    border-inline-start-color: var(--accent);
   }
 
   .about-story__paragraph {
-    font-size: 15px;
+    max-width: 720px;
+    margin: 0 0 22px;
+    color: var(--text-sec);
+    font-size: 16px;
+    line-height: 1.9;
   }
 
   .about-story__heading {
-    font-size: 21px;
+    margin-block: 42px 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--card-border);
+    font-size: 24px;
   }
 
-  .about-contact {
-    padding: 48px 0 72px;
+  .about-story__list {
+    display: grid;
+    gap: 14px;
+    margin: 0;
+    padding-inline-start: var(--space-6);
+    color: var(--text-sec);
+    font-size: 15px;
+    line-height: 1.75;
   }
 
-  .approach-item {
-    gap: 18px;
+  .about-story__list--numbered {
+    list-style: decimal;
+  }
+
+  .about-story__list--resources {
+    list-style: none;
+    padding-inline-start: 0;
+  }
+
+  .about-story__list--resources li {
+    position: relative;
+    padding-inline-start: var(--space-6);
+  }
+
+  .about-story__list--resources li::before {
+    content: "";
+    position: absolute;
+    top: 0.75em;
+    inset-inline-start: 2px;
+    width: 7px;
+    height: 7px;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+
+  .about-story__closing {
+    margin-top: 46px;
+    padding: 24px 26px;
+    background: var(--accent);
+    color: #fff8e8;
+    font-family: var(--font-serif);
+    font-size: 16px;
+    line-height: 1.8;
+    white-space: pre-line;
+  }
+
+  .about-story__aside {
+    position: sticky;
+    top: 104px;
+  }
+
+  .about-story__figure {
+    margin: 0;
+  }
+
+  .about-story__figure img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    box-shadow: 0 18px 42px rgba(15, 91, 92, 0.16);
+  }
+
+  .about-story__figure figcaption {
+    margin-top: 12px;
+    color: var(--text-sec);
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  /* ------------------------------------------------------------
+   Approach - staggered timeline instead of a card grid
+   ------------------------------------------------------------ */
+
+  .about-approach {
+    position: relative;
+    padding: 72px 0 80px;
+  }
+
+  .approach-layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.85fr) minmax(320px, 1.15fr);
+    gap: 64px;
+    align-items: center;
   }
 
   .approach-visual {
-    min-height: 300px;
+    position: relative;
+    min-height: 420px;
+  }
+
+  .approach-visual::after {
+    content: "";
+    position: absolute;
+    inset: 18px -18px -18px 18px;
+    border: 1px solid var(--gold-border);
+    border-radius: 8px;
+    pointer-events: none;
   }
 
   .approach-visual img {
-    height: 300px;
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 18px 42px rgba(15, 91, 92, 0.16);
   }
 
   .approach-visual__caption {
-    right: -12px;
-    bottom: 12px;
+    position: absolute;
+    z-index: 2;
+    inset-inline-end: -22px;
+    bottom: 22px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    max-width: 220px;
+    padding: 16px 18px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 6px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  }
+
+  .approach-visual__caption span {
+    color: var(--gold);
+    font-family: var(--font-serif);
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .approach-visual__caption p {
+    color: var(--text-sec);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .approach-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .approach-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .approach-item__num {
+    flex: 0 0 34px;
+    font-family: var(--font-serif);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--gold);
+  }
+
+  .approach-item__body {
+    max-width: 480px;
+  }
+
+  .approach-item__body h3 {
+    font-size: 17px;
+    margin-bottom: 6px;
+  }
+
+  .approach-item__body p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  /* ------------------------------------------------------------
+   Contact - decorative panel + tilted form card
+   ------------------------------------------------------------ */
+
+  .about-contact {
+    padding: 64px 0 96px;
+  }
+
+  .about-contact__inner {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 44px;
+    align-items: start;
   }
 
   .about-contact__panel {
-    border-radius: 24px;
-    padding: 32px 24px;
+    position: relative;
+    overflow: hidden;
+    background: var(--gold-light);
+    border: 1px solid var(--gold-border);
+    border-radius: 8px;
+    padding: 44px 36px;
   }
-}
 
-@media (prefers-reduced-motion: reduce) {
-  .about-hero__title,
-  .about-hero__lead,
-  .about-hero__second {
-    animation: none;
+  .about-contact__mark {
+    position: absolute;
+    top: -18px;
+    inset-inline-start: 22px;
+    font-family: var(--font-serif);
+    font-size: 120px;
+    line-height: 1;
+    color: var(--gold);
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+  .about-contact__panel h2 {
+    position: relative;
+    margin-top: 20px;
+    font-size: 22px;
+  }
+
+  .about-contact__intro {
+    position: relative;
+    margin-top: 12px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-sec);
+  }
+
+  .about-contact__form-wrap {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 36px 32px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.07);
+  }
+
+  /* ------------------------------------------------------------
+   Responsive
+   ------------------------------------------------------------ */
+
+  @media (max-width: 860px) {
+    .about-hero__inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .about-hero__art {
+      display: none;
+    }
+
+    .about-contact__inner {
+      grid-template-columns: 1fr;
+    }
+
+    .about-story__layout {
+      grid-template-columns: 1fr;
+      gap: 42px;
+    }
+
+    .about-story__aside {
+      position: static;
+      max-width: 420px;
+    }
+
+    .approach-layout {
+      grid-template-columns: 1fr;
+      gap: 42px;
+    }
+
+    .approach-visual {
+      max-width: 520px;
+      width: calc(100% - 18px);
+      margin: 0 auto;
+    }
+
+    .about-contact__form-wrap {
+      transform: none;
+    }
+  }
+
+  @media (max-width: 680px) {
+    .about-hero {
+      padding: 48px 0 40px;
+    }
+
+    .about-approach {
+      padding: 56px 0 64px;
+    }
+
+    .about-story {
+      padding: 12px 0 64px;
+    }
+
+    .about-hero__logo {
+      height: 48px;
+      max-width: 200px;
+    }
+
+    .about-story__quotes {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+
+    .about-story__scripture,
+    .about-story__liturgy {
+      padding: 18px;
+      font-size: 14px;
+    }
+
+    .about-story__paragraph {
+      font-size: 15px;
+    }
+
+    .about-story__heading {
+      font-size: 21px;
+    }
+
+    .about-contact {
+      padding: 48px 0 72px;
+    }
+
+    .approach-item {
+      gap: 18px;
+    }
+
+    .approach-visual {
+      min-height: 300px;
+    }
+
+    .approach-visual img {
+      height: 300px;
+    }
+
+    .approach-visual__caption {
+      inset-inline-end: -12px;
+      bottom: 12px;
+    }
+
+    .about-contact__panel {
+      border-radius: 24px;
+      padding: 32px 24px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .about-hero__title,
+    .about-hero__lead,
+    .about-hero__second {
+      animation: none;
+    }
   }
 }
