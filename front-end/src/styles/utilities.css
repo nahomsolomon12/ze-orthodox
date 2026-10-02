@@ -1,0 +1,141 @@
+/* Small, intentional utility classes shared across pages. */
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.text-muted {
+  color: var(--text-sec);
+}
+
+.text-success {
+  color: var(--success-text);
+}
+
+.text-error {
+  color: var(--err-text);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-8 {
+  margin-top: var(--space-2);
+}
+
+.mt-16 {
+  margin-top: var(--space-4);
+}
+
+.mt-24 {
+  margin-top: var(--space-6);
+}
+
+.mt-32 {
+  margin-top: var(--space-8);
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-8 {
+  margin-bottom: var(--space-2);
+}
+
+.mb-16 {
+  margin-bottom: var(--space-4);
+}
+
+.mb-24 {
+  margin-bottom: var(--space-6);
+}
+
+.mb-32 {
+  margin-bottom: var(--space-8);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-8 {
+  gap: var(--space-2);
+}
+
+.gap-12 {
+  gap: 12px;
+}
+
+.gap-16 {
+  gap: var(--space-4);
+}
+
+.gap-24 {
+  gap: var(--space-6);
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.max-w-500 {
+  max-width: 500px;
+}
+
+.max-w-600 {
+  max-width: 600px;
+}
+
+.max-w-700 {
+  max-width: 700px;
+}

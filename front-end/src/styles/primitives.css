@@ -1,0 +1,215 @@
+/* Reusable UI primitives shared across pages. */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  backdrop-filter: blur(4px);
+}
+
+.badge--gold {
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  border: 1px solid var(--badge-border);
+}
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: #fff;
+  padding: 14px 32px;
+  font-size: 16px;
+}
+
+.btn--primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn--secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--hero-text);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 14px 32px;
+  font-size: 16px;
+  backdrop-filter: blur(4px);
+}
+
+.btn--sm {
+  padding: var(--space-2) 20px;
+  font-size: 13px;
+  border-radius: var(--radius-md);
+}
+
+.btn--success {
+  background: var(--success-bg);
+  color: var(--success-text);
+  border: 1px solid var(--success-text);
+}
+
+.btn--ghost {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--card-border);
+  padding: 8px 18px;
+  font-size: 13px;
+  border-radius: var(--radius-md);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 24px rgba(139, 26, 26, 0.08);
+  border-color: var(--accent);
+}
+
+.card--flat {
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+}
+
+.card--flat:hover {
+  box-shadow: 0 2px 12px rgba(139, 26, 26, 0.06);
+}
+
+.card--gold {
+  background: var(--gold-light);
+  border-color: var(--gold-border);
+}
+
+.card--gold:hover {
+  box-shadow: none;
+  border-color: var(--gold-border);
+}
+
+.icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.icon-box--accent {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.icon-box--success {
+  background: var(--success-bg);
+  color: var(--success-text);
+}
+
+.icon-box--muted {
+  background: var(--bg);
+  color: var(--text-sec);
+}
+
+.icon-box--sm {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-sec);
+  margin-bottom: 5px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--input-border);
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  background: var(--input-bg);
+  color: var(--text);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+textarea.form-input {
+  resize: vertical;
+}
+
+.alert {
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.alert--error {
+  background: var(--err-bg);
+  color: var(--err-text);
+}
+
+.alert--success {
+  background: var(--success-bg);
+  color: var(--success-text);
+  padding: 20px 24px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
