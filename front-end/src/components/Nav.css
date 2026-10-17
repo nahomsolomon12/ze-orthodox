@@ -41,11 +41,12 @@
   }
 
   .nav__btn {
+    position: relative;
     background: transparent;
     color: var(--text-sec);
     border: none;
     padding: 8px 16px;
-    border-radius: 8px;
+    border-radius: 0;
     font-weight: 500;
     font-size: 14px;
     cursor: pointer;
@@ -56,13 +57,29 @@
   }
 
   .nav__btn:hover {
-    background: var(--accent-light);
     color: var(--accent);
   }
 
+  .nav__btn::after {
+    content: "";
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 4px;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.2s ease;
+  }
+
   .nav__btn--active {
-    background: var(--accent-light);
     color: var(--accent);
+  }
+
+  .nav__btn:hover::after,
+  .nav__btn--active::after {
+    transform: scaleX(1);
   }
 
   .nav__btn--primary {
@@ -134,12 +151,10 @@
   }
 
   .nav__dropdown-item:hover {
-    background: var(--accent-light);
     color: var(--accent);
   }
 
   .nav__dropdown-item--active {
-    background: var(--accent-light);
     color: var(--accent);
   }
 
@@ -226,6 +241,11 @@
       height: 42px;
       padding: 10px 21px;
       font-size: 14.4px;
+    }
+
+    .nav__btn::after {
+      left: 21px;
+      right: 21px;
     }
 
     .nav__btn--primary {
