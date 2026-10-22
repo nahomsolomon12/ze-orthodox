@@ -1,13 +1,14 @@
 import { useCallback, useEffect, useState } from "react";
 import "./styles/global.css";
 import { ThemeProvider } from "./context/ThemeContext";
-import { LanguageProvider } from "./context/LanguageContext";
+import { LanguageProvider, useLanguage } from "./context/LanguageContext";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import LessonsPage from "./pages/LessonsPage";
 import AboutPage from "./pages/AboutPage";
 import LessonsCategoryPage from "./pages/LessonsCategoryPage";
+import { lessonCategories } from "./data/lessonCategories";
 
 const pageRoutes = {
   home: "/",
@@ -25,9 +26,23 @@ const routesByPath = Object.fromEntries(
 
 const getPageFromPath = () => routesByPath[window.location.pathname] || "home";
 
+const pageTitleKeys = {
+  about: "navAbout",
+  lessons: "navLearning",
+};
+
 const AppContent = () => {
   const [page, setPage] = useState(getPageFromPath);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { t } = useLanguage();
+
+  useEffect(() => {
+    const titleKey =
+      pageTitleKeys[page] || lessonCategories[page.replace("lessons-", "")]?.titleKey;
+    const pageTitle = page === "home" ? "Welcome" : titleKey ? t(titleKey) : "Welcome";
+
+    document.title = `ZeOrthodox | ${pageTitle}`;
+  }, [page, t]);
 
   const navigate = useCallback((nextPage) => {
     const nextPath = pageRoutes[nextPage] || pageRoutes.home;
