@@ -194,6 +194,11 @@
     color: var(--accent);
   }
 
+  .nav__language-toggle:disabled {
+    opacity: 0.6;
+    cursor: wait;
+  }
+
   .nav__mobile-btns {
     display: none;
     align-items: center;

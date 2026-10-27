@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage";
 import LessonsPage from "./pages/LessonsPage";
 import AboutPage from "./pages/AboutPage";
 import LessonsCategoryPage from "./pages/LessonsCategoryPage";
+import LoadingPage from "./components/LoadingPage";
 import { lessonCategories } from "./data/lessonCategories";
 
 const pageRoutes = {
@@ -34,7 +35,7 @@ const pageTitleKeys = {
 const AppContent = () => {
   const [page, setPage] = useState(getPageFromPath);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { t } = useLanguage();
+  const { isLanguageLoading, t } = useLanguage();
 
   useEffect(() => {
     const titleKey =
@@ -64,6 +65,10 @@ const AppContent = () => {
     window.addEventListener("popstate", handlePopState);
     return () => window.removeEventListener("popstate", handlePopState);
   }, []);
+
+  if (isLanguageLoading) {
+    return <LoadingPage />;
+  }
 
   return (
     <div className="app-wrapper">

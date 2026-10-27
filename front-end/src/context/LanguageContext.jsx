@@ -1,4 +1,12 @@
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { translations } from "../data/translations";
 
 const LanguageContext = createContext(null);
@@ -10,11 +18,29 @@ const getInitialLanguage = () => {
 
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState(getInitialLanguage);
+  const [isLanguageLoading, setIsLanguageLoading] = useState(false);
+  const loadingTimeoutRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      window.clearTimeout(loadingTimeoutRef.current);
+    };
+  }, []);
 
   useEffect(() => {
     window.localStorage.setItem("language", language);
     document.documentElement.lang = language === "am" ? "am" : "en";
   }, [language]);
+
+  const toggleLanguage = useCallback(() => {
+    if (isLanguageLoading) return;
+
+    setIsLanguageLoading(true);
+    loadingTimeoutRef.current = window.setTimeout(() => {
+      setLanguage((current) => (current === "en" ? "am" : "en"));
+      setIsLanguageLoading(false);
+    }, 500);
+  }, [isLanguageLoading]);
 
   const value = useMemo(() => {
     const t = (key, fallback = key) => translations[language]?.[key] || translations.en[key] || fallback;
@@ -22,11 +48,12 @@ export const LanguageProvider = ({ children }) => {
     return {
       language,
       isAmharic: language === "am",
+      isLanguageLoading,
       setLanguage,
-      toggleLanguage: () => setLanguage((current) => (current === "en" ? "am" : "en")),
+      toggleLanguage,
       t,
     };
-  }, [language]);
+  }, [isLanguageLoading, language, toggleLanguage]);
 
   return (
     <LanguageContext.Provider value={value}>

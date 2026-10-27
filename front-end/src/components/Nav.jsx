@@ -15,7 +15,7 @@ const lessonPages = [
 
 const Nav = ({ page, setPage, mobileOpen, setMobileOpen }) => {
   const { isDark, toggleDark } = useThemeToggle();
-  const { t, toggleLanguage } = useLanguage();
+  const { isLanguageLoading, t, toggleLanguage } = useLanguage();
   const [lessonsOpen, setLessonsOpen] = useState(false);
 
   const navBtnClass = (key) =>
@@ -90,6 +90,7 @@ const Nav = ({ page, setPage, mobileOpen, setMobileOpen }) => {
           <button
             className="nav__language-toggle"
             onClick={toggleLanguage}
+            disabled={isLanguageLoading}
             title={t("languageTitle")}
             aria-label={t("languageTitle")}
           >
@@ -109,6 +110,7 @@ const Nav = ({ page, setPage, mobileOpen, setMobileOpen }) => {
           <button
             className="nav__language-toggle"
             onClick={toggleLanguage}
+            disabled={isLanguageLoading}
             title={t("languageTitle")}
             aria-label={t("languageTitle")}
           >
